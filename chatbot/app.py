@@ -9,7 +9,7 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain.schema.output_parser import StrOutputParser
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-app=FastAPI()
+app=FastAPI(title="RAG API")
 origins=[
     "https://portfolio-s-amine.netlify.app/"
     "http://localhost:5173",
@@ -95,4 +95,4 @@ async def message(query:str):
         print("there is an error",e)
     
 if __name__=="__main__":
-    uvicorn.run("app:app",host="0.0.0.0",port=8000,reload=True)
+    uvicorn.run("app:app",host="127.0.0.1",port=8000,reload=True)
