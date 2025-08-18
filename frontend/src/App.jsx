@@ -1,0 +1,89 @@
+// App.js
+
+import "./App.css";
+import "./index.css";
+import { Home } from "./components/sections/Home";
+import { About } from "./components/sections/About";
+import { Projects } from "./components/sections/Projects";
+import { Contact } from "./components/sections/Contact";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import NotFound from "./components/NotFound";
+import { LoadingRedirect } from "./components/LoadingRedirect";
+import { Layout } from "./components/Layout";
+import { AnimatePresence } from "framer-motion";
+import { PageTransition } from "./components/Transition";
+
+function AppRoutes() {
+  const location = useLocation();
+
+  return (
+    // The AnimatePresence wrapper is correct
+    <AnimatePresence mode="wait">
+      {/* --- Combine everything into a SINGLE <Routes> block --- */}
+      <Routes location={location} key={location.pathname}>
+        {/* The Chatbot component is REMOVED from here */}
+        
+        <Route path="/" element={<LoadingRedirect redirectTo="/home" />} />
+
+        {/* This Layout route now correctly wraps all main pages */}
+        <Route element={<Layout />}>
+          <Route
+            path="/home"
+            element={
+              <PageTransition>
+                <Home />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <PageTransition>
+                <About />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <PageTransition>
+                <Projects />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <PageTransition>
+                <Contact />
+              </PageTransition>
+            }
+          />
+        </Route>
+        <Route
+          path="*"
+          element={
+            <PageTransition>
+              <NotFound />
+            </PageTransition>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppRoutes />
+    </Router>
+  );
+}
+
+export default App;
