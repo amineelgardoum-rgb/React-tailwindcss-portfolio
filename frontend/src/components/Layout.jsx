@@ -4,14 +4,15 @@ import { CustomCursor } from './CustomCursor';
 import MatrixBackground from './MatrixBackground';
 import { Navbar } from './Navbar';
 import { MobileMenu } from './MobileMenu'; 
+import { useIsTouchDevice } from './MobileTouch';
 import Chatbot from './sections/Chatbot';
 
 export const Layout = () => {
-  // 2. Define the state here, in the common parent component
   const [menuOpen, setMenuOpen] = useState(false);
-
+  useIsTouchDevice();
   return (
     <>
+
       <CustomCursor />
       <MatrixBackground />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />

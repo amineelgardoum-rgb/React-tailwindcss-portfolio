@@ -24,10 +24,7 @@ function AppRoutes() {
   return (
     // The AnimatePresence wrapper is correct
     <AnimatePresence mode="wait">
-      {/* --- Combine everything into a SINGLE <Routes> block --- */}
       <Routes location={location} key={location.pathname}>
-        {/* The Chatbot component is REMOVED from here */}
-        
         <Route path="/" element={<LoadingRedirect redirectTo="/home" />} />
 
         {/* This Layout route now correctly wraps all main pages */}
