@@ -1,199 +1,91 @@
-import React, { useState } from "react";
-import { FaDocker, FaHtml5, FaCss3Alt, FaPython } from "react-icons/fa";
-import {
-  SiFastapi,
-  SiTensorflow,
-  SiScikitlearn,
-  SiPandas,
-  SiMongodb,
-  SiStreamlit,
-  SiKaggle,
-  SiJupyter,
-  SiChartdotjs,
-  SiApachekafka,
-  SiApache,
-  SiLangchain,
-  SiReact,
-  SiGooglegemini,
-  SiHuggingface,
-} from "react-icons/si";
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import { CustomCursor } from "../CustomCursor";
-import { useIsTouchDevice } from "../MobileTouch";
+import emailjs from "@emailjs/browser";
+import { Footer } from "./Footer";
 
-const pythonIcon = <FaPython />;
-const kafkaIcon = <SiApachekafka />;
-const apacheIcon = <SiApache />;
-const defaultIcon = <FaPython />;
+export const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle");
 
-// --- 4. SIMPLIFIED PROJECT CARD ---
-// isTapped state and onClick handlers are removed. The component is now simpler.
-const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
-  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
-  const groupedIcons = new Map();
-  project.skills.forEach((skill) => {
-    const { icon, color } = getSkillInfo(skill);
-    const iconKey = icon.type.name;
-    if (!groupedIcons.has(iconKey)) {
-      groupedIcons.set(iconKey, { icon, color, skills: [skill] });
-    } else {
-      groupedIcons.get(iconKey).skills.push(skill);
-    }
-  });
+  const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const public_key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-  return (
-    <RevealOnScroll>
-      {/* onClick handler is removed from this div */}
-      <div className="group relative w-full max-w-sm mx-auto aspect-[4/3] rounded-xl shadow-lg overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          // The hover effects are now prefixed with `md:` to only apply on desktop
-          className="absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-in-out md:group-hover:scale-110 md:group-hover:blur-sm"
-        />
-        {/* Darker overlay on mobile for readability, with a hover effect for desktop */}
-        <div className="absolute inset-0 bg-black/70 md:bg-black/40 transition-all duration-500 ease-in-out md:group-hover:bg-black/70"></div>
-        <div className="relative z-10 flex h-full flex-col justify-end p-6">
-          <h3 className="text-xl font-bold text-white bg-[rgba(0,0,0,0.2)] rounded mb-auto">
-            {project.title}
-          </h3>
-          {/*
-            This is now mobile-first: visible by default (opacity-100),
-            but becomes hidden and hover-able on medium screens and up (md:).
-          */}
-          <div className="opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 ease-in-out">
-            <div className="mb-6 text-sm text-gray-300 min-h-[4rem]">
-              {isDescriptionExpanded ? (
-                <>
-                  <p className="transition-opacity duration-300 ease-in-out opacity-100">
-                    {project.description}
-                  </p>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsDescriptionExpanded(false);
-                    }}
-                    className="font-semibold text-green-300 hover:text-green-200 mt-2 cursor-none"
-                  >
-                    Show Less
-                  </button>
-                </>
-              ) : (
-                <div className="flex items-start">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsDescriptionExpanded(true);
-                    }}
-                    className="cursor-none font-bold text-2xl leading-none text-gray-300 hover:text-white transition-colors"
-                  >
-                    ...
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <div className="mb-4 flex flex-wrap items-center gap-3">
-              {Array.from(groupedIcons.values()).map((info) => {
-                const isPythonIcon = info.icon.type.name === "FaPython";
-                const displayColor = isPythonIcon
-                  ? skillInfo["python"].color
-                  : info.color;
-                const tooltipText = isPythonIcon
-                  ? "Python"
-                  : info.skills.join(" / ");
-
-                return (
-                  <div key={info.skills.join("-")} className="group/tooltip relative">
-                    <div className={`text-3xl cursor-none transition-transform md:group-hover/tooltip:scale-110 ${displayColor} hover:text-green-400 hover:filter-drop-shadow-[0_0_10px_#00ff00]`}>
-                      {info.icon}
-                    </div>
-                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-in-out md:group-hover/tooltip:opacity-100 md:group-hover/tooltip:scale-100 md:group-hover/tooltip:-translate-y-1 md:group-hover/tooltip:pointer-events-auto">
-                      {tooltipText}
-                      <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-black/80"></div>
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-            <div>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block cursor-none font-semibold text-green-300 transition-colors hover:text-green-200">
-                View Project →
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </RevealOnScroll>
-  );
-};
-
-export const Projects = () => {
-  // --- 2. CALL THE HOOK ---
-  const isTouchDevice = useIsTouchDevice();
-
-  const projectsData = [
-    { id: 1, title: "MRI Brain Tumor Detection", description: "A deep learning model using TensorFlow to classify brain tumors from MRI scans. Served via a FastAPI backend.", skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle"], link: "https://github.com/amineel-crypto/tumor", image: "/images/mri_brain_detection.png", category: "AI" },
-    { id: 3, title: "Mental Health Prediction", description: "A machine learning model predicting mental health conditions based on survey data, built with Scikit-learn.", skills: ["Python", "Pandas", "Scikit-learn", "Seaborn", "Kaggle"], link: "https://github.com/amineel-crypto/Depression_Predict", image: "/images/depression.png", category: "AI" },
-    { id: 4, title: "In-Depth Sales Analysis", description: "A comprehensive sales data analysis project in a Jupyter environment, utilizing Pandas and Matplotlib/Seaborn.", skills: ["Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Jupyter"], link: "https://github.com/amineel-crypto/Prediction_Sales", image: "/images/sales.png", category: "AI" },
-    { id: 6, title: "RAG Chatbot About Me", description: "A RAG chatbot using Langchain and Gemini to answer questions about my professional profile.", skills: ["Langchain", "FastAPI", "React", "Gemini", "Huggingface"], image: '/images/chatbot_image.png', category: "AI" },
-    { id: 2, title: "Bitcoin Price Streaming", description: "A real-time data pipeline streaming Bitcoin prices using Kafka, FastAPI, and Streamlit for visualization.", skills: ["Docker", "FastAPI", "Redpanda", "Kafka", "MongoDB", "Streamlit"], link: "https://github.com/amineel-crypto/btc-real-time-streaming", image: "/images/btc-stream.png", category: "Data Engineering" },
-    { id: 5, title: "E-Commerce Data Pipeline", description: "Constructed a real-time e-commerce data pipeline using Docker, Kafka, and FastAPI, with data stored in MongoDB.", skills: ["Docker", "Kafka", "FastAPI", "MongoDB", "Chart.js", "Zookeeper"], link: "https://github.com/amineel-crypto/transactions_e_commerce_pipeline", image: "/images/real_time_e_commerce.png", category: "Data Engineering" },
-  ];
-
-  const skillInfo = { docker: { icon: <FaDocker />, color: "text-white" }, fastapi: { icon: <SiFastapi />, color: "text-white" }, mongodb: { icon: <SiMongodb />, color: "text-white" }, kafka: { icon: kafkaIcon, color: "text-white" }, redpanda: { icon: kafkaIcon, color: "text-white" }, zookeeper: { icon: apacheIcon, color: "text-white" }, html5: { icon: <FaHtml5 />, color: "text-white" }, css3: { icon: <FaCss3Alt />, color: "text-white" }, "chart.js": { icon: <SiChartdotjs />, color: "text-white" }, streamlit: { icon: <SiStreamlit />, color: "text-white" }, python: { icon: pythonIcon, color: "text-white" }, tensorflow: { icon: <SiTensorflow />, color: "text-white" }, "scikit-learn": { icon: <SiScikitlearn />, color: "text-white" }, pandas: { icon: <SiPandas />, color: "text-white" }, jupyter: { icon: <SiJupyter />, color: "text-white" }, kaggle: { icon: <SiKaggle />, color: "text-white" }, seaborn: { icon: pythonIcon, color: "text-white" }, matplotlib: { icon: pythonIcon, color: "text-white" }, react: { icon: <SiReact />, color: "text-white" }, langchain: { icon: <SiLangchain />, color: "text-white" }, gemini: { icon: <SiGooglegemini />, color: "text-white" }, huggingface: { icon: <SiHuggingface />, color: "text-white" } };
-  const getSkillInfo = (skill) => skillInfo[skill.toLowerCase()] || { icon: defaultIcon, color: "text-gray-400" };
-
-  const aiProjects = projectsData.filter(p => p.category === "AI");
-  const dataEngProjects = projectsData.filter(p => p.category === "Data Engineering");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    emailjs
+      .sendForm(service_id, template_id, e.target, public_key)
+      .then(() => {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      })
+      .catch(() => {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      });
+  };
 
   return (
     <>
-      {/* --- 3. CONDITIONALLY RENDER THE CURSOR --- */}
-      {!isTouchDevice && <CustomCursor />}
-      <section id="projects" className="flex min-h-screen items-start justify-center py-28 bg-black text-green-300">
-        <div className="mx-auto w-full max-w-7xl px-4">
+      <section id="contact" className="relative z-10 min-h-screen flex flex-col items-center justify-center py-20 px-4 bg-transparent text-green-300">
+        <div className="w-full max-w-2xl mx-auto">
           <RevealOnScroll>
-            <h2 className="mb-12 bg-gradient-to-r from-green-500 to-green-300 bg-clip-text text-center text-4xl font-bold text-transparent font-mono">
-              My Projects
-            </h2>
+            <div className="bg-transparent p-6 md:p-10 ">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-center text-transparent">
+                Get In Touch
+              </h2>
+
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Full Name"
+                    className="w-full bg-black border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="Email Address"
+                    className="w-full bg-black border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    name="message"
+                    required
+                    rows="5"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Your Message"
+                    className="w-full bg-black border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full bg-green-600 text-black py-3 px-6 font-bold tracking-wide cursor-none rounded-lg transition-colors duration-400 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-green-500 disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {status === "sending" ? "Sending..." : "Send Message"}
+                </button>
+                <div className="h-6 text-center"> {/* Added a fixed height container to prevent layout shift */}
+                    {status === "success" && <p className="text-green-400">Message sent successfully!</p>}
+                    {status === "error" && <p className="text-red-400">Oops! Something went wrong. Please try again.</p>}
+                </div>
+              </form>
+            </div>
+            <Footer />
           </RevealOnScroll>
-          <div className="mb-20">
-            <RevealOnScroll>
-              {/* Added 'text-transparent' to make the gradient visible */}
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text text-transparent mb-8 text-center">
-                AI & Machine Learning
-              </h3>
-            </RevealOnScroll>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {aiProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  getSkillInfo={getSkillInfo}
-                  skillInfo={skillInfo}
-                />
-              ))}
-            </div>
-          </div>
-          <div>
-            <RevealOnScroll>
-               {/* Added 'text-transparent' to make the gradient visible */}
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text text-transparent mb-8 text-center">
-                Data Engineering
-              </h3>
-            </RevealOnScroll>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {dataEngProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  getSkillInfo={getSkillInfo}
-                  skillInfo={skillInfo}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </section>
     </>
