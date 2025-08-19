@@ -226,7 +226,7 @@ export const Projects = () => {
       <section id="projects" className="flex min-h-screen items-start justify-center py-28 bg-black text-green-300">
         <div className="mx-auto w-full max-w-7xl px-4">
           <RevealOnScroll>
-            <h2 className="mb-12 bg-gradient-to-r from-green-500 to-green-300 bg-clip-text text-center text-4xl font-bold text-transparent font-mono">
+            <h2 className="mb-12 bg-gradient-to-r from-green-500 to-green-300 bg-clip-text text-center  text-4xl font-bold text-transparent font-mono">
               My Projects
             </h2>
           </RevealOnScroll>
@@ -234,7 +234,7 @@ export const Projects = () => {
           {/* AI & Machine Learning Section */}
           <div className="mb-20">
             <RevealOnScroll>
-              <h3 className="text-3xl font-bold text-white mb-8 text-center">
+              <h3 className="text-3xl font-bold  bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
                 AI & Machine Learning
               </h3>
             </RevealOnScroll>
@@ -253,7 +253,7 @@ export const Projects = () => {
           {/* Data Engineering Section */}
           <div>
             <RevealOnScroll>
-              <h3 className="text-3xl font-bold text-white mb-8 text-center">
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
                 Data Engineering
               </h3>
             </RevealOnScroll>
