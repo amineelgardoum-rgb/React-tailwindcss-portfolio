@@ -11,11 +11,14 @@ import {
   SiMysql,
   SiOracle,
   SiPandas,
+  SiC,
+  SiScala,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
-import { VscSymbolNamespace } from "react-icons/vsc"; 
+import { VscSymbolNamespace } from "react-icons/vsc";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
+
 const iconMap = {
   airflow:  { icon: <SiApacheairflow />, name: "Apache Airflow", hoverColor: "group-hover:text-green-400" },
   kafka:    { icon: <SiApachekafka />, name: "Apache Kafka",   hoverColor: "group-hover:text-green-300" },
@@ -27,8 +30,10 @@ const iconMap = {
   pandas:   { icon: <SiPandas />, name: "Pandas",         hoverColor: "group-hover:text-green-400" },
   python:   { icon: <FaPython />, name: "Python",         hoverColor: "group-hover:text-green-400" },
   sql:      { icon: <TbSql />, name: "SQL",            hoverColor: "group-hover:text-green-500" },
-  nosql:    { icon: <VscSymbolNamespace />, name: "NoSQL",  hoverColor: "group-hover:text-green400" },
+  nosql:    { icon: <VscSymbolNamespace />, name: "NoSQL",  hoverColor: "group-hover:text-green-400" },
   java:     { icon: <FaJava />, name: "Java",           hoverColor: "group-hover:text-green-400" },
+  c:{icon:<SiC />,name:"C",hoverColor:"group-hover:text-green-600"},
+  scala:{icon:<SiScala />,name:"scala",hoverColor:"group-hover:text-green-400"}
 };
 
 const getIconInfo = (techName) => {
@@ -40,7 +45,7 @@ export const About = () => {
   const dataEngTools = [
     "Airflow", "Kafka", "Docker", "MongoDB", "MySQL", "OracleDB", "FastAPI", "Pandas",
   ];
-  const dataEngLanguages = ["Python", "SQL", "NOSQL", "Java"];
+  const dataEngLanguages = ["Python", "SQL", "NOSQL", "Java","C","SCALA"];
 
   return (
     <>
@@ -57,16 +62,13 @@ export const About = () => {
         </RevealOnScroll>
         
         <RevealOnScroll>
-          <div className="rounded-xl p-6 md:p-8 border-white/10 border  shadow-[0px_2px_12px_green] bg-black">
-            <p className="text-gray-300  mb-8 text-lg leading-relaxed">
+          <div className="rounded-xl p-6 md:p-8 border-white/10 border shadow-[0px_2px_12px_green] bg-black">
+            <p className="text-gray-300 mb-8 text-lg leading-relaxed">
               I am a dedicated and detail-oriented Data Engineering student in my
-              second year at the National School of Applied Sciences of Al Hoceima
-              (ENSAH). With a solid academic background in computer science and a
-              growing expertise in data handling technologies, I am actively
-              seeking to apply my knowledge in a practical setting. My goal is to
-              contribute to a forward-thinking organization where I can develop my
+              second year at the **National School of Applied Sciences of Al Hoceima (ENSAH)**. [2, 3] With a solid foundation in computer science and a growing expertise in data handling technologies, I am actively seeking an opportunity to apply my knowledge in a practical setting. My goal is to
+              contribute to a forward-thinking organization where I can further develop my
               skills in data modeling, pipeline development, and data analysis
-              while helping to solve complex problems.
+              while helping to solve complex, real-world problems.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -74,7 +76,7 @@ export const About = () => {
                 <h3 className="text-xl font-bold mb-4 text-green-300">
                   Data Engineering Tools
                 </h3>
-                <div className=" flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4">
                   {dataEngTools.map((tool) => {
                     const { icon, name, hoverColor } = getIconInfo(tool);
                     return (
@@ -94,7 +96,7 @@ export const About = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-4 text-green-300 ">
+                <h3 className="text-xl font-bold mb-4 text-green-300">
                   Programming Languages
                 </h3>
                 <div className="flex flex-wrap gap-4">
@@ -119,7 +121,7 @@ export const About = () => {
             </div>
           </div>
         </RevealOnScroll>
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
           <RevealOnScroll>
             <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] border-white/10 border bg-gray-900/20 backdrop-blur-sm hover:-translate-y-1 transition-all">
               <h3 className="text-xl font-bold mb-4 text-green-300">Education</h3>
@@ -145,7 +147,7 @@ export const About = () => {
               <div className="space-y-4 text-gray-300">
                 <div>
                   <h4 className="font-semibold">XAI Internship Program</h4>
-                  <p className="text-sm text-gray-400">HR-Agent:(smart recruitment agent)</p>
+                  <p className="text-sm text-gray-400">Project: Smart Recruitment Agent</p>
                </div>
               </div>
             </div>

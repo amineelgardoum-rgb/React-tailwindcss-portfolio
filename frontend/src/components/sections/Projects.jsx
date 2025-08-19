@@ -15,7 +15,7 @@ import {
   SiLangchain,
   SiReact,
   SiGooglegemini,
-  SiHuggingface
+  SiHuggingface,
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
