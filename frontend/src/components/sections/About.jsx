@@ -33,7 +33,6 @@ const iconMap = {
   nosql:    { icon: <VscSymbolNamespace />, name: "NoSQL",  hoverColor: "group-hover:text-green-400" },
   java:     { icon: <FaJava />, name: "Java",           hoverColor: "group-hover:text-green-400" },
   c:{icon:<SiC />,name:"C",hoverColor:"group-hover:text-green-600"},
-  scala:{icon:<SiScala />,name:"scala",hoverColor:"group-hover:text-green-400"}
 };
 
 const getIconInfo = (techName) => {
@@ -45,7 +44,7 @@ export const About = () => {
   const dataEngTools = [
     "Airflow", "Kafka", "Docker", "MongoDB", "MySQL", "OracleDB", "FastAPI", "Pandas",
   ];
-  const dataEngLanguages = ["Python", "SQL", "NOSQL", "Java","C","SCALA"];
+  const dataEngLanguages = ["Python", "SQL", "NOSQL", "Java","C"];
 
   return (
     <>
