@@ -130,7 +130,7 @@ export const Projects = () => {
   const projectsData = [
     {
       id: 1,
-      title: "MRI Brain Tumor Detection",
+      title: "MRI Brain Tumor Detection.",
       description: "A deep learning model using TensorFlow to classify brain tumors from MRI scans. Served via a FastAPI backend with a simple HTML/CSS frontend for interaction.",
       skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle"],
       link: "https://github.com/amineel-crypto/tumor",
@@ -139,7 +139,7 @@ export const Projects = () => {
     },
     {
       id: 2,
-      title: "Bitcoin Price Streaming",
+      title: "Bitcoin Price Streaming.",
       description: "A real-time data pipeline that streams Bitcoin prices. Uses Kafka (with Redpanda) for messaging, FastAPI for the API, and Streamlit for live visualization.",
       skills: ["Docker", "FastAPI", "Redpanda", "Kafka", "MongoDB", "Streamlit"],
       link: "https://github.com/amineel-crypto/btc-real-time-streaming",
@@ -148,7 +148,7 @@ export const Projects = () => {
     },
     {
       id: 3,
-      title: "Mental Health Prediction",
+      title: "Mental Health Prediction.",
       description: "A machine learning model predicting mental health conditions based on survey data. Built with Python, Pandas, and Scikit-learn, using Seaborn for visualizations.",
       skills: ["Python", "Pandas", "Scikit-learn", "Seaborn", "Kaggle"],
       link: "https://github.com/amineel-crypto/Depression_Predict",
@@ -157,7 +157,7 @@ export const Projects = () => {
     },
     {
       id: 4,
-      title: "In-Depth Sales Analysis",
+      title: "In-Depth Sales Analysis.",
       description: "A comprehensive sales data analysis project performed in a Jupyter environment. Utilized Pandas for data manipulation and Matplotlib/Seaborn for insights.",
       skills: ["Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Jupyter"],
       link: "https://github.com/amineel-crypto/Prediction_Sales",
@@ -166,7 +166,7 @@ export const Projects = () => {
     },
     {
       id: 5,
-      title: "E-Commerce Data Pipeline",
+      title: "E-Commerce Data Pipeline.",
       description: "Constructed a real-time data pipeline for an e-commerce platform using Docker, Kafka, and FastAPI, with data stored in MongoDB and visualized with Chart.js.",
       skills: ["Docker", "Kafka", "FastAPI", "MongoDB", "Chart.js", "Zookeeper"],
       link: "https://github.com/amineel-crypto/transactions_e_commerce_pipeline",

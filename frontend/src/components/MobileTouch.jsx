@@ -1,22 +1,36 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * A custom hook to detect if the user is on a touch-enabled device.
+ * It checks for touch events and navigator properties to determine the device type.
+ * @returns {boolean} - True if it's a touch device, false otherwise.
+ */
 export const useIsTouchDevice = () => {
-  const [isTouch, setIsTouch] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // This check is the most reliable way to determine a touch device.
-    // It's true for phones, tablets, and touch-screen laptops.
-    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
-    // As a fallback, we can also check the screen width.
-    const isMobileWidth = window.innerWidth < 768; // 768px is a common tablet breakpoint
+    // Check if the window object is available (prevents errors during server-side rendering)
+    if (typeof window !== 'undefined') {
+      const onTouch = () => {
+        setIsTouchDevice(true);
+        // Once a touch is detected, the listener can be removed for performance.
+        window.removeEventListener('touchstart', onTouch, { passive: true });
+      };
+      
+      // A primary check for modern touch devices.
+      if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        setIsTouchDevice(true);
+      } else {
+        // Fallback for other devices: listen for the very first touch event.
+        window.addEventListener('touchstart', onTouch, { passive: true });
+      }
 
-    // We consider it a "touch device" for our purposes if it has touch capability
-    // OR if it's a very narrow screen.
-    if (hasTouch || isMobileWidth) {
-      setIsTouch(true);
+      // Cleanup the event listener when the component unmounts.
+      return () => {
+        window.removeEventListener('touchstart', onTouch, { passive: true });
+      };
     }
-  }, []); // The empty array ensures this check only runs once on mount.
+  }, []);
 
-  return isTouch;
-};
+  return isTouchDevice;
+}
