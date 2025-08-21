@@ -2,7 +2,7 @@
 
 ### AI & Data Engineer | Building Intelligent, Data-Driven Systems
 
-This repository contains the complete source code for my personal portfolio website, available at **[your-portfolio-url.com](https://your-portfolio-url.com)**. The project is a full-stack application designed to showcase my skills in both modern backend and frontend development.
+This repository contains the complete source code for my personal portfolio website, available at **[amine-portfolio](https://amine-s-portfolio.netlify.app/)**. The project is a full-stack application designed to showcase my skills in both modern backend and frontend development.
 
 ---
 
