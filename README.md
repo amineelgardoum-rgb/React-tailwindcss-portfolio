@@ -13,7 +13,7 @@ The portfolio is architected with a decoupled frontend and backend, which is sta
 | Frontend (React + Vite)                                                                                                                                                  | Backend (FastAPI)                                                                                                                            |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![Frontend Screenshot](./frontend.png)                                                                                                                                     | ![Backend API Screenshot](./backend.png)                                                                                                       |
-| A clean, fully responsive user interface built with**React** and styled with **Tailwind CSS**.  | A robust and high-performance REST API built with**Python** and **FastAPI**. It serves project details, handles chatbot answers. |
+| A clean, fully responsive user interface built with**React** and styled with **Tailwind CSS**.  | A robust and high-performance REST API built with **Python** and **FastAPI**. It serves project details, handles chatbot answers. |
 
 ---
 
