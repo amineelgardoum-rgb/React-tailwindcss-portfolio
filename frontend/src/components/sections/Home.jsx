@@ -34,7 +34,7 @@ export const Home = () => {
                        border border-green-500/30 
                        transition-all duration-300 hover:border-green-500/60 hover:shadow-[0px_2px_20px_green] hover:translate-y-1"
           >
-            As a Data Engineer, I specialize in architecting and maintaining
+            As a Data/AI Engineer, I specialize in architecting and maintaining
             robust data pipelines. I am passionate about transforming raw data
             into reliable, high-quality assets through efficient ETL/ELT
             processes. My core focus is on building scalable systems that
