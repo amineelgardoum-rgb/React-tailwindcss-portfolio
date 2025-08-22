@@ -20,8 +20,8 @@ export const Home = () => {
                 strings={[
                   "I'm",
                   "Amine ELGARDOUM",
-                  "Data Engineering",
-                  "Data Enthusiast",
+                  "Data/AI Engineering",
+                  "Data/AI Enthusiast",
                 ]}
               />
             </span>
