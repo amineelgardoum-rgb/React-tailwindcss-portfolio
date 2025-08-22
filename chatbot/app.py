@@ -13,7 +13,7 @@ app=FastAPI(title="RAG API")
 origins=[
     "https://portfolio-s-amine.netlify.app/"
     "http://localhost:5173",
-    "http://localhost:3000"
+    "http://localhost:3000",
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -79,7 +79,7 @@ conversation_rag_chain=RunnableWithMessageHistory(
 )
 
 @app.get("/")
-def sucess():
+def success():
     return {"status":"200 OK","message":"the Api is working"}
 @app.get("/ask")
 async def message(query:str):
@@ -95,4 +95,4 @@ async def message(query:str):
         print("there is an error",e)
     
 if __name__=="__main__":
-    uvicorn.run("app:app",host="127.0.0.1",port=8000,reload=True)
+    uvicorn.run("app:app",host="0.0.0.0",port=8000,reload=True)

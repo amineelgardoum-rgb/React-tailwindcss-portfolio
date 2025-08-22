@@ -46,7 +46,7 @@ function Chatbot() {
 
     try {
       const encodedQuery = encodeURIComponent(currentInput);
-      const apiUrl = "http://0.0.0.0:8000"; // Replace with your backend URL
+      const apiUrl = "http://0.0.0.0:8000";
       const url = `${apiUrl}/ask?query=${encodedQuery}`;
       const response = await fetch(url);
 

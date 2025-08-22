@@ -16,6 +16,7 @@ import {
   SiReact,
   SiGooglegemini,
   SiHuggingface,
+  SiTailwindcss,
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -133,7 +134,7 @@ export const Projects = () => {
       title: "MRI Brain Tumor Detection.",
       description: "A deep learning model using TensorFlow to classify brain tumors from MRI scans. Served via a FastAPI backend with a simple HTML/CSS frontend for interaction.",
       skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle"],
-      link: "https://github.com/amineel-crypto/tumor",
+      link: "https://github.com/amineelgardoum-rgb/tumor",
       image: "/images/mri_brain_detection.png",
       category: "AI",
     },
@@ -142,7 +143,7 @@ export const Projects = () => {
       title: "Bitcoin Price Streaming.",
       description: "A real-time data pipeline that streams Bitcoin prices. Uses Kafka (with Redpanda) for messaging, FastAPI for the API, and Streamlit for live visualization.",
       skills: ["Docker", "FastAPI", "Redpanda", "Kafka", "MongoDB", "Streamlit"],
-      link: "https://github.com/amineel-crypto/btc-real-time-streaming",
+      link: "https://github.com/amineelgardoum-rgb/btc-real-time-streaming-pipeline",
       image: "/images/btc-stream.png",
       category: "Data Engineering",
     },
@@ -151,7 +152,7 @@ export const Projects = () => {
       title: "Mental Health Prediction.",
       description: "A machine learning model predicting mental health conditions based on survey data. Built with Python, Pandas, and Scikit-learn, using Seaborn for visualizations.",
       skills: ["Python", "Pandas", "Scikit-learn", "Seaborn", "Kaggle"],
-      link: "https://github.com/amineel-crypto/Depression_Predict",
+      link: "https://github.com/amineelgardoum-rgb/Depression_Predict",
       image: "/images/depression.png",
       category: "AI",
     },
@@ -160,7 +161,7 @@ export const Projects = () => {
       title: "In-Depth Sales Analysis.",
       description: "A comprehensive sales data analysis project performed in a Jupyter environment. Utilized Pandas for data manipulation and Matplotlib/Seaborn for insights.",
       skills: ["Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Jupyter"],
-      link: "https://github.com/amineel-crypto/Prediction_Sales",
+      link: "https://github.com/amineelgardoum-rgb/Prediction_Sales",
       image: "/images/sales.png",
       category: "AI",
     },
@@ -169,7 +170,7 @@ export const Projects = () => {
       title: "E-Commerce Data Pipeline.",
       description: "Constructed a real-time data pipeline for an e-commerce platform using Docker, Kafka, and FastAPI, with data stored in MongoDB and visualized with Chart.js.",
       skills: ["Docker", "Kafka", "FastAPI", "MongoDB", "Chart.js", "Zookeeper"],
-      link: "https://github.com/amineel-crypto/transactions_e_commerce_pipeline",
+      link: "https://github.com/amineelgardoum-rgb/transactions_e_commerce_pipeline",
       image: "/images/real_time_e_commerce.png",
       category: "Data Engineering",
     },
@@ -177,9 +178,19 @@ export const Projects = () => {
       id: 6,
       title: "RAG chatbot about me.",
       description: "Designed a RAG chatbot to answer questions about me.",
-      skills: ["Langchain", "FastAPI", "React", "Gemini", "Huggingface"],
+      skills: ["Langchain", "FastAPI", "React", "Gemini", "Huggingface",'Tailwindcss'],
+      link:"https://github.com/amineelgardoum-rgb/Rag_amine_chatbot",
       image: '/images/chatbot_image.png',
       category: "AI",
+    }
+    ,{
+      id:7,
+      title:"portfolio.",
+      description:"Builded a portfolio to show my skills,and my projects.",
+      skills:['React','Python','Tailwindcss','Huggingface','Gemini','Langchain'],
+      link:'https://github.com/amineelgardoum-rgb/React-tailwindcss-portfolio',
+      image:'/images/chatbot_image.png',
+      category:"Web development",
     }
   ];
 
@@ -205,7 +216,8 @@ export const Projects = () => {
     react: { icon: <SiReact />, color: "text-white" },
     langchain: { icon: <SiLangchain />, color: "text-white" },
     gemini: { icon: <SiGooglegemini />, color: "text-white" },
-    huggingface: { icon: <SiHuggingface />, color: "text-white" }
+    huggingface: { icon: <SiHuggingface />, color: "text-white" },
+    tailwindcss:{icon:<SiTailwindcss />,color:"text-white"}
   };
 
   const getSkillInfo = (skill) => {
@@ -219,6 +231,7 @@ export const Projects = () => {
 
   const aiProjects = projectsData.filter(p => p.category === "AI");
   const dataEngProjects = projectsData.filter(p => p.category === "Data Engineering");
+  const webdev=projectsData.filter(p=>p.category==="Web development");
 
   return (
     <>
@@ -251,7 +264,7 @@ export const Projects = () => {
           </div>
 
           {/* Data Engineering Section */}
-          <div>
+          <div className="mb-20">
             <RevealOnScroll>
               <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
                 Data Engineering
@@ -259,6 +272,23 @@ export const Projects = () => {
             </RevealOnScroll>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {dataEngProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  getSkillInfo={getSkillInfo}
+                  skillInfo={skillInfo}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="mb-20">
+            <RevealOnScroll>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
+               Web development
+              </h3>
+            </RevealOnScroll>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {webdev.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
