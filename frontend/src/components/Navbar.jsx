@@ -10,7 +10,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     <nav className="fixed top-0 w-full z-[40] bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link className="font-mono text-xl font-bold text-white cursor-none"  to="/home">
+          <Link className="font-mono text-xl font-bold text-white cursor-none hover:-translate-y-1 transition-all ease-in-out duration-300 "  to="/home">
             Amine.<span className="text-green-500">ELGARDOUM</span>
           </Link>
           
@@ -25,19 +25,19 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             {/* 3. Replaced all navigation links */}
             <Link
               to="/about"
-              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all"
+              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 duration-300 ease-in-out"
             >
               About
             </Link>
             <Link
               to="/projects"
-              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all"
+              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-300"
             >
               Projects
             </Link>
             <Link
               to="/contact"
-              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all"
+              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-300"
             >
               Contact
             </Link>

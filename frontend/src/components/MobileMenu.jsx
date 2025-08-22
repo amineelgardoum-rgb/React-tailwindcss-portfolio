@@ -20,7 +20,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       <Link
               to="/home"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl  cursor-none font-semibold text-white my-4 transform transition-transform duration-300
+              className={`text-2xl  hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"
@@ -32,7 +32,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             <Link
               to="/about"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl cursor-none font-semibold text-white my-4 transform transition-transform duration-300
+              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"
@@ -44,7 +44,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             <Link
               to="/projects"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl cursor-none font-semibold text-white my-4 transform transition-transform duration-300
+              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"
@@ -56,7 +56,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             <Link
               to="/contact"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl cursor-none font-semibold text-white my-4 transform transition-transform duration-300
+              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"

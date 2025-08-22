@@ -16,10 +16,12 @@ import {
   SiReact,
   SiGooglegemini,
   SiHuggingface,
-  SiTailwindcss,
+  SiTailwindcss
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
+import { IoBarChart } from "react-icons/io5";
+import { TbChartLine} from "react-icons/tb";
 
 const pythonIcon = <FaPython />;
 const kafkaIcon = <SiApachekafka />;
@@ -48,7 +50,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
 
   return (
     <RevealOnScroll>
-      <div onClick={handleCardClick} className="group relative w-full max-w-sm mx-auto aspect-[4/3] rounded-xl shadow-lg overflow-hidden">
+      <div onClick={handleCardClick} className="group relative w-full max-w-sm mx-auto aspect-[4/3] rounded-xl shadow-lg overflow-hidden  hover:shadow-[0px_10px_30px_green] hover:-translate-y-1 transition-all ease-in-out duration-300">
         <img
           src={project.image}
           alt={project.title}
@@ -151,7 +153,7 @@ export const Projects = () => {
       id: 3,
       title: "Mental Health Prediction.",
       description: "A machine learning model predicting mental health conditions based on survey data. Built with Python, Pandas, and Scikit-learn, using Seaborn for visualizations.",
-      skills: ["Python", "Pandas", "Scikit-learn", "Seaborn", "Kaggle"],
+      skills: ["Pandas", "Scikit-learn", "Seaborn", "Kaggle",'matplotlib'],
       link: "https://github.com/amineelgardoum-rgb/Depression_Predict",
       image: "/images/depression.png",
       category: "AI",
@@ -178,7 +180,7 @@ export const Projects = () => {
       id: 6,
       title: "RAG chatbot about me.",
       description: "Designed a RAG chatbot to answer questions about me.",
-      skills: ["Langchain", "FastAPI", "React", "Gemini", "Huggingface",'Tailwindcss'],
+      skills: ["Langchain", "FastAPI", "React", "Gemini", "Huggingface",'Tailwindcss','Tensorflow',"Docker"],
       link:"https://github.com/amineelgardoum-rgb/Rag_amine_chatbot",
       image: '/images/chatbot_image.png',
       category: "AI",
@@ -187,7 +189,7 @@ export const Projects = () => {
       id:7,
       title:"portfolio.",
       description:"Builded a portfolio to show my skills,and my projects.",
-      skills:['React','Python','Tailwindcss','Huggingface','Gemini','Langchain'],
+      skills:['React','Tailwindcss','Huggingface','Gemini','Langchain','Tensorflow',"Docker","FastAPI"],
       link:'https://github.com/amineelgardoum-rgb/React-tailwindcss-portfolio',
       image:'/images/chatbot_image.png',
       category:"Web development",
@@ -211,8 +213,8 @@ export const Projects = () => {
     pandas: { icon: <SiPandas />, color: "text-white" },
     jupyter: { icon: <SiJupyter />, color: "text-white" },
     kaggle: { icon: <SiKaggle />, color: "text-white" },
-    seaborn: { icon: pythonIcon, color: "text-white" },
-    matplotlib: { icon: pythonIcon, color: "text-white" },
+    seaborn: { icon: <IoBarChart />, color: "text-white" },
+    matplotlib: { icon: <TbChartLine />, color: "text-white" },
     react: { icon: <SiReact />, color: "text-white" },
     langchain: { icon: <SiLangchain />, color: "text-white" },
     gemini: { icon: <SiGooglegemini />, color: "text-white" },

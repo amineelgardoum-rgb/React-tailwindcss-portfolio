@@ -34,7 +34,7 @@ export const CustomCursor = ({ size = "normal" }) => {
   const tagName = hoverTarget?.tagName?.toLowerCase();
   
   // The cursor is expanded if the tag is 'a' OR 'button'.
-  const isExpanded = tagName === "a" || tagName === "button";
+  const isExpanded = tagName === "a" || tagName === "button" || tagName==="Link";
 
   const baseSize = size === "small" ? 4 : size === "large" ? 10 : 6;
   
@@ -52,7 +52,6 @@ export const CustomCursor = ({ size = "normal" }) => {
       }}
     >
       <div
-        // Also use 'isExpanded' here for styling.
         className={`rounded-full ${
           isExpanded ? "bg-green-500" : "bg-green-300"
         }`}
