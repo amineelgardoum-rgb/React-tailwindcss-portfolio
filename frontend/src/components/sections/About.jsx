@@ -19,7 +19,8 @@ import {
   SiGit,
   SiNumpy,
   SiNetlify,
-  SiPrefect
+  SiPrefect,
+  SiPytorch,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { VscSymbolNamespace } from "react-icons/vsc";
@@ -125,41 +126,46 @@ const iconMap = {
     name: "tensorflow",
     hoverColor: "group-hover:text-green-400",
   },
-  canva:{
-    icon:<SiCanva />,
-    name:"canva",
-    hoverColor:"group-hover:text-green-600"
+  canva: {
+    icon: <SiCanva />,
+    name: "canva",
+    hoverColor: "group-hover:text-green-600",
   },
-  git:{
-    icon:<SiGit />,
-    name:'git',
-    hoverColor:"group-hover:text-green-700"
+  git: {
+    icon: <SiGit />,
+    name: "git",
+    hoverColor: "group-hover:text-green-700",
   },
-  matplotlib:{
-    icon:<TbChartLine />,
-    name:"matplotlib",
-    hoverColor:"group-hover:text-green-800"
+  matplotlib: {
+    icon: <TbChartLine />,
+    name: "matplotlib",
+    hoverColor: "group-hover:text-green-800",
   },
-  seaborn:{
-    icon:<IoBarChart />,
-    name:"seaborn",
-    hoverColor:"group-hover:text-green-600"
+  seaborn: {
+    icon: <IoBarChart />,
+    name: "seaborn",
+    hoverColor: "group-hover:text-green-600",
   },
-  numpy:{
-    icon:<SiNumpy />,
-    name:"numpy",
-    hoverColor:"group-hover:text-green-800"
+  numpy: {
+    icon: <SiNumpy />,
+    name: "numpy",
+    hoverColor: "group-hover:text-green-800",
   },
-  netlify:{
-    icon:<SiNetlify />,
-    name:"netlify",
-    hoverColor:"group-hover:text-green-600"
+  netlify: {
+    icon: <SiNetlify />,
+    name: "netlify",
+    hoverColor: "group-hover:text-green-600",
   },
-  prefect:{
-    icon:<SiPrefect />,
-    name:'prefect',
-    hoverColor:"group-hover:text-green-500"
-  }
+  prefect: {
+    icon: <SiPrefect />,
+    name: "prefect",
+    hoverColor: "group-hover:text-green-500",
+  },
+  pytorch: {
+    icon: <SiPytorch />,
+    name: "pytorch",
+    hoverColor: "group-hover:text-green-800",
+  },
 };
 
 const getIconInfo = (techName) => {
@@ -179,8 +185,9 @@ export const About = () => {
     "OracleDB",
     "Pandas",
     "Streamlit",
-    'matplotlib',
-    'seaborn',
+    "matplotlib",
+    "seaborn",
+    "numpy",
   ];
   const dataEngLanguages = [
     "Python",
@@ -190,12 +197,12 @@ export const About = () => {
     "C",
     "Javascript",
   ];
-  const dataOrchestrate = ["Docker", "Airflow","prefect"];
+  const dataOrchestrate = ["Docker", "Airflow", "prefect"];
   const frameworks = ["React", "Fastapi"];
-  const aiTools = ["Langchain", "scikit_learn", "tensorflow"];
+  const aiTools = ["Langchain", "scikit_learn", "tensorflow", "Pytorch"];
   const design = ["canva"];
-  const vsc=['Github','Git'];
-  const hostingTools=['netlify'];
+  const vsc = ["Github", "Git"];
+  const hostingTools = ["netlify"];
 
   return (
     <>
@@ -212,17 +219,18 @@ export const About = () => {
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <div className="rounded-xl p-6 md:p-8  hover:shadow-[0px_3px_20px_green] shadow-[0px_2px_12px_green] bg-black transition-all-ease duration-300 border border-green-500 hover:translate-y-3">
+            <div className="rounded-xl p-6 md:p-8  hover:shadow-[0px_0px_50px_green] shadow-[0px_2px_12px_green] bg-black transition-all-ease duration-300 border border-green-500 hover:-translate-y-3">
               <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                I am a dedicated and detail-oriented Data Engineering student in
-                my second year at the **National School of Applied Sciences of
-                Al Hoceima (ENSAH)**.With a solid foundation in computer science
-                and a growing expertise in data handling technologies, I am
-                actively seeking an opportunity to apply my knowledge in a
-                practical setting. My goal is to contribute to a
-                forward-thinking organization where I can further develop my
-                skills in data modeling, pipeline development, and data analysis
-                while helping to solve complex, real-world problems.
+                As a second-year AI and Data Engineering student at ENSAH, my
+                passion is to bridge the gap between complex data and
+                intelligent action. My journey has evolved from writing
+                foundational code to architecting robust data pipelines and
+                training neural networks. My focus lies at the intersection of
+                machine learning, deep learning, and the data-driven systems
+                that power them. I am actively seeking an opportunity to apply
+                my technical skills and creative energy to solve real-world
+                challenges and help build the next generation of intelligent
+                applications.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -239,7 +247,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300  group-hover:scale-110 ${hoverColor} transition-all duration-300 ease-in-out group-hover:-translate-y-1`}
                           >
                             {icon}
                           </div>
@@ -267,7 +275,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all ease-in-out duration-300 group-hover:scale-110 group-hover:-translate-y-1 ${hoverColor}`}
                           >
                             {icon}
                           </div>
@@ -295,7 +303,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all ease-in-out duration-300 group-hover:scale-110 group-hover:-translate-y-1 ${hoverColor}`}
                           >
                             {icon}
                           </div>
@@ -323,7 +331,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:-translate-y-1 ${hoverColor}`}
                           >
                             {icon}
                           </div>
@@ -351,7 +359,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ease-in-out group-hover:-translate-y-1 ${hoverColor}`}
                           >
                             {icon}
                           </div>
@@ -379,7 +387,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ease-in-out group-hover:-translate-y-1 ${hoverColor}`}
                           >
                             {icon}
                           </div>
@@ -407,7 +415,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ease-in-out group-hover:-translate-y-1 ${hoverColor}`}
                           >
                             {icon}
                           </div>
@@ -435,7 +443,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all duration-300 group-hover:scale-110 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all ease-in-out group-hover:-translate-y-1 duration-300 group-hover:scale-110 ${hoverColor}`}
                           >
                             {icon}
                           </div>
