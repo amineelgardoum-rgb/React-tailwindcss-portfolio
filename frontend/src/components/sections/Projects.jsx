@@ -16,7 +16,8 @@ import {
   SiReact,
   SiGooglegemini,
   SiHuggingface,
-  SiTailwindcss
+  SiTailwindcss,
+  SiNumpy
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -135,7 +136,7 @@ export const Projects = () => {
       id: 1,
       title: "MRI Brain Tumor Detection.",
       description: "A deep learning model using TensorFlow to classify brain tumors from MRI scans. Served via a FastAPI backend with a simple HTML/CSS frontend for interaction.",
-      skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle"],
+      skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle","Numpy"],
       link: "https://github.com/amineelgardoum-rgb/tumor",
       image: "/images/mri_brain_detection.png",
       category: "AI",
@@ -191,7 +192,7 @@ export const Projects = () => {
       description:"Builded a portfolio to show my skills,and my projects.",
       skills:['React','Tailwindcss','Huggingface','Gemini','Langchain','Tensorflow',"Docker","FastAPI"],
       link:'https://github.com/amineelgardoum-rgb/React-tailwindcss-portfolio',
-      image:'/images/chatbot_image.png',
+      image:'/images/portfolio.png',
       category:"Web development",
     }
   ];
@@ -219,7 +220,8 @@ export const Projects = () => {
     langchain: { icon: <SiLangchain />, color: "text-white" },
     gemini: { icon: <SiGooglegemini />, color: "text-white" },
     huggingface: { icon: <SiHuggingface />, color: "text-white" },
-    tailwindcss:{icon:<SiTailwindcss />,color:"text-white"}
+    tailwindcss:{icon:<SiTailwindcss />,color:"text-white"},
+    numpy:{icon:<SiNumpy />,color:"text-white"}
   };
 
   const getSkillInfo = (skill) => {
