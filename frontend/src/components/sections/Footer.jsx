@@ -5,7 +5,7 @@ export const Footer = () => {
     {
       name: "GitHub",
       icon: <FaGithub />,
-      link: "https://github.com/amineel-crypto",
+      link: "https://github.com/amineelgardoum-rgb",
     },
     {
       name: "LinkedIn",

@@ -18,7 +18,8 @@ import {
   SiCanva,
   SiGit,
   SiNumpy,
-  SiNetlify
+  SiNetlify,
+  SiPrefect
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { VscSymbolNamespace } from "react-icons/vsc";
@@ -153,6 +154,11 @@ const iconMap = {
     icon:<SiNetlify />,
     name:"netlify",
     hoverColor:"group-hover:text-green-600"
+  },
+  prefect:{
+    icon:<SiPrefect />,
+    name:'prefect',
+    hoverColor:"group-hover:text-green-500"
   }
 };
 
@@ -184,7 +190,7 @@ export const About = () => {
     "C",
     "Javascript",
   ];
-  const dataOrchestrate = ["Docker", "Airflow"];
+  const dataOrchestrate = ["Docker", "Airflow","prefect"];
   const frameworks = ["React", "Fastapi"];
   const aiTools = ["Langchain", "scikit_learn", "tensorflow"];
   const design = ["canva"];

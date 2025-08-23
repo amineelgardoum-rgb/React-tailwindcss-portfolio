@@ -58,7 +58,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
         />
         <div className={`absolute inset-0 bg-black/40 transition-all duration-500 ${isTapped ? 'bg-black/70' : 'bg-black/40'} md:group-hover:bg-black/70 ease-in-out group-hover:bg-black/70`}></div>
         <div className="relative z-10 flex h-full flex-col justify-end p-6">
-          <h3 className="text-xl font-bold text-white bg-[rgba(0,0,0,0.2)] rounded mb-auto">
+          <h3 className="text-xl font-bold text-white bg-[rgba(0,0,0,0.4)] rounded mb-auto text-center p-3">
             {project.title}
           </h3>
           <div className={`opacity-0 transition-all duration-500 ease-in-out ${isTapped ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'} md:opacity-0 md:group-hover:opacity-100 md:translate-y-4 md:group-hover:translate-y-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0`}>
