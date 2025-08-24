@@ -51,7 +51,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
 
   return (
     <RevealOnScroll>
-      <div onClick={handleCardClick} className="group relative w-full max-w-sm mx-auto aspect-[4/3] rounded-xl shadow-lg overflow-hidden  hover:shadow-[0px_0px_30px_green] hover:-translate-y-2 transition-all ease-in-out duration-300">
+      <div onClick={handleCardClick} className="group relative w-full max-w-sm mx-auto aspect-[4/3] rounded-xl shadow-lg overflow-hidden  hover:drop-shadow-[0px_0px_30px_green] hover:-translate-y-2 transition-all ease-in-out duration-300">
         <img
           src={project.image}
           alt={project.title}
@@ -107,10 +107,10 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
 
                 return (
                   <div key={info.skills.join("-")} className="group/tooltip relative">
-                    <div className={`text-3xl cursor-none transition-transform group-hover/tooltip:scale-110 ${displayColor} hover:text-green-400 hover:filter-drop-shadow-[0_0_10px_#00ff00]`}>
+                    <div className={`text-2xl cursor-none transition-all ease-in-out duration-300 group-hover/tooltip:scale-110 ${displayColor} hover:text-green-400 hover:-translate-y-2 hover:drop-shadow-[0px_0px_30px_green] `}>
                       {info.icon}
                     </div>
-                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-in-out group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 group-hover/tooltip:-translate-y-1 group-hover/tooltip:pointer-events-auto">
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-in-out group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 group-hover/tooltip:-translate-y-2 group-hover/tooltip:pointer-events-auto">
                       {tooltipText}
                       <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-black/80"></div>
                     </span>
