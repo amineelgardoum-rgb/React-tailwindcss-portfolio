@@ -10,7 +10,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
     <nav className="fixed top-0 w-full z-[40] bg-[rgba(10,10,10,0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg">
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link className="font-mono text-xl font-bold text-white cursor-none hover:-translate-y-1 transition-all ease-in-out duration-300 "  to="/home">
+          <Link className="font-mono text-xl font-bold text-white cursor-none hover:-translate-y-1 transition-all hover:scale-110 ease-in-out duration-300 "  to="/home">
             Amine.<span className="text-green-500">ELGARDOUM</span>
           </Link>
           

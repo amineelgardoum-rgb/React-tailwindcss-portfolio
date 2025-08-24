@@ -51,7 +51,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
 
   return (
     <RevealOnScroll>
-      <div onClick={handleCardClick} className="group relative w-full max-w-sm mx-auto aspect-[4/3] rounded-xl shadow-lg overflow-hidden  hover:shadow-[0px_10px_30px_green] hover:-translate-y-1 transition-all ease-in-out duration-300">
+      <div onClick={handleCardClick} className="group relative w-full max-w-sm mx-auto aspect-[4/3] rounded-xl shadow-lg overflow-hidden  hover:shadow-[0px_0px_30px_green] hover:-translate-y-2 transition-all ease-in-out duration-300">
         <img
           src={project.image}
           alt={project.title}

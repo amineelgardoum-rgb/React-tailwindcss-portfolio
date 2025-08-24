@@ -32,7 +32,7 @@ export const Home = () => {
             className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto 
                        bg-gray-900/40 backdrop-blur-sm p-6 rounded-lg 
                        border border-green-500/30 
-                       transition-all duration-300 hover:border-green-500/60 hover:shadow-[0px_2px_20px_green] hover:translate-y-1"
+                       transition-all duration-300 hover:border-green-500/60 hover:shadow-[0px_0px_30px_green] hover:-translate-y-3"
           >
             As a Data/AI Engineer, I specialize in architecting and maintaining
             robust data pipelines. I am passionate about transforming raw data

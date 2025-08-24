@@ -93,12 +93,12 @@ const iconMap = {
   c: { icon: <SiC />, name: "C", hoverColor: "group-hover:text-green-600" },
   github: {
     icon: <SiGithub />,
-    name: "github",
+    name: "Github",
     hoverColor: "group-hover:text-green-700",
   },
   javascript: {
     icon: <SiJavascript />,
-    name: "javascript",
+    name: "Javascript",
     hoverColor: "group-hover:text-green-200",
   },
   react: {
@@ -113,57 +113,57 @@ const iconMap = {
   },
   scikit_learn: {
     icon: <SiScikitlearn />,
-    name: "scikit_learn",
+    name: "Scikit_learn",
     hoverColor: "group-hover:text-green-500",
   },
   langchain: {
     icon: <SiLangchain />,
-    name: "langchain",
+    name: "Langchain",
     hoverColor: "group-hover:text-green-700",
   },
   tensorflow: {
     icon: <SiTensorflow />,
-    name: "tensorflow",
+    name: "Tensorflow",
     hoverColor: "group-hover:text-green-400",
   },
   canva: {
     icon: <SiCanva />,
-    name: "canva",
+    name: "Canva",
     hoverColor: "group-hover:text-green-600",
   },
   git: {
     icon: <SiGit />,
-    name: "git",
+    name: "Git",
     hoverColor: "group-hover:text-green-700",
   },
   matplotlib: {
     icon: <TbChartLine />,
-    name: "matplotlib",
+    name: "Matplotlib",
     hoverColor: "group-hover:text-green-800",
   },
   seaborn: {
     icon: <IoBarChart />,
-    name: "seaborn",
+    name: "Seaborn",
     hoverColor: "group-hover:text-green-600",
   },
   numpy: {
     icon: <SiNumpy />,
-    name: "numpy",
+    name: "Numpy",
     hoverColor: "group-hover:text-green-800",
   },
   netlify: {
     icon: <SiNetlify />,
-    name: "netlify",
+    name: "Netlify",
     hoverColor: "group-hover:text-green-600",
   },
   prefect: {
     icon: <SiPrefect />,
-    name: "prefect",
+    name: "Prefect",
     hoverColor: "group-hover:text-green-500",
   },
   pytorch: {
     icon: <SiPytorch />,
-    name: "pytorch",
+    name: "Pytorch",
     hoverColor: "group-hover:text-green-800",
   },
 };
@@ -186,8 +186,8 @@ export const About = () => {
     "Pandas",
     "Streamlit",
     "matplotlib",
-    "seaborn",
-    "numpy",
+    "Seaborn",
+    "Numpy",
   ];
   const dataEngLanguages = [
     "Python",
@@ -197,12 +197,12 @@ export const About = () => {
     "C",
     "Javascript",
   ];
-  const dataOrchestrate = ["Docker", "Airflow", "prefect"];
+  const dataOrchestrate = ["Docker", "Airflow", "Prefect"];
   const frameworks = ["React", "Fastapi"];
-  const aiTools = ["Langchain", "scikit_learn", "tensorflow", "Pytorch"];
-  const design = ["canva"];
+  const aiTools = ["Langchain", "Scikit_learn", "Tensorflow", "Pytorch"];
+  const design = ["Canva"];
   const vsc = ["Github", "Git"];
-  const hostingTools = ["netlify"];
+  const hostingTools = ["Netlify"];
 
   return (
     <>
