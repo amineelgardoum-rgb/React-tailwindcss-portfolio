@@ -5,4 +5,5 @@ langchain-text-splitters
 fastapi
 uvicorn 
 sentence-transformers
+gunicorn 
 faiss-cpu
