@@ -74,20 +74,19 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                       e.stopPropagation(); // Prevents card click when hiding text
                       setIsDescriptionExpanded(false);
                     }}
-                    className="font-semibold text-green-300 hover:text-green-200 mt-2 cursor-none"
+                    className="font-semibold text-green-300 transition-all ease-in-out duration-200 hover:text-green-200 mt-2 cursor-none"
                   >
                     Show Less
                   </button>
                 </>
               ) : (
-                // --- THIS IS THE CHANGED PART ---
                 <div className="flex items-start">
                   <button
                     onClick={(e) => {
-                      e.stopPropagation(); // Prevents card click when showing text
+                      e.stopPropagation(); 
                       setIsDescriptionExpanded(true);
                     }}
-                    className="cursor-none font-bold text-2xl leading-none text-gray-300 hover:text-white transition-colors"
+                    className="cursor-none font-bold text-2xl leading-none text-gray-300 hover:text-green-500 duration-300 transition-all ease-in-out"
                   >
                     ...
                   </button>
@@ -119,7 +118,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
               })}
             </div>
             <div>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block cursor-none font-semibold text-green-300 transition-colors hover:text-green-200">
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block cursor-none font-semibold text-green-300 transition-all ease-in-out hover:scale-110 hover:text-green-500 hover:-translate-y-1">
                 View Project →
               </a>
             </div>

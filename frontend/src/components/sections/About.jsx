@@ -247,7 +247,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300  group-hover:scale-110 ${hoverColor} transition-all duration-300 ease-in-out group-hover:-translate-y-1`}
+                            className={`text-3xl text-gray-300  group-hover:scale-110 ${hoverColor} transition-all duration-300 ease-in-out group-hover:-translate-y-1 group-hover:drop-shadow-[0px_0px_30px_green]`}
                           >
                             {icon}
                           </div>
@@ -275,7 +275,7 @@ export const About = () => {
                           className="group relative flex flex-col items-center"
                         >
                           <div
-                            className={`text-3xl text-gray-300 transition-all ease-in-out duration-300 group-hover:scale-110 group-hover:-translate-y-1 ${hoverColor}`}
+                            className={`text-3xl text-gray-300 transition-all ease-in-out duration-300 group-hover:scale-110 group-hover:-translate-y-1 group-hover:drop-shadow-[0px_0px_20px_green] ${hoverColor}`}
                           >
                             {icon}
                           </div>

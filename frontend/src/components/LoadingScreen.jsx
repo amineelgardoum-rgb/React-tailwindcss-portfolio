@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
   const [text, setText] = useState("");
-  const fullText = "<Data Engineering/>";
+  const fullText = "<Data Engineer />";
   const index = useRef(0);
 
   useEffect(() => {

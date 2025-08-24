@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { HeroText } from "../TypeWriter"; 
+import { HeroText } from "../TypeWriter";
 import { Bot, X } from "lucide-react";
 
 function Chatbot() {
@@ -46,8 +46,7 @@ function Chatbot() {
 
     try {
       const encodedQuery = encodeURIComponent(currentInput);
-      const apiUrl = "http://0.0.0.0:8000";
-      const url = `${apiUrl}/ask?query=${encodedQuery}`;
+      const url = `/api/ask?query=${encodedQuery}`;
       const response = await fetch(url);
 
       if (!response.ok) {
@@ -79,8 +78,9 @@ function Chatbot() {
         className={`fixed bottom-4 right-4 z-50 flex items-center justify-center
                    bg-green-500 text-black rounded-full border border-black 
                    p-3 md:py-3 md:px-5 md:rounded-md
-                   shadow-[0_0_10px_rgba(0,255,65,0.7)]
-                   hover:bg-black hover:text-green-500 hover:shadow-[0_0_15px_rgba(0,255,65,1)]
+                   shadow-[0_0_20px_rgba(0,255,65,0.7)]
+                   ease-in-out
+                   hover:bg-black hover:text-green-500 hover:shadow-[0_0_20px_rgba(0,255,65,1)]
                    transition-all duration-300 cursor-none transform hover:scale-105
                    ${isChatOpen ? "hidden md:flex" : "flex"}`}
       >
@@ -101,7 +101,6 @@ function Chatbot() {
           }`}
       >
         <div className="font-mono bg-black/95 text-green-400 flex flex-col w-full h-full max-h-full border border-green-500 shadow-[0_0_15px_rgba(0,255,65,0.4),0_0_5px_rgba(0,255,65,1)_inset] border-rounded md:rounded-lg">
-          
           <div className="bg-green-500 text-black border-rounded p-3 text-center uppercase tracking-widest border-b border-green-500/50 select-none flex-shrink-0">
             <div className="flex justify-between items-center">
               <h1 className="text-lg font-bold [text-shadow:0_0_3px_rgba(0,0,0,0.5)] mx-auto">

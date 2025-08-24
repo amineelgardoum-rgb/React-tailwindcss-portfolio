@@ -37,9 +37,9 @@ export const Footer = () => {
                 aria-label={`Link to my ${social.name} profile`}
                 className="text-green-400 text-3xl cursor-none
                           transition-all duration-300 ease-in-out
-                          hover:text-green-300 
-                          hover:scale-110
-                          hover:drop-shadow-[0_0_8px_rgba(52,211,153,0.7)] 
+                          hover:text-green-100 
+                          hover:scale-120
+                          hover:drop-shadow-[0_0_10px_rgba(52,211,153,0.7)] 
                           hover:-translate-y-2"
               >
                 {social.icon}

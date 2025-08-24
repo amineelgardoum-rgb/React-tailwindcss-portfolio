@@ -32,7 +32,7 @@ export const Home = () => {
             className="text-gray-300 text-lg md:text-xl mb-12 max-w-2xl mx-auto 
                        bg-gray-900/40 backdrop-blur-sm p-6 rounded-lg 
                        border border-green-500/30 
-                       transition-all duration-300 hover:border-green-500/60 hover:shadow-[0px_0px_30px_green] hover:-translate-y-3"
+                       transition-all duration-300 hover:border-green-500/60 hover:shadow-[0px_0px_30px_green] hover:-translate-y-2"
           >
             As a Data/AI Engineer, I specialize in architecting and maintaining
             robust data pipelines. I am passionate about transforming raw data
@@ -45,19 +45,23 @@ export const Home = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/projects" // Use anchor link for single-page scrolling
-              className="w-full sm:w-auto border border-green-500 text-green-500 py-3 px-8 rounded-md font-semibold 
+              className="w-full sm:w-auto border border-green-500/100 text-green-500 py-3 px-8 rounded-md font-semibold 
                          transition-all duration-300 ease-in-out
-                         hover:bg-green-500 hover:text-black  hover:shadow-[0px_2px_20px_green]
+                         hover:bg-green-500 hover:text-black  
+                         hover:shadow-[0px_0px_20px_green]
                          hover:-translate-y-1 cursor-none"
             >
               View Projects
             </Link>
             <Link
               to="/contact" // Use anchor link for single-page scrolling
-              className="w-full sm:w-auto border border-gray-600 text-gray-300 py-3 px-8 rounded-md font-semibold
+              className="w-full sm:w-auto border border-gray-600/100 text-gray-300 py-3 px-8 rounded-md font-semibold
                          transition-all duration-300 ease-in-out
-                         hover:border-green-500 hover:text-green-500 
-                         hover:-translate-y-1 cursor-none hover:shadow-[0px_2px_30px_green]"
+                         hover:border-green-500
+                         hover:text-black 
+                         hover:bg-green-400
+                         hover:-translate-y-1
+                        cursor-none hover:shadow-[0px_0px_50px_green]"
             >
               Contact Me
             </Link>

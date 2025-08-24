@@ -11,7 +11,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       <div className="max-w-5xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link className="font-mono text-xl font-bold text-white cursor-none hover:-translate-y-1 transition-all hover:scale-110 ease-in-out duration-300 "  to="/home">
-            Amine.<span className="text-green-500">ELGARDOUM</span>
+            <span className="text-white hover:text-green-500 transition-all ease-in-out duration-300">Amine.</span><span className="text-green-400 hover:text-green-800 transition-all ease-in-out duration-300">ELGARDOUM</span>
           </Link>
           
           <a
