@@ -107,7 +107,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
 
                 return (
                   <div key={info.skills.join("-")} className="group/tooltip relative">
-                    <div className={`text-2xl cursor-none transition-all ease-in-out duration-300 group-hover/tooltip:scale-110 ${displayColor} hover:text-green-400 hover:-translate-y-2 hover:drop-shadow-[0px_0px_30px_green] `}>
+                    <div className={`text-3xl cursor-none transition-all ease-in-out duration-300 group-hover/tooltip:scale-110 ${displayColor} hover:text-green-400 hover:-translate-y-2 hover:drop-shadow-[0px_0px_30px_green] `}>
                       {info.icon}
                     </div>
                     <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-in-out group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 group-hover/tooltip:-translate-y-2 group-hover/tooltip:pointer-events-auto">
