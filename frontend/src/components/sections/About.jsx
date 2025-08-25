@@ -21,6 +21,7 @@ import {
   SiNetlify,
   SiPrefect,
   SiPytorch,
+  SiVercel,
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { VscSymbolNamespace } from "react-icons/vsc";
@@ -166,6 +167,11 @@ const iconMap = {
     name: "Pytorch",
     hoverColor: "group-hover:text-green-800",
   },
+  vercel:{
+    icon:<SiVercel />,
+    name:"Vercel",
+    hoverColor:"group-hover:text-green-700"
+  }
 };
 
 const getIconInfo = (techName) => {
@@ -202,7 +208,7 @@ export const About = () => {
   const aiTools = ["Langchain", "Scikit_learn", "Tensorflow", "Pytorch"];
   const design = ["Canva"];
   const vsc = ["Github", "Git"];
-  const hostingTools = ["Netlify"];
+  const hostingTools = ["Netlify","Vercel"];
 
   return (
     <>
