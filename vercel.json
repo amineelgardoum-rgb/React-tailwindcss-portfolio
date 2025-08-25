@@ -1,17 +1,29 @@
 {
+  "version": 2,
   "builds": [
-    {
-      "src": "frontend/package.json", 
-      "use": "@vercel/static-build",
-      "config": { "distDir": "frontend/dist" }
-    },
     {
       "src": "chatbot/app.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/dist"
+      }
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "chatbot/app.py" },
-    { "src": "/(.*)", "dest": "frontend/dist/$1" }
+    {
+      "src": "/api/(.*)",
+      "dest": "chatbot/app.py"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/dist/index.html"
+    }
   ]
 }
