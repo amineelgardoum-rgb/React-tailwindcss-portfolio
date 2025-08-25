@@ -9,6 +9,8 @@ from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain.schema.output_parser import StrOutputParser
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
+import os
+api_key=os.environ.get('GOOGLE_API_KEY')
 app=FastAPI(title="RAG API")
 origins=[
     "https://portfolio-s-amine.netlify.app/",
@@ -46,11 +48,11 @@ prompt = ChatPromptTemplate.from_messages(
 )
 
 
-llm = GoogleGenerativeAI(model="gemini-2.5-flash",temperature=0)
+llm = GoogleGenerativeAI(model="gemini-2.5-flash",api_key=api_key,temperature=0,)
 
 # --build the rag chain
 def format_docs(docs):
-    return "\n".join(doc.page_content for doc in docs)
+    return "\n".join(doc.page_content for doc in docs) 
 
 
 print("the full rag chain...")
