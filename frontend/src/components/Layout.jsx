@@ -5,7 +5,7 @@ import MatrixBackground from './MatrixBackground';
 import { Navbar } from './Navbar';
 import { MobileMenu } from './MobileMenu';
 import { useIsTouchDevice } from './MobileTouch'; 
-import Chatbot from './sections/Chatbot';
+
 
 export const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
