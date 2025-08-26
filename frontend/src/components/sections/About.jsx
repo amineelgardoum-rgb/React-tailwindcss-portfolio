@@ -34,175 +34,204 @@ const iconMap = {
     icon: <SiApacheairflow />,
     name: "Apache Airflow",
     hoverColor: "hover:text-blue-400",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   kafka: {
     icon: <SiApachekafka />,
     name: "Apache Kafka",
     hoverColor: "hover:text-yellow-300",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   docker: {
     icon: <FaDocker />,
     name: "Docker",
     hoverColor: "hover:text-blue-500",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   mongodb: {
     icon: <SiMongodb />,
     name: "MongoDB",
     hoverColor: "hover:text-green-300",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
   },
   mysql: {
     icon: <SiMysql />,
     name: "MySQL",
     hoverColor: "hover:text-blue-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   oracledb: {
     icon: <SiOracle />,
     name: "OracleDB",
     hoverColor: "hover:text-red-500",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_10px_red)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_10px_red)]",
   },
   fastapi: {
     icon: <SiFastapi />,
     name: "FastAPI",
     hoverColor: "hover:text-green-700",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
   },
   pandas: {
     icon: <SiPandas />,
     name: "Pandas",
     hoverColor: "hover:text-blue-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   python: {
     icon: <FaPython />,
     name: "Python",
     hoverColor: "hover:text-yellow-400",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   sql: {
     icon: <TbSql />,
     name: "SQL",
     hoverColor: "hover:text-blue-900",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   nosql: {
     icon: <VscSymbolNamespace />,
     name: "NoSQL",
     hoverColor: "hover:text-green-400",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
   },
   java: {
     icon: <FaJava />,
     name: "Java",
     hoverColor: "hover:text-red-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
   },
   c: {
     icon: <SiC />,
     name: "C",
     hoverColor: "hover:text-blue-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   github: {
     icon: <SiGithub />,
     name: "Github",
     hoverColor: "hover:text-white",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
   },
   javascript: {
     icon: <SiJavascript />,
     name: "Javascript",
     hoverColor: "hover:text-yellow-200",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   react: {
     icon: <SiReact />,
     name: "React",
     hoverColor: "hover:text-blue-300",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   streamlit: {
     icon: <SiStreamlit />,
     name: "Streamlit",
     hoverColor: "hover:text-red-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
   },
   scikit_learn: {
     icon: <SiScikitlearn />,
     name: "Scikit Learn",
     hoverColor: "hover:text-orange-500",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   langchain: {
     icon: <SiLangchain />,
     name: "Langchain",
     hoverColor: "hover:text-gray-700",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
   },
   tensorflow: {
     icon: <SiTensorflow />,
     name: "Tensorflow",
     hoverColor: "hover:text-orange-400",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   canva: {
     icon: <SiCanva />,
     name: "Canva",
     hoverColor: "hover:text-violet-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]",
   },
   git: {
     icon: <SiGit />,
     name: "Git",
     hoverColor: "hover:text-red-700",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
   },
   matplotlib: {
     icon: <TbChartLine />,
     name: "Matplotlib",
     hoverColor: "hover:text-blue-800",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   seaborn: {
     icon: <IoBarChart />,
     name: "Seaborn",
     hoverColor: "hover:text-blue-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   numpy: {
     icon: <SiNumpy />,
     name: "Numpy",
     hoverColor: "hover:text-blue-800",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   netlify: {
     icon: <SiNetlify />,
     name: "Netlify",
     hoverColor: "hover:text-blue-600",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   prefect: {
     icon: <SiPrefect />,
     name: "Prefect",
     hoverColor: "hover:text-blue-500",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   pytorch: {
     icon: <SiPytorch />,
     name: "Pytorch",
     hoverColor: "hover:text-red-700",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
   },
   vercel: {
     icon: <SiVercel />,
     name: "Vercel",
     hoverColor: "hover:text-white",
-    shadow: "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
   },
 };
 
@@ -359,6 +388,48 @@ export const About = () => {
               </div>
             </div>
           </RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <RevealOnScroll>
+              <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]   bg-gray-900/20 backdrop-blur-sm hover:-translate-y-2 transition-all ease-in-out duration-500 border border-green-500">
+                <h3 className="text-xl font-bold mb-4 text-green-300">
+                  Education
+                </h3>
+                <ul className="list-disc list-inside text-gray-300 space-y-3">
+                  <li>
+                    <strong>National School of Applied Sciences (ENSAH)</strong>
+                    <span className="block text-sm text-gray-400">
+                      2022 - Present
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Faculty of Sciences and Techniques (FST)</strong>
+                    <span className="block text-sm text-gray-400">
+                      2021 - 2022
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Moroccan Baccalaureate, Physical Sciences</strong>
+                    <span className="block text-sm text-gray-400">2021</span>
+                  </li>
+                </ul>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll>
+              <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]  border border-green-500 bg-gray-900/20 backdrop-blur-sm hover:-translate-y-2 transition-all ease-in-out  duration-500">
+                <h3 className="text-xl font-bold mb-4 text-green-300">
+                  Work Experience
+                </h3>
+                <div className="space-y-4 text-gray-300">
+                  <div>
+                    <h4 className="font-semibold">XAI Internship Program</h4>
+                    <p className="text-sm text-gray-400">
+                      Project: Smart Recruitment Agent
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
         </div>
       </section>
     </>

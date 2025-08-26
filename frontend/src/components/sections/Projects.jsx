@@ -23,6 +23,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
 import { IoBarChart } from "react-icons/io5";
 import { TbChartLine } from "react-icons/tb";
+import {GiPanda} from "react-icons/gi"
 
 const pythonIcon = <FaPython />;
 const kafkaIcon = <SiApachekafka />;
@@ -165,7 +166,7 @@ export const Projects = () => {
       title: "MRI Brain Tumor Detection.",
       description:
         "A deep learning model using TensorFlow to classify brain tumors from MRI scans. Served via a FastAPI backend with a simple HTML/CSS frontend for interaction.",
-      skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle", "Numpy"],
+      skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle", "Numpy","Python"],
       link: "https://github.com/amineelgardoum-rgb/tumor",
       image: "/images/mri_brain_detection.png",
       category: "AI",
@@ -179,9 +180,9 @@ export const Projects = () => {
         "Docker",
         "FastAPI",
         "Redpanda",
-        "Kafka",
         "MongoDB",
         "Streamlit",
+        "Python"
       ],
       link: "https://github.com/amineelgardoum-rgb/btc-real-time-streaming-pipeline",
       image: "/images/btc-stream.png",
@@ -192,7 +193,7 @@ export const Projects = () => {
       title: "Mental Health Prediction.",
       description:
         "A machine learning model predicting mental health conditions based on survey data. Built with Python, Pandas, and Scikit-learn, using Seaborn for visualizations.",
-      skills: ["Pandas", "Scikit-learn", "Seaborn", "Kaggle", "matplotlib"],
+      skills: ["Pandas","Python", "Scikit-learn", "Seaborn", "Kaggle", "matplotlib"],
       link: "https://github.com/amineelgardoum-rgb/Depression_Predict",
       image: "/images/depression.png",
       category: "AI",
@@ -202,7 +203,7 @@ export const Projects = () => {
       title: "In-Depth Sales Analysis.",
       description:
         "A comprehensive sales data analysis project performed in a Jupyter environment. Utilized Pandas for data manipulation and Matplotlib/Seaborn for insights.",
-      skills: ["Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Jupyter"],
+      skills: ["Pandas", "Python","Matplotlib", "Seaborn", "Scikit-learn", "Jupyter"],
       link: "https://github.com/amineelgardoum-rgb/Prediction_Sales",
       image: "/images/sales.png",
       category: "AI",
@@ -214,6 +215,7 @@ export const Projects = () => {
         "Constructed a real-time data pipeline for an e-commerce platform using Docker, Kafka, and FastAPI, with data stored in MongoDB and visualized with Chart.js.",
       skills: [
         "Docker",
+        "Python",
         "Kafka",
         "FastAPI",
         "MongoDB",
@@ -279,7 +281,7 @@ export const Projects = () => {
       hoverGlow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
     },
     redpanda: {
-      icon: kafkaIcon,
+      icon: <GiPanda />,
       color: "text-white",
       hoverColor: "hover:text-yellow-600",
       hoverGlow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
