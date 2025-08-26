@@ -33,20 +33,21 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const groupedIcons = new Map();
   project.skills.forEach((skill) => {
-    const { icon, color } = getSkillInfo(skill);
+    const { icon, color, hoverGlow, hoverColor } = getSkillInfo(skill);
     const iconKey = icon.type.name;
     if (!groupedIcons.has(iconKey)) {
-      groupedIcons.set(iconKey, { icon, color, skills: [skill] });
+      groupedIcons.set(iconKey, {
+        icon,
+        color,
+        hoverGlow,
+        hoverColor,
+        skills: [skill],
+      });
     } else {
       groupedIcons.get(iconKey).skills.push(skill);
     }
   });
 
-  // const handleCardClick = () => {
-  //   if (window.innerWidth < 768) {
-  //     setIsTapped(!isTapped);
-  //   }
-  // };
   return (
     <RevealOnScroll>
       <div className="group relative w-full max-w-sm overflow-hidden  mx-auto aspect-[4/3] rounded-xl shadow-lg hover:drop-shadow-[0px_0px_30px_rgba(0,255,0,0.3)] hover:-translate-y-2 transition-all ease-in-out duration-300">
@@ -90,7 +91,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                       e.stopPropagation(); // Prevents card click when hiding text
                       setIsDescriptionExpanded(false);
                     }}
-                    className="font-semibold text-green-300 transition-all ease-in-out duration-300 hover:text-green-200 mt-2 cursor-none"
+                    className="font-semibold text-green-300 transition-all ease-in-out duration-500 hover:text-green-200 mt-2 cursor-none"
                   >
                     Show Less
                   </button>
@@ -102,7 +103,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                       e.stopPropagation();
                       setIsDescriptionExpanded(true);
                     }}
-                    className="cursor-none font-bold text-2xl leading-none text-gray-300 hover:text-green-500 duration-300 transition-all ease-in-out"
+                    className="cursor-none font-bold text-2xl leading-none text-gray-300 hover:text-green-500 duration-500 transition-all ease-in-out"
                   >
                     ...
                   </button>
@@ -126,19 +127,13 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                     className="group/tooltip relative"
                   >
                     <div
-                      className={`
-                      text-3xl cursor-none transition-all ease-in-out duration-300 
-                      group-hover/tooltip:scale-110 
-                      ${displayColor} 
-                      hover:text-green-400 hover:-translate-y-2 
-                      hover:drop-shadow-[0px_0px_15px_rgba(0,255,0,0.8)]
-                      bg-white rounded-full p-1
-                      md:bg-transparent md:p-0
-                    `}
+                      className={`text-3xl cursor-none transition-all duration-500 ease-in-out
+                                 ${displayColor} ${info.color} ${info.hoverColor} hover:-translate-y-2 ${info.hoverGlow}`}
                     >
                       {info.icon}
                     </div>
-                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-in-out group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 group-hover/tooltip:-translate-y-2 group-hover/tooltip:pointer-events-auto">
+
+                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-in-out group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 group-hover/tooltip:-translate-y-2 group-hover/tooltip:pointer-events-auto">
                       {tooltipText}
                       <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-black/80"></div>
                     </span>
@@ -151,7 +146,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block cursor-none font-semibold text-green-300 transition-all ease-in-out hover:scale-110 hover:text-green-500 hover:-translate-y-1"
+                className="inline-block cursor-none font-semibold text-green-300 transition-all ease-in-out hover:scale-110 hover:text-green-500 hover:-translate-y-1  duration-500"
               >
                 View Project →
               </a>
@@ -251,16 +246,7 @@ export const Projects = () => {
       id: 7,
       title: "portfolio.",
       description: "Builded a portfolio to show my skills,and my projects.",
-      skills: [
-        "React",
-        "Tailwindcss",
-        "Huggingface",
-        "Gemini",
-        "Langchain",
-        "Tensorflow",
-        "Docker",
-        "FastAPI",
-      ],
+      skills: ["React", "Tailwindcss"],
       link: "https://github.com/amineelgardoum-rgb/React-tailwindcss-portfolio",
       image: "/images/portfolio.png",
       category: "Web development",
@@ -268,33 +254,150 @@ export const Projects = () => {
   ];
 
   const skillInfo = {
-    docker: { icon: <FaDocker />, color: "text-black md:text-white" },
-    fastapi: { icon: <SiFastapi />, color: "text-black md:text-white" },
-    mongodb: { icon: <SiMongodb />, color: "text-black md:text-white" },
-    kafka: { icon: kafkaIcon, color: "text-black md:text-white" },
-    redpanda: { icon: kafkaIcon, color: "text-black md:text-white" },
-    zookeeper: { icon: apacheIcon, color: "text-black md:text-white" },
-    html5: { icon: <FaHtml5 />, color: "text-black md:text-white" },
-    css3: { icon: <FaCss3Alt />, color: "text-black md:text-white" },
-    "chart.js": { icon: <SiChartdotjs />, color: "text-black md:text-white" },
-    streamlit: { icon: <SiStreamlit />, color: "text-black md:text-white" },
-    python: { icon: pythonIcon, color: "text-black md:text-white" },
-    tensorflow: { icon: <SiTensorflow />, color: "text-black md:text-white" },
+    docker: {
+      icon: <FaDocker />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-500",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#2496ed]",
+    },
+    fastapi: {
+      icon: <SiFastapi />,
+      color: "text-white",
+      hoverColor: "hover:text-green-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#009688]",
+    },
+    mongodb: {
+      icon: <SiMongodb />,
+      color: "text-white",
+      hoverColor: "hover:text-green-500",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#4DB33D]",
+    },
+    kafka: {
+      icon: kafkaIcon,
+      color: "text-white",
+      hoverColor: "hover:text-yellow-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#F0A500]",
+    },
+    redpanda: {
+      icon: kafkaIcon,
+      color: "text-white",
+      hoverColor: "hover:text-yellow-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#F0A500]",
+    },
+    zookeeper: {
+      icon: apacheIcon,
+      color: "text-white",
+      hoverColor: "hover:text-green-300",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#FF6F00]",
+    },
+    html5: {
+      icon: <FaHtml5 />,
+      color: "text-white",
+      hoverColor: "hover:text-orange-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#E34F26]",
+    },
+    css3: {
+      icon: <FaCss3Alt />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-300",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#1572B6]",
+    },
+    "chart.js": {
+      icon: <SiChartdotjs />,
+      color: "text-white",
+      hoverColor: "hover:text-pink-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#F7931A]",
+    },
+    streamlit: {
+      icon: <SiStreamlit />,
+      color: "text-white",
+      hoverColor: "hover:text-red-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#FF4B3E]",
+    },
+    python: {
+      icon: pythonIcon,
+      color: "text-white",
+      hoverColor: "hover:text-yellow-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#FFD43B]",
+    },
+    tensorflow: {
+      icon: <SiTensorflow />,
+      color: "text-white",
+      hoverColor: "hover:text-orange-700",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#FF6F00]",
+    },
     "scikit-learn": {
       icon: <SiScikitlearn />,
-      color: "text-black md:text-white",
+      color: "text-white",
+      hoverColor: "hover:text-orange-500",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#F7931A]",
     },
-    pandas: { icon: <SiPandas />, color: "text-black md:text-white" },
-    jupyter: { icon: <SiJupyter />, color: "text-black md:text-white" },
-    kaggle: { icon: <SiKaggle />, color: "text-black md:text-white" },
-    seaborn: { icon: <IoBarChart />, color: "text-black md:text-white" },
-    matplotlib: { icon: <TbChartLine />, color: "text-black md:text-white" },
-    react: { icon: <SiReact />, color: "text-black md:text-white" },
-    langchain: { icon: <SiLangchain />, color: "text-black md:text-white" },
-    gemini: { icon: <SiGooglegemini />, color: "text-black md:text-white" },
-    huggingface: { icon: <SiHuggingface />, color: "text-black md:text-white" },
-    tailwindcss: { icon: <SiTailwindcss />, color: "text-black md:text-white" },
-    numpy: { icon: <SiNumpy />, color: "text-black md:text-white" },
+    pandas: {
+      icon: <SiPandas />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-700",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#150458]",
+    },
+    jupyter: {
+      icon: <SiJupyter />,
+      color: "text-white",
+      hoverColor: "hover:text-orange-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#F37626]",
+    },
+    kaggle: {
+      icon: <SiKaggle />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#20BEFF]",
+    },
+    seaborn: {
+      icon: <IoBarChart />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-700",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#2A9D8F]",
+    },
+    matplotlib: {
+      icon: <TbChartLine />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-500",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#264653]",
+    },
+    react: {
+      icon: <SiReact />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-500",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#61DAFB]",
+    },
+    langchain: {
+      icon: <SiLangchain />,
+      color: "text-white",
+      hoverColor: "hover:text-gray-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#00FFAA]",
+    },
+    gemini: {
+      icon: <SiGooglegemini />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-400",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#FF00FF]",
+    },
+    huggingface: {
+      icon: <SiHuggingface />,
+      color: "text-white",
+      hoverColor: "hover:text-yellow-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#FFA500]",
+    },
+    tailwindcss: {
+      icon: <SiTailwindcss />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-600",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#38B2AC]",
+    },
+    numpy: {
+      icon: <SiNumpy />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-500",
+      hoverGlow: "hover:drop-shadow-[0_0_10px_#013243]",
+    },
   };
 
   const getSkillInfo = (skill) => {
@@ -302,6 +405,9 @@ export const Projects = () => {
       skillInfo[skill.toLowerCase()] || {
         icon: defaultIcon,
         color: "text-gray-400",
+        hoverGlow:
+          "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
+        hoverColor: "text-gray-600",
       }
     );
   };
