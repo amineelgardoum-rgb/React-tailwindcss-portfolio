@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { CustomCursor } from "./CustomCursor";
-
+import "./glow.css"
 const NotFound = () => {
   return (
     <>
@@ -8,10 +8,9 @@ const NotFound = () => {
       <div className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white p-4 overflow-hidden">
         <div
           className="
-            mb-8 flex items-center justify-center 
+            mb-8 flex items-center justify-center filter
             border-2 border-green-400 rounded-lg px-12 py-6 
-            shadow-[0_0_15px_rgba(74,222,128,0.5)]
-            md:shadow-[0_0_25px_rgba(74,222,128,0.7)]
+            bg-black text-white animate-glow transition-all duration-500
           "
         >
           <h1 className="text-7xl md:text-9xl font-bold font-mono tracking-widest">

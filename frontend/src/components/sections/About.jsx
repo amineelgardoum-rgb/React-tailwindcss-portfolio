@@ -21,7 +21,10 @@ import {
   SiNetlify,
   SiPrefect,
   SiPytorch,
+  SiHtml5,
   SiVercel,
+  SiTailwindcss,
+  SiCss3,
 } from "react-icons/si";
 import { TbSql, TbChartLine } from "react-icons/tb";
 import { VscSymbolNamespace } from "react-icons/vsc";
@@ -233,6 +236,24 @@ const iconMap = {
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
   },
+  html:{
+    icon:<SiHtml5/>,
+    name:"html",
+    hoverColor:"hover:text-orange-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+  },
+  tailwindcss:{
+    icon:<SiTailwindcss />,
+    name:"tailwindcss",
+    hoverColor:"hover:text-blue-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
+  },
+  css:{
+    icon:<SiCss3 />,
+    name:"css",
+    hoverColor:"hover:text-blue-800",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+  }
 };
 
 const getIconInfo = (name) =>
@@ -262,6 +283,9 @@ export const About = () => {
     "Java",
     "C",
     "Javascript",
+    "Html",
+    "Css",
+    "Tailwindcss"
   ];
   const dataOrchestrate = ["Docker", "Airflow", "Prefect"];
   const frameworks = ["React", "FastAPI"];
