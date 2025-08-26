@@ -31,6 +31,7 @@ import { VscSymbolNamespace } from "react-icons/vsc";
 import { IoBarChart } from "react-icons/io5";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
+import { GiPanda } from "react-icons/gi";
 
 const iconMap = {
   airflow: {
@@ -253,6 +254,12 @@ const iconMap = {
     name:"css",
     hoverColor:"hover:text-blue-800",
     shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+  },
+  redpanda:{
+    icon:<GiPanda />,
+    name:"Readpanda",
+    hoverColor:"hover:text-red-700",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
   }
 };
 
@@ -275,6 +282,7 @@ export const About = () => {
     "Matplotlib",
     "Seaborn",
     "Numpy",
+    "Redpanda"
   ];
   const dataEngLanguages = [
     "Python",
