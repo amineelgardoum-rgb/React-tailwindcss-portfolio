@@ -40,6 +40,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-400",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://airflow.apache.org/"
   },
   kafka: {
     icon: <SiApachekafka />,
@@ -47,6 +48,7 @@ const iconMap = {
     hoverColor: "hover:text-yellow-300",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+    url:"https://kafka.apache.org/"
   },
   docker: {
     icon: <FaDocker />,
@@ -54,6 +56,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-500",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://www.docker.com/"
   },
   mongodb: {
     icon: <SiMongodb />,
@@ -61,6 +64,7 @@ const iconMap = {
     hoverColor: "hover:text-green-300",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+    url:"https://www.mongodb.com/"
   },
   mysql: {
     icon: <SiMysql />,
@@ -68,6 +72,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      url:"https://www.mysql.com/"
   },
   oracledb: {
     icon: <SiOracle />,
@@ -75,6 +80,7 @@ const iconMap = {
     hoverColor: "hover:text-red-500",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_10px_red)]",
+    url:"https://www.oracle.com/"
   },
   fastapi: {
     icon: <SiFastapi />,
@@ -82,6 +88,7 @@ const iconMap = {
     hoverColor: "hover:text-green-700",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+    url:"https://fastapi.tiangolo.com/"
   },
   pandas: {
     icon: <SiPandas />,
@@ -89,6 +96,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://pandas.pydata.org/"
   },
   python: {
     icon: <FaPython />,
@@ -96,6 +104,7 @@ const iconMap = {
     hoverColor: "hover:text-yellow-400",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+    url:"https://www.python.org/"
   },
   sql: {
     icon: <TbSql />,
@@ -103,6 +112,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-900",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://en.wikipedia.org/wiki/SQL"
   },
   nosql: {
     icon: <VscSymbolNamespace />,
@@ -110,6 +120,7 @@ const iconMap = {
     hoverColor: "hover:text-green-400",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+    url:"https://en.wikipedia.org/wiki/NoSQL"
   },
   java: {
     icon: <FaJava />,
@@ -117,6 +128,7 @@ const iconMap = {
     hoverColor: "hover:text-red-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    url:"https://www.java.com/en/"
   },
   c: {
     icon: <SiC />,
@@ -124,6 +136,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://en.wikipedia.org/wiki/C_(programming_language)"
   },
   github: {
     icon: <SiGithub />,
@@ -131,6 +144,7 @@ const iconMap = {
     hoverColor: "hover:text-white",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
+    url:"https://github.com/"
   },
   javascript: {
     icon: <SiJavascript />,
@@ -138,6 +152,7 @@ const iconMap = {
     hoverColor: "hover:text-yellow-200",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+    url:"https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   react: {
     icon: <SiReact />,
@@ -145,6 +160,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-300",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://react.dev/"
   },
   streamlit: {
     icon: <SiStreamlit />,
@@ -152,6 +168,7 @@ const iconMap = {
     hoverColor: "hover:text-red-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    url:"https://streamlit.io/"
   },
   scikit_learn: {
     icon: <SiScikitlearn />,
@@ -159,6 +176,7 @@ const iconMap = {
     hoverColor: "hover:text-orange-500",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    url:"https://scikit-learn.org/"
   },
   langchain: {
     icon: <SiLangchain />,
@@ -166,6 +184,7 @@ const iconMap = {
     hoverColor: "hover:text-gray-700",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
+      url:"https://www.langchain.com/"
   },
   tensorflow: {
     icon: <SiTensorflow />,
@@ -173,6 +192,7 @@ const iconMap = {
     hoverColor: "hover:text-orange-400",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    url:"https://www.tensorflow.org/"
   },
   canva: {
     icon: <SiCanva />,
@@ -180,6 +200,7 @@ const iconMap = {
     hoverColor: "hover:text-violet-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]",
+      url:"https://www.canva.com/"
   },
   git: {
     icon: <SiGit />,
@@ -187,6 +208,7 @@ const iconMap = {
     hoverColor: "hover:text-red-700",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+      url:"https://git-scm.com/"
   },
   matplotlib: {
     icon: <TbChartLine />,
@@ -194,6 +216,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-800",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      url:'https://matplotlib.org/'
   },
   seaborn: {
     icon: <IoBarChart />,
@@ -201,6 +224,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      url:"https://seaborn.pydata.org/"
   },
   numpy: {
     icon: <SiNumpy />,
@@ -208,6 +232,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-800",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      url:"https://numpy.org/"
   },
   netlify: {
     icon: <SiNetlify />,
@@ -215,6 +240,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://www.netlify.com/"
   },
   prefect: {
     icon: <SiPrefect />,
@@ -222,6 +248,7 @@ const iconMap = {
     hoverColor: "hover:text-blue-500",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      url:"https://www.prefect.io/"
   },
   pytorch: {
     icon: <SiPytorch />,
@@ -229,6 +256,7 @@ const iconMap = {
     hoverColor: "hover:text-red-700",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    url:"https://pytorch.org/"
   },
   vercel: {
     icon: <SiVercel />,
@@ -236,30 +264,35 @@ const iconMap = {
     hoverColor: "hover:text-white",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
+      url:"https://vercel.com/"
   },
   html:{
     icon:<SiHtml5/>,
     name:"html",
     hoverColor:"hover:text-orange-600",
-    shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+    shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    url:"https://en.wikipedia.org/wiki/HTML"
   },
   tailwindcss:{
     icon:<SiTailwindcss />,
     name:"tailwindcss",
     hoverColor:"hover:text-blue-600",
-    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"https://tailwindcss.com/"
   },
   css:{
     icon:<SiCss3 />,
     name:"css",
     hoverColor:"hover:text-blue-800",
-    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
+    url:"https://en.wikipedia.org/wiki/CSS"
   },
   redpanda:{
     icon:<GiPanda />,
     name:"Readpanda",
     hoverColor:"hover:text-red-700",
-    shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
+    shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    url:"https://www.redpanda.com/"
   }
 };
 
@@ -269,6 +302,7 @@ const getIconInfo = (name) =>
     name,
     hoverColor: "hover:text-gray-400",
     shadow: "hover:drop-shadow-[0_0_10px_gray]",
+    url:"#"
   };
 
 export const About = () => {
@@ -292,11 +326,10 @@ export const About = () => {
     "C",
     "Javascript",
     "Html",
-    "Css",
-    "Tailwindcss"
+    "Css"
   ];
   const dataOrchestrate = ["Docker", "Airflow", "Prefect"];
-  const frameworks = ["React", "FastAPI"];
+  const frameworks = ["React", "FastAPI","Tailwindcss"];
   const aiTools = ["Langchain", "Scikit_Learn", "Tensorflow", "Pytorch"];
   const design = ["Canva"];
   const vsc = ["Github", "Git"];
@@ -304,10 +337,12 @@ export const About = () => {
 
   const renderIcons = (items) =>
     items.map((name) => {
-      const { icon, hoverColor, shadow } = getIconInfo(name);
+      const { icon, hoverColor, shadow,url } = getIconInfo(name);
       return (
-        <div
+        <a
           key={name}
+          target="_blank"
+          href={url}
           className="relative flex flex-col items-center group cursor-none"
         >
           <div
@@ -318,7 +353,7 @@ export const About = () => {
           <span className="absolute -top-8 whitespace-nowrap rounded-md bg-black px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             {name}
           </span>
-        </div>
+        </a>
       );
     });
 
@@ -422,7 +457,7 @@ export const About = () => {
           </RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
             <RevealOnScroll>
-              <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]   bg-gray-900/20 backdrop-blur-sm hover:-translate-y-2 transition-all ease-in-out duration-500 border border-green-500">
+              <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]   bg-black  hover:-translate-y-2 transition-all ease-in-out duration-500 border border-green-500">
                 <h3 className="text-xl font-bold mb-4 text-green-300">
                   Education
                 </h3>
@@ -447,7 +482,7 @@ export const About = () => {
               </div>
             </RevealOnScroll>
             <RevealOnScroll>
-              <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]  border border-green-500 bg-gray-900/20 backdrop-blur-sm hover:-translate-y-2 transition-all ease-in-out  duration-500">
+              <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]  border border-green-500 bg-black  hover:-translate-y-2 transition-all ease-in-out  duration-500">
                 <h3 className="text-xl font-bold mb-4 text-green-300">
                   Work Experience
                 </h3>
@@ -456,6 +491,21 @@ export const About = () => {
                     <h4 className="font-semibold">XAI Internship Program</h4>
                     <p className="text-sm text-gray-400">
                       Project: Smart Recruitment Agent
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+            <RevealOnScroll>
+              <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]  border border-green-500 bg-black hover:-translate-y-2 transition-all ease-in-out  duration-500">
+                <h3 className="text-xl font-bold mb-4 text-green-300">
+                 Certification
+                </h3>
+                <div className="space-y-4 text-gray-300">
+                  <div>
+                    <h4 className="font-semibold">C programming language:</h4>
+                    <p className="text-sm text-gray-400">
+                     Udemy:C
                     </p>
                   </div>
                 </div>

@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import { CustomCursor } from "./CustomCursor";
 import "./glow.css"
+import MatrixBackground from "./MatrixBackground";
 const NotFound = () => {
   return (
     <>
       <CustomCursor />
       <div className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white p-4 overflow-hidden">
+        <MatrixBackground />
         <div
           className="
             mb-8 flex items-center justify-center filter
             border-2 border-green-400 rounded-lg px-12 py-6 
-            bg-black text-white animate-glow transition-all duration-500
+            bg-black text-white animate-glow transition-all z-20 duration-500
           "
         >
           <h1 className="text-7xl md:text-9xl font-bold font-mono tracking-widest">
