@@ -147,9 +147,9 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block cursor-none font-semibold text-green-300 transition-all ease-in-out hover:scale-110 hover:text-green-500 hover:-translate-y-1  duration-500"
+                className="inline-block group cursor-none font-semibold text-green-300 transition-all ease-in-out hover:scale-110 hover:text-green-500 hover:-translate-y-1  duration-500"
               >
-                View Project →
+                View Project <span className="inline-block  transition-all duration-500 group-hover:translate-x-2">→</span>
               </a>
             </div>
           </div>
