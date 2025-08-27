@@ -167,7 +167,7 @@ export const Projects = () => {
       description:
         "A deep learning model using TensorFlow to classify brain tumors from MRI scans. Served via a FastAPI backend with a simple HTML/CSS frontend for interaction.",
       skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle", "Numpy","Python"],
-      link: "https://github.com/amineelgardoum-rgb/tumor",
+      link: "https://tumor-presentation.netlify.app/",
       image: "/images/mri_brain_detection.png",
       category: "AI",
     },
