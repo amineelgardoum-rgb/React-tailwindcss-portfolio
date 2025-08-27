@@ -222,7 +222,7 @@ export const Projects = () => {
         "Chart.js",
         "Zookeeper",
       ],
-      link: "https://github.com/amineelgardoum-rgb/transactions_e_commerce_pipeline",
+      link: "https://e-commerce-presentation.netlify.app/",
       image: "/images/real_time_e_commerce.png",
       category: "Data Engineering",
     },
