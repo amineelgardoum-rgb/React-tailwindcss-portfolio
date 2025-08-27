@@ -249,7 +249,7 @@ export const Projects = () => {
       title: "portfolio.",
       description: "Builded a portfolio to show my skills,and my projects.",
       skills: ["React", "Tailwindcss"],
-      link: "https://github.com/amineelgardoum-rgb/React-tailwindcss-portfolio",
+      link: "https://amine-s-portfolio.netlify.app/",
       image: "/images/portfolio.png",
       category: "Web development",
     },
