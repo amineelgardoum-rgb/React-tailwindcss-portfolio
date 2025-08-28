@@ -240,7 +240,7 @@ export const Projects = () => {
         "Tensorflow",
         "Docker",
       ],
-      link: "https://github.com/amineelgardoum-rgb/Rag_amine_chatbot",
+      link: "https://rag-presentation.netlify.app/",
       image: "/images/chatbot_image.png",
       category: "AI",
     },
