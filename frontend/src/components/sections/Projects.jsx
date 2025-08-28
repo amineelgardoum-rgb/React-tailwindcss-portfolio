@@ -409,7 +409,7 @@ export const Projects = () => {
   const dataEngProjects = projectsData.filter(
     (p) => p.category === "Data Engineering"
   );
-  const webdev = projectsData.filter((p) => p.category === "Web development");
+  // const webdev = projectsData.filter((p) => p.category === "Web development");
 
   return (
     <>
