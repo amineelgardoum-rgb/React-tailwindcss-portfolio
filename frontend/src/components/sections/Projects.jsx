@@ -244,15 +244,6 @@ export const Projects = () => {
       image: "/images/chatbot_image.png",
       category: "AI",
     },
-    {
-      id: 7,
-      title: "portfolio.",
-      description: "Builded a portfolio to show my skills,and my projects.",
-      skills: ["React", "Tailwindcss"],
-      link: "https://amine-s-portfolio.netlify.app/",
-      image: "/images/portfolio.png",
-      category: "Web development",
-    },
   ];
 
   const skillInfo = {
@@ -462,23 +453,6 @@ export const Projects = () => {
             </RevealOnScroll>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {dataEngProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  getSkillInfo={getSkillInfo}
-                  skillInfo={skillInfo}
-                />
-              ))}
-            </div>
-          </div>
-          <div className="mb-20">
-            <RevealOnScroll>
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
-                Web development
-              </h3>
-            </RevealOnScroll>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {webdev.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
