@@ -1,4 +1,4 @@
-import { FaDocker, FaJava, FaPython } from "react-icons/fa";
+import { FaDocker, FaJava, FaLinux, FaPython, FaUbuntu, FaWindows } from "react-icons/fa";
 import {
   SiApacheairflow,
   SiApachekafka,
@@ -25,13 +25,16 @@ import {
   SiVercel,
   SiTailwindcss,
   SiCss3,
+  SiShell,
+  SiShelly,
+  SiGnubash,
 } from "react-icons/si";
-import { TbSql, TbChartLine } from "react-icons/tb";
+import { TbSql, TbChartLine, TbBrandPowershell, TbCommand, TbCommandOff } from "react-icons/tb";
 import { VscSymbolNamespace } from "react-icons/vsc";
 import { IoBarChart } from "react-icons/io5";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
-import { GiPanda } from "react-icons/gi";
+import { GiPanda, GiTwinShell } from "react-icons/gi";
 
 const iconMap = {
   airflow: {
@@ -293,6 +296,34 @@ const iconMap = {
     hoverColor:"hover:text-red-700",
     shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
     url:"https://www.redpanda.com/"
+  },
+  linux:{
+    icon:<FaLinux />,
+    name:"linux(Ubuntu)",
+    hoverColor:"hover:text-white-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    url:"#"
+  },
+  windows:{
+    icon:<FaWindows />,
+    name:"windows",
+    hoverColor:"hover:text-blue-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"#"
+  },
+  powershell:{
+    icon:<TbBrandPowershell />,
+    name:"powershell",
+    hoverColor:"hover:text-blue-300",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    url:"#"
+  },
+  bash:{
+    icon:<SiGnubash />,
+    name:"cmd",
+    hoverColor:"hover:text-red-400",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
+    url:"#"
   }
 };
 
@@ -334,6 +365,8 @@ export const About = () => {
   const design = ["Canva"];
   const vsc = ["Github", "Git"];
   const hostingTools = ["Netlify", "Vercel"];
+  const os=["linux","windows"];
+  const scripting_tools=["bash","powershell"];
 
   const renderIcons = (items) =>
     items.map((name) => {
@@ -378,7 +411,7 @@ export const About = () => {
                 passion is to bridge the gap between complex data and
                 intelligent action. My journey has evolved from writing
                 foundational code to architecting robust data pipelines and
-                training neural networks. I am actively seeking opportunities to
+                integrate the data with ai. I am actively seeking opportunities to
                 apply my skills to solve real-world challenges.
               </p>
 
@@ -450,6 +483,22 @@ export const About = () => {
                   </h3>
                   <div className="flex flex-wrap gap-4">
                     {renderIcons(hostingTools)}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-green-300">
+                   operating systems
+                  </h3>
+                  <div className="flex flex-wrap gap-4">
+                    {renderIcons(os)}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-green-300">
+                   scripting tools
+                  </h3>
+                  <div className="flex flex-wrap gap-4">
+                    {renderIcons(scripting_tools)}
                   </div>
                 </div>
               </div>
