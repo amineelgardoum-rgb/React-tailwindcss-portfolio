@@ -194,7 +194,7 @@ export const Projects = () => {
       description:
         "A machine learning model predicting mental health conditions based on survey data. Built with Python, Pandas, and Scikit-learn, using Seaborn for visualizations.",
       skills: ["Pandas","Python", "Scikit-learn", "Seaborn", "Kaggle", "matplotlib"],
-      link: "https://github.com/amineelgardoum-rgb/Depression_Predict",
+      link: "https://mental-health-presentation.netlify.app/",
       image: "/images/depression.png",
       category: "AI",
     },
