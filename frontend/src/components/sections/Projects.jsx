@@ -204,7 +204,7 @@ export const Projects = () => {
       description:
         "A comprehensive sales data analysis project performed in a Jupyter environment. Utilized Pandas for data manipulation and Matplotlib/Seaborn for insights.",
       skills: ["Pandas", "Python","Matplotlib", "Seaborn", "Scikit-learn", "Jupyter"],
-      link: "https://github.com/amineelgardoum-rgb/Prediction_Sales",
+      link: "https://in-depth-sales-presentation.netlify.app/",
       image: "/images/sales.png",
       category: "AI",
     },
