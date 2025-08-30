@@ -75,7 +75,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
 
           <div
             className={`
-              opacity-100 translate-y-0 
+              opacity-0 translate-y-0 
               md:opacity-0 md:group-hover:opacity-100 
               md:translate-y-4 md:group-hover:translate-y-0
               transition-all duration-300 ease-in
