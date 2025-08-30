@@ -46,9 +46,9 @@ export const Home = () => {
                          transition-all duration-500 ease-in-out
                          hover:bg-green-500 hover:text-black  
                          hover:shadow-[0px_0px_20px_green]
-                         hover:-translate-y-1 cursor-none"
+                         hover:-translate-y-1 cursor-none inline-block group"
             >
-              View Projects
+              View Projects <span className="inline-block text-xl group-hover:translate-x-2 transition-all ease-in-out duration-500 ">→</span>
             </Link>
             <Link
               to="/contact" // Use anchor link for single-page scrolling
@@ -58,9 +58,9 @@ export const Home = () => {
                          hover:text-black 
                          hover:bg-green-400
                          hover:-translate-y-1
-                        cursor-none hover:shadow-[0px_0px_50px_green]"
+                        cursor-none hover:shadow-[0px_0px_50px_green] group inline-block"
             >
-              Contact Me
+              Contact Me <span className=" inline-block text-xl group-hover:translate-x-2 duration-500 ease-in-out transition-all">→</span>
             </Link>
           </div>
         </div>
