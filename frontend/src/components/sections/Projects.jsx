@@ -78,7 +78,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
               opacity-100 translate-y-0 
               md:opacity-0 md:group-hover:opacity-100 
               md:translate-y-4 md:group-hover:translate-y-0
-              transition-all duration-500 ease-in
+              transition-all duration-300 ease-in
             `}
           >
             <div className="mb-6 text-sm text-white  min-h-[4rem]">
@@ -92,7 +92,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                       e.stopPropagation(); // Prevents card click when hiding text
                       setIsDescriptionExpanded(false);
                     }}
-                    className="font-semibold text-green-300 transition-all ease-in-out duration-500 hover:text-green-200 mt-2 cursor-none"
+                    className="font-semibold text-green-300 transition-all ease-in-out duration-300 hover:text-green-200 mt-2 cursor-none"
                   >
                     Show Less
                   </button>
