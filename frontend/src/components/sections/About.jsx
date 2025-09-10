@@ -1,4 +1,5 @@
 import {
+  FaAws,
   FaDocker,
   FaJava,
   FaLinux,
@@ -346,6 +347,13 @@ const iconMap = {
       "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
     url: "https://linuxcommand.org/lc3_lts0010.php",
   },
+  aws:{
+    icon:<FaAws />,
+    name:"aws",
+    hoverColor:"hover:text-orange-500",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    url:"#"
+  }
 };
 
 const getIconInfo = (name) =>
@@ -388,7 +396,7 @@ export const About = () => {
   const hostingTools = ["Netlify", "Vercel"];
   const os = ["linux", "windows"];
   const scripting_tools = ["bash", "powershell"];
-
+  const cloud=["AWS"]
   const renderIcons = (items) =>
     items.map((name) => {
       const { icon, hoverColor, shadow, url } = getIconInfo(name);
@@ -518,6 +526,14 @@ export const About = () => {
                   </h3>
                   <div className="flex flex-wrap gap-4">
                     {renderIcons(scripting_tools)}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-green-300">
+                    Cloud Services
+                  </h3>
+                  <div className="flex flex-wrap gap-4">
+                    {renderIcons(cloud)}
                   </div>
                 </div>
               </div>
