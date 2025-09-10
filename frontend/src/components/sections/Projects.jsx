@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaDocker, FaHtml5, FaCss3Alt, FaPython } from "react-icons/fa";
+import { FaDocker, FaHtml5, FaCss3Alt, FaPython, FaAws, FaCloud } from "react-icons/fa";
 import {
   SiFastapi,
   SiTensorflow,
@@ -18,6 +18,7 @@ import {
   SiHuggingface,
   SiTailwindcss,
   SiNumpy,
+  SiApacheairflow,
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -179,14 +180,13 @@ export const Projects = () => {
       skills: [
         "Docker",
         "FastAPI",
-        "Redpanda",
-        "MongoDB",
-        "Streamlit",
+        "AWS_(S3_bucket)",
+        "Airflow",
         "Python"
       ],
       link: "https://github.com/amineelgardoum-rgb/btc-real-time-streaming-pipeline",
       image: "/images/btc-stream.png",
-      category: "Data Engineering",
+      category: "Coming Soon",
     },
     {
       id: 3,
@@ -391,6 +391,18 @@ export const Projects = () => {
       hoverColor: "hover:text-blue-500",
       hoverGlow: "hover:[filter:drop-shadow(0_0_5px_#013243)_drop-shadow(0_0_10px_#013243)_drop-shadow(0_0_15px_#013243)]",
     },
+    airflow:{
+      icon:<SiApacheairflow />,
+      color:"text-white",
+      hoverColor:"hover:text-blue-600",
+      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
+    },
+    "aws_(s3_bucket)":{
+      icon:<FaCloud />,
+      color:"text-white",
+      hoverColor:"hover:text-orange-300",
+      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+    }
   };
 
   const getSkillInfo = (skill) => {
@@ -409,6 +421,7 @@ export const Projects = () => {
   const dataEngProjects = projectsData.filter(
     (p) => p.category === "Data Engineering"
   );
+  const comingSoon=projectsData.filter((p)=>p.category==="Coming Soon")
   // const webdev = projectsData.filter((p) => p.category === "Web development");
 
   return (
@@ -453,6 +466,23 @@ export const Projects = () => {
             </RevealOnScroll>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {dataEngProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  getSkillInfo={getSkillInfo}
+                  skillInfo={skillInfo}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="mb-20">
+            <RevealOnScroll>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
+                Coming Soon (Btc-Streaming pipeline using airflow s3-bucket storage)
+              </h3>
+            </RevealOnScroll>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {comingSoon.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
