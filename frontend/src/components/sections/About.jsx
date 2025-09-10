@@ -352,7 +352,7 @@ const iconMap = {
     name:"aws",
     hoverColor:"hover:text-orange-500",
     shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
-    url:"#"
+    url:"https://aws.amazon.com/"
   }
 };
 
