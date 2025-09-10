@@ -57,7 +57,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
           src={project.image}
           alt={project.title}
           className={`
-            absolute inset-0 h-full w-full object-fit rounded-xl 
+            absolute inset-0 h-full w-full object-center rounded-xl 
             transition-all duration-500 ease-in-out 
             md:group-hover:scale-110 md:group-hover:blur-sm
           `}
@@ -176,7 +176,7 @@ export const Projects = () => {
       id: 2,
       title: "Bitcoin Price Streaming.",
       description:
-        "A real-time data pipeline that streams Bitcoin prices. Uses Kafka (with Redpanda) for messaging, FastAPI for the API, and Streamlit for live visualization.",
+        "Coming Soon...",
       skills: [
         "Docker",
         "FastAPI",
@@ -184,7 +184,7 @@ export const Projects = () => {
         "Airflow",
         "Python"
       ],
-      link: "https://github.com/amineelgardoum-rgb/btc-real-time-streaming-pipeline",
+      link: "https://coming-soon-presenta.netlify.app/",
       image: "/images/btc-stream.png",
       category: "Coming Soon",
     },

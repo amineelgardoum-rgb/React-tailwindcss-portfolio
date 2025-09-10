@@ -74,7 +74,7 @@ export const Contact = () => {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full bg-green-400 text-black py-3 px-6 font-bold tracking-wide hover:translate-y-3 hover:text-white  cursor-none rounded-lg transition-all ease-in-out duration-400 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-green-500 disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0px_2px_20px_green] hover: border border-green-600"
+                  className="w-full bg-green-400 text-black py-3 px-6 font-bold tracking-wide hover:-translate-y-3  hover:text-black cursor-none rounded-lg transition-all ease-in-out duration-400 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-green-500 disabled:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0px_2px_20px_green] hover: border border-green-600"
                 >
                   {status === "sending" ? "Sending..." : "Send Message"}
                 </button>
