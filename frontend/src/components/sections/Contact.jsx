@@ -46,7 +46,7 @@ export const Contact = () => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Full Name"
-                    className="w-full bg-black border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                    className="w-full bg-black cursor-none border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
                   />
                 </div>
                 <div>
@@ -57,7 +57,7 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Email Address"
-                    className="w-full bg-black border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                    className="w-full bg-black cursor-none border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
                   />
                 </div>
                 <div>
@@ -68,7 +68,7 @@ export const Contact = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Your Message"
-                    className="w-full bg-black border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                    className="w-full bg-black cursor-none border border-green-700 rounded-lg px-4 py-3 text-green-300 placeholder-green-500/70 transition duration-300 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
                   ></textarea>
                 </div>
                 <button
