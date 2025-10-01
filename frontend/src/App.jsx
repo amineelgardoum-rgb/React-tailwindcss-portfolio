@@ -6,6 +6,7 @@ import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
+import Chabot from "./components/sections/Chatbot"
 import {
   BrowserRouter as Router,
   Routes,
@@ -34,6 +35,7 @@ function AppRoutes() {
             element={
               <PageTransition>
                 <Home />
+                <Chabot/>
               </PageTransition>
             }
           />
