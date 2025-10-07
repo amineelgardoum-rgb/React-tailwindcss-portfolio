@@ -37,6 +37,7 @@ import {
   SiShelly,
   SiGnubash,
 } from "react-icons/si";
+import RAGStep from "../rag";
 import {
   TbSql,
   TbChartLine,
@@ -49,6 +50,7 @@ import { IoBarChart } from "react-icons/io5";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
 import { GiPanda, GiTwinShell } from "react-icons/gi";
+// import { icons } from "lucide-react";
 
 const iconMap = {
   airflow: {
@@ -353,7 +355,14 @@ const iconMap = {
     hoverColor:"hover:text-orange-500",
     shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     url:"https://aws.amazon.com/"
-  }
+  },
+//   rag: {
+//   icon: <RAGStep />,
+//   name: 'RAG',
+//   hoverColor: '', // optional, can leave empty
+//   shadow: '',     // optional, can leave empty
+//   url: '#'        // optional
+// }
 };
 
 const getIconInfo = (name) =>

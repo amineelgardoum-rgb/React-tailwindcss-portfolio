@@ -18,11 +18,14 @@ import { LoadingRedirect } from "./components/LoadingRedirect";
 import { Layout } from "./components/Layout";
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/Transition";
+import Chatbot from "./components/sections/Chatbot";
 
 function AppRoutes() {
   const location = useLocation();
 
   return (
+    <>
+    {/* <Chatbot /> */}
     // The AnimatePresence wrapper is correct
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -35,7 +38,7 @@ function AppRoutes() {
             element={
               <PageTransition>
                 <Home />
-                <Chabot/>
+                {/* <Chabot/> */}
               </PageTransition>
             }
           />
@@ -74,6 +77,7 @@ function AppRoutes() {
         />
       </Routes>
     </AnimatePresence>
+    </>
   );
 }
 
