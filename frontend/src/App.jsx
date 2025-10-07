@@ -26,7 +26,6 @@ function AppRoutes() {
   return (
     <>
     {/* <Chatbot /> */}
-    // The AnimatePresence wrapper is correct
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<LoadingRedirect redirectTo="/home" />} />
