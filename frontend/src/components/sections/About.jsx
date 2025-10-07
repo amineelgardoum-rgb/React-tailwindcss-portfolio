@@ -44,6 +44,7 @@ import {
   TbBrandPowershell,
   TbCommand,
   TbCommandOff,
+  TbBrandNextjs,
 } from "react-icons/tb";
 import { VscSymbolNamespace } from "react-icons/vsc";
 import { IoBarChart } from "react-icons/io5";
@@ -356,6 +357,16 @@ const iconMap = {
     shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     url:"https://aws.amazon.com/"
   },
+  next:{
+    icon:<TbBrandNextjs />,
+    name:'next',
+    hoverColor:'',
+    shadow:'',
+    url:'#'
+  },
+  // "pl/sql":{
+  //   icon:<Pls
+  // }
 //   rag: {
 //   icon: <RAGStep />,
 //   name: 'RAG',
@@ -398,7 +409,7 @@ export const About = () => {
     "Css",
   ];
   const dataOrchestrate = ["Docker", "Airflow", "Prefect"];
-  const frameworks = ["React", "FastAPI", "Tailwindcss"];
+  const frameworks = ["React", "FastAPI", "Tailwindcss","Next"];
   const aiTools = ["Langchain", "Scikit_Learn", "Tensorflow", "Pytorch"];
   const design = ["Canva"];
   const vsc = ["Github", "Git"];
