@@ -7,9 +7,9 @@ export const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
 
-  const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const public_key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const service_id = import.meta.env.EMAILJS_SERVICE_ID;
+  const template_id = import.meta.env.EMAILJS_TEMPLATE_ID;
+  const public_key = import.meta.env.EMAILJS_PUBLIC_KEY;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
