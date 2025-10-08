@@ -3,7 +3,10 @@ langchain-google-genai
 langchain-huggingface
 langchain-text-splitters
 fastapi
-uvicorn 
-sentence-transformers
-gunicorn 
+uvicorn
+gunicorn
 faiss-cpu
+qdrant-client
+sentence-transformers
+torch==2.3.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu

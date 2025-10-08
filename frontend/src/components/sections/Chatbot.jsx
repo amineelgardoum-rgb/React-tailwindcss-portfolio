@@ -34,39 +34,40 @@ function Chatbot() {
     };
   }, [isChatOpen]);
 
-  const handleSend = async (e) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
+  // Detect if running in Docker or local dev
+const isDocker = window.location.hostname !== "localhost";
+const backendHost = isDocker ? "http://chatbot-backend:8000" : "http://localhost:8000";
 
-    const userMessage = { sender: "user", text: input };
-    setMessages((prev) => [...prev, userMessage]);
-    const currentInput = input;
-    setInput("");
-    setIsLoading(true);
+const handleSend = async (e) => {
+  e.preventDefault();
+  if (!input.trim() || isLoading) return;
 
-    try {
-      const encodedQuery = encodeURIComponent(currentInput);
-      const url = `/api/ask?query=${encodedQuery}`;
-      const response = await fetch(url);
+  const userMessage = { sender: "user", text: input };
+  setMessages(prev => [...prev, userMessage]);
+  const currentInput = input;
+  setInput("");
+  setIsLoading(true);
 
-      if (!response.ok) {
-        throw new Error(`Network response error: ${response.statusText}`);
-      }
+  try {
+    const encodedQuery = encodeURIComponent(currentInput);
+    const response = await fetch(`${backendHost}/ask?query=${encodedQuery}`);
 
-      const data = await response.json();
-      const botMessage = { sender: "bot", text: data.answer };
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error("Failed to get response:", error);
-      const errorMessage = {
-        sender: "bot",
-        text: "Error: Connection to host failed. Please check the terminal and try again.",
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    if (!response.ok) throw new Error(`Network error: ${response.statusText}`);
+
+    const data = await response.json();
+    const botMessage = { sender: "bot", text: data.answer };
+    setMessages(prev => [...prev, botMessage]);
+  } catch (err) {
+    console.error("Failed to get response:", err);
+    setMessages(prev => [...prev, {
+      sender: "bot",
+      text: "Error: Connection failed. Check backend and try again."
+    }]);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   return (
     <>

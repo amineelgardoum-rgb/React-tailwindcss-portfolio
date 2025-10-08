@@ -1,13 +1,31 @@
 services:
   chatbot:
    build: ./chatbot
+   container_name: chatbot-backend
    ports:
     - "8000:8000"
    env_file:
     - ./chatbot/.env
+   environment:
+   - QDRANT_URL=http://qdrant:6333
+
   frontend:
    build: ./frontend
+   container_name: chatbot-frontend
    ports:
     - "5173:5173"
-   depends_on:
-    - chatbot
+  #  depends_on:
+  #   - chatbot
+  
+  qdrant:
+   image: qdrant/qdrant:latest
+   container_name: qdrant 
+   ports:
+     - "6333:6333"
+     - "6334:6344"
+   volumes:
+     - qdrant_data:/qdrant/storage
+   restart: unless-stopped
+
+volumes:
+  qdrant_data:
