@@ -1,7 +1,50 @@
 import { useState, useEffect, useRef } from "react";
 import { HeroText } from "../TypeWriter";
 import { Bot, X } from "lucide-react";
+const linkify = (text) => {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  return text.split(urlRegex).map((part, i) =>
+    urlRegex.test(part) ? (
+      <a
+        key={i}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-cyan-400 hover:text-cyan-300"
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+};
+   const renderBotMessage = (text) => {
+      // split by '*' for bullets
+      const items = text
+        .split("*")
+        .map((i) => i.trim())
+        .filter(Boolean);
 
+      if (items.length === 0) return text;
+
+      // first item as heading if contains colon
+      const heading = items[0].includes(":") ? items[0].replace(":", "") : "";
+      const bullets = heading ? items.slice(1) : items;
+
+      return (
+        <div>
+          {heading && <strong>{heading}:</strong>}
+          {bullets.length > 0 && (
+            <ul className="list-disc list-inside mt-1 space-y-1 text-green-400">
+              {bullets.map((b, i) => (
+                <li key={i}>{linkify(b.replace(/\bBuilded\b/g, "Built"))}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      );
+    };
 function Chatbot() {
   const [messages, setMessages] = useState([
     { sender: "bot", text: "Connection established. Awaiting your command..." },
@@ -35,39 +78,44 @@ function Chatbot() {
   }, [isChatOpen]);
 
   // Detect if running in Docker or local dev
-const isDocker = window.location.hostname !== "localhost";
-const backendHost = isDocker ? "http://chatbot-backend:8000" : "http://localhost:8000";
+  const isDocker = window.location.hostname !== "localhost";
+  const backendHost = isDocker
+    ? "http://chatbot-backend:8000"
+    : "http://localhost:8000";
 
-const handleSend = async (e) => {
-  e.preventDefault();
-  if (!input.trim() || isLoading) return;
+  const handleSend = async (e) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading) return;
 
-  const userMessage = { sender: "user", text: input };
-  setMessages(prev => [...prev, userMessage]);
-  const currentInput = input;
-  setInput("");
-  setIsLoading(true);
+    const userMessage = { sender: "user", text: input };
+    setMessages((prev) => [...prev, userMessage]);
+    const currentInput = input;
+    setInput("");
+    setIsLoading(true);
+ 
+    try {
+      const encodedQuery = encodeURIComponent(currentInput);
+      const response = await fetch(`${backendHost}/ask?query=${encodedQuery}`);
 
-  try {
-    const encodedQuery = encodeURIComponent(currentInput);
-    const response = await fetch(`${backendHost}/ask?query=${encodedQuery}`);
+      if (!response.ok)
+        throw new Error(`Network error: ${response.statusText}`);
 
-    if (!response.ok) throw new Error(`Network error: ${response.statusText}`);
-
-    const data = await response.json();
-    const botMessage = { sender: "bot", text: data.answer };
-    setMessages(prev => [...prev, botMessage]);
-  } catch (err) {
-    console.error("Failed to get response:", err);
-    setMessages(prev => [...prev, {
-      sender: "bot",
-      text: "Error: Connection failed. Check backend and try again."
-    }]);
-  } finally {
-    setIsLoading(false);
-  }
-};
-
+      const data = await response.json();
+      const botMessage = { sender: "bot", text: data.answer };
+      setMessages((prev) => [...prev, botMessage]);
+    } catch (err) {
+      console.error("Failed to get response:", err);
+      setMessages((prev) => [
+        ...prev,
+        {
+          sender: "bot",
+          text: "Error: Connection failed. Check backend and try again.",
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
@@ -132,9 +180,9 @@ const handleSend = async (e) => {
                     msg.sender === "user" ? "text-cyan-400" : "text-green-400"
                   }`}
                 >
-                  {msg.sender === "user" ? "[USER]> " : "[BOT_RESPONSE]> "}
+                  {msg.sender === "bot" ? "[USER]> " : "[BOT_RESPONSE]> "}
                 </span>
-                {msg.text}
+                {msg.sender === "bot" ? renderBotMessage(msg.text) : msg.text}
               </div>
             ))}
             {isLoading && (
