@@ -1,7 +1,13 @@
+# netlify.toml (in the repository root)
+[build]
+  # Tell Netlify that your build output is inside 'frontend/dist'
+  publish = "frontend/dist" 
+  # Tell Netlify that your build command runs from the 'frontend' directory
+  base = "frontend"
+  # Tell Netlify where to find your serverless functions
+  functions = "functions"  # This should match the path to your functions folder (e.g., 'functions' or 'frontend/functions')
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-[build.environment]
-  # Instruct Netlify to skip scanning for the values of these specific keys
-  SECRETS_SCAN_OMIT_KEYS = "VITE_EMAILJS_PUBLIC_KEY,VITE_EMAILJS_SERVICE_ID,VITE_EMAILJS_TEMPLATE_ID"
