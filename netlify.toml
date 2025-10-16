@@ -1,7 +1,7 @@
 [build]
   # Tell Netlify that your build output is inside 'frontend/dist' <--- Check indentation here
-  publish = "frontend/dist"
-  # Tell Netlify that your build command runs from the 'frontend' directory <--- Check indentation here
+  publish = "dist"
+  base="frontend"
   # Tell Netlify where to find your serverless functions <--- Check indentation here
   functions = "src/functions" 
 
