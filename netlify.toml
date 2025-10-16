@@ -1,13 +1,12 @@
-
 [build]
-  # Tell Netlify that your build output is inside 'frontend/dist'
-  publish = "frontend/dist" 
-  # Tell Netlify that your build command runs from the 'frontend' directory
-  base = "frontend"
-  # ❗ CORRECTED PATH: Relative to the 'frontend' base directory
-  functions = "src/functions" 
+  # Tell Netlify that your build output is inside 'frontend/dist' <--- Check indentation here
+  publish = "frontend/dist"  <--- Check for the NBSP after the value here as well
+  # Tell Netlify that your build command runs from the 'frontend' directory <--- Check indentation here
+  base = "frontend"
+  # Tell Netlify where to find your serverless functions <--- Check indentation here
+  functions = "src/functions" 
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
