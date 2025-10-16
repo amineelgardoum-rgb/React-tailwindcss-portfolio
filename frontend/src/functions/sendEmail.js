@@ -1,7 +1,7 @@
 // functions/sendEmail.js
 // No import needed for fetch in modern Node environments
 // If using an older Node environment, you might need to 'npm install node-fetch' and 'import fetch from "node-fetch";'
-
+import fetch from 'node-fetch'; // ❗ ADD THIS IMPORT LINE
 export async function handler(event) {
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
