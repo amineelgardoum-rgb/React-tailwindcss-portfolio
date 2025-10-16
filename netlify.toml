@@ -1,4 +1,4 @@
-# netlify.toml (in the repository root)
+
 [build]
   # Tell Netlify that your build output is inside 'frontend/dist'
   publish = "frontend/dist" 
