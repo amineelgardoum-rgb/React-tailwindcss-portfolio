@@ -17,7 +17,7 @@ export const Contact = () => {
 
     try {
       // **NEW: Call the Netlify Serverless Function**
-      const response = await fetch("netlify/functions/sendEmail", {
+      const response = await fetch("/.netlify/functions/sendEmail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
