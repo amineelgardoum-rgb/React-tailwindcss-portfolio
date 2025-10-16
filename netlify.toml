@@ -1,11 +1,10 @@
 [build]
-  # Tell Netlify that your build output is inside 'frontend/dist' <--- Check indentation here
-  publish = "dist"
-  base="frontend"
-  # Tell Netlify where to find your serverless functions <--- Check indentation here
-  functions = "src/functions" 
+publish = "frontend/dist"
+base = "frontend" 
+# ❗ MOST RELIABLE FIX: Path is now relative to the REPOSITORY ROOT (frontend/src/functions)
+functions = "frontend/src/functions" 
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
