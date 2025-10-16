@@ -1,5 +1,5 @@
 [build]
-publish = "frontend/dist"
+publish = "dist"
 base = "frontend" 
 # ❗ MOST RELIABLE FIX: Path is now relative to the REPOSITORY ROOT (frontend/src/functions)
 functions = "frontend/src/functions" 
