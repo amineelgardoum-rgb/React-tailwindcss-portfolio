@@ -1,25 +1,43 @@
-import emailjs from "@emailjs/browser";
+// functions/sendEmail.js
+// No import needed for fetch in modern Node environments
+// If using an older Node environment, you might need to 'npm install node-fetch' and 'import fetch from "node-fetch";'
 
 export async function handler(event) {
-  // Only allow POST requests
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const { name, email, message } = JSON.parse(event.body); // Read form data
+  const { name, email, message } = JSON.parse(event.body);
+
+  // Direct API call configuration
+  const EMAILJS_URL = "https://api.emailjs.com/api/v1.0/email/send";
+  
+  const payload = {
+    // These values are required for the direct API call
+    service_id: process.env.EMAILJS_SERVICE_ID,
+    template_id: process.env.EMAILJS_TEMPLATE_ID,
+    user_id: process.env.VITE_EMAILJS_PUBLIC_KEY, // The Public Key is used as user_id
+    template_params: { name, email, message }
+  };
 
   try {
-    // The keys are accessed via process.env and will NOT be exposed publicly.
-    await emailjs.send(
-      process.env.EMAILJS_SERVICE_ID,
-      process.env.EMAILJS_TEMPLATE_ID,
-      { name, email, message }, // Use the received form data
-      process.env.VITE_EMAILJS_PUBLIC_KEY // Public key is acceptable here
-    );
+    const response = await fetch(EMAILJS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+        // Log the full error response text for debugging
+        const errorText = await response.text(); 
+        console.error("EmailJS API Error:", response.status, errorText);
+        // Throw an error that will be caught below and returned as a 500
+        throw new Error(`EmailJS API failed with status: ${response.status}`);
+    }
 
     return { statusCode: 200, body: JSON.stringify({ success: true }) };
   } catch (err) {
-    console.error("Serverless EmailJS Error:", err);
+    console.error("Serverless Function Runtime Error:", err);
     return { statusCode: 500, body: JSON.stringify({ success: false, error: err.message }) };
   }
 }
