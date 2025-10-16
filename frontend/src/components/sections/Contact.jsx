@@ -1,32 +1,45 @@
 import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import { Footer } from "./Footer";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
 
-  const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const public_key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  // const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  // const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  // const public_key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
 
     try {
-      await emailjs.send(service_id, template_id, {
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }, public_key);
+      // **NEW: Call the Netlify Serverless Function**
+      const response = await fetch("/.netlify/functions/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // Send form data to the serverless function
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Check the response success from the function
+      const data = await response.json();
+      if (!data.success) {
+        throw new Error("Function failed to send email.");
+      }
 
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setStatus("idle"), 4000);
     } catch (err) {
-      console.error("EmailJS error:", err); // <-- See the real error
+      console.error("Server call error:", err);
       setStatus("error");
       setTimeout(() => setStatus("idle"), 4000);
     }
