@@ -2,7 +2,7 @@
 publish = "dist"
 base = "frontend" 
 # ❗ MOST RELIABLE FIX: Path is now relative to the REPOSITORY ROOT (frontend/src/functions)
-functions = "frontend/netlify/functions" 
+functions = "frontend/functions" 
 
 [[redirects]]
 from = "/*"

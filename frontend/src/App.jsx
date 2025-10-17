@@ -6,7 +6,7 @@ import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
-import Chabot from "./components/sections/Chatbot"
+// import Chabot from "./components/sections/Chatbot";
 import {
   BrowserRouter as Router,
   Routes,
@@ -18,64 +18,64 @@ import { LoadingRedirect } from "./components/LoadingRedirect";
 import { Layout } from "./components/Layout";
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/Transition";
-import Chatbot from "./components/sections/Chatbot";
+// import Chatbot from "./components/sections/Chatbot";
 
 function AppRoutes() {
   const location = useLocation();
 
   return (
     <>
-    <Chatbot />
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<LoadingRedirect redirectTo="/home" />} />
+      {/* <Chatbot /> */}
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<LoadingRedirect redirectTo="/home" />} />
 
-        {/* This Layout route now correctly wraps all main pages */}
-        <Route element={<Layout />}>
+          {/* This Layout route now correctly wraps all main pages */}
+          <Route element={<Layout />}>
+            <Route
+              path="/home"
+              element={
+                <PageTransition>
+                  <Home />
+                  {/* <Chabot/> */}
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <PageTransition>
+                  <About />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <PageTransition>
+                  <Projects />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <PageTransition>
+                  <Contact />
+                </PageTransition>
+              }
+            />
+          </Route>
           <Route
-            path="/home"
+            path="*"
             element={
               <PageTransition>
-                <Home />
-                {/* <Chabot/> */}
+                <NotFound />
               </PageTransition>
             }
           />
-          <Route
-            path="/about"
-            element={
-              <PageTransition>
-                <About />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/projects"
-            element={
-              <PageTransition>
-                <Projects />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <PageTransition>
-                <Contact />
-              </PageTransition>
-            }
-          />
-        </Route>
-        <Route
-          path="*"
-          element={
-            <PageTransition>
-              <NotFound />
-            </PageTransition>
-          }
-        />
-      </Routes>
-    </AnimatePresence>
+        </Routes>
+      </AnimatePresence>
     </>
   );
 }

@@ -1,55 +1,52 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-// import emailjs from "@emailjs/browser";
 import { Footer } from "./Footer";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("idle");
+  // const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  // const [status, setStatus] = useState("idle");
 
-  // const service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  // const template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  // const public_key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+ 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("sending");
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus("sending");
 
-    try {
-      // **NEW: Call the Netlify Serverless Function**
-      const response = await fetch("/.netlify/functions/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData), // Send form data to the serverless function
-      });
+  //   try {
+  //     // **NEW: Call the Netlify Serverless Function**
+  //     const response = await fetch("/.netlify/functions/sendEmail", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData), // Send form data to the serverless function
+  //     });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
 
-      // Check the response success from the function
-      const data = await response.json();
-      if (!data.success) {
-        throw new Error("Function failed to send email.");
-      }
+  //     // Check the response success from the function
+  //     const data = await response.json();
+  //     if (!data.success) {
+  //       throw new Error("Function failed to send email.");
+  //     }
 
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 4000);
-    } catch (err) {
-      console.error("Server call error:", err);
-      setStatus("error");
-      setTimeout(() => setStatus("idle"), 4000);
-    }
-  };
+  //     setStatus("success");
+  //     setFormData({ name: "", email: "", message: "" });
+  //     setTimeout(() => setStatus("idle"), 4000);
+  //   } catch (err) {
+  //     console.error("Server call error:", err);
+  //     setStatus("error");
+  //     setTimeout(() => setStatus("idle"), 4000);
+  //   }
+  // };
 
   return (
     <section id="contact" className="relative z-10 min-h-screen flex flex-col items-center justify-center py-20 px-4 bg-transparent text-green-300">
       <div className="w-full max-w-2xl mx-auto">
         <RevealOnScroll>
-          <div className="bg-transparent p-6 md:p-10 ">
+          {/* <div className="bg-transparent p-6 md:p-10 ">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-center text-transparent">
               Get In Touch
             </h2>
@@ -96,7 +93,7 @@ export const Contact = () => {
                 {status === "error" && <p className="text-red-400">Oops! Something went wrong. Please try again.</p>}
               </div>
             </form>
-          </div>
+          </div> */}
           <Footer />
         </RevealOnScroll>
       </div>

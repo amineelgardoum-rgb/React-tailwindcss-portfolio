@@ -36,6 +36,7 @@ import {
   SiShell,
   SiShelly,
   SiGnubash,
+  SiMinio,
 } from "react-icons/si";
 import RAGStep from "../rag";
 import {
@@ -360,20 +361,16 @@ const iconMap = {
   next:{
     icon:<TbBrandNextjs />,
     name:'next',
-    hoverColor:'',
-    shadow:'',
+    hoverColor:'hover:text-white',
+    shadow:'hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_20px_white)]',
     url:'#'
   },
-  // "pl/sql":{
-  //   icon:<Pls
-  // }
-//   rag: {
-//   icon: <RAGStep />,
-//   name: 'RAG',
-//   hoverColor: '', // optional, can leave empty
-//   shadow: '',     // optional, can leave empty
-//   url: '#'        // optional
-// }
+  minio:{
+    icon:<SiMinio />,
+    name:'minio',
+    hoverColor:'hover:text-pink-600',
+    shadow:"hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]"
+  }
 };
 
 const getIconInfo = (name) =>
@@ -396,6 +393,7 @@ export const About = () => {
     "Matplotlib",
     "Seaborn",
     "Numpy",
+    "Minio",
     "Redpanda",
   ];
   const dataEngLanguages = [

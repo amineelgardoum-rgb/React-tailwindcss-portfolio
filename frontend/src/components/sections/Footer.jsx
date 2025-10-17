@@ -53,7 +53,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Link to my ${social.name} profile`}
-                className={`text-green-400 text-3xl cursor-none
+                className={`text-green-400 text-6xl cursor-none
                           transition-all duration-500 ease-in-out
                           ${social.hoverColor}
                           hover:scale-110
