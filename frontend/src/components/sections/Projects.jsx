@@ -30,6 +30,7 @@ import {
   SiDbt,
   SiMinio,
   SiApifox,
+  SiPostgresql,
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -281,16 +282,15 @@ export const Projects = () => {
         "minio",
         "dbt",
         "docker",
-        "snowflake",
+        "Postgres",
         "airflow",
         "kafka",
         "zookeeper",
-        // "kafdrop",
       ],
       link:"https://stocks-data-pipeline.netlify.app/",
       description:
-        "a scalable, real-time data pipeline using Apache Kafka and Airflow to model stock market data with dbt and deliver clean, analytical-ready insights into Snowflake.",
-      image: "/images/stocks_data_pipeline.png",
+        "a scalable, real-time data pipeline using Apache Kafka and Airflow to model stock market data with dbt and deliver clean, analytical-ready insights into PostgreSQL.",
+      image: "/images/Stocks_pipeline.jpg",
       category: "Data Engineering",
     },
   ];
@@ -386,6 +386,12 @@ export const Projects = () => {
       hoverColor: "hover:text-orange-500",
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    },
+    postgres:{
+      icon:<SiPostgresql />,
+      color:"text-white",
+      hoverColor:"hover:text-blue-600",
+      hoverGlow:"[filter:drop-shadow(0_0_5px_oblue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
     },
     pandas: {
       icon: <SiPandas />,
