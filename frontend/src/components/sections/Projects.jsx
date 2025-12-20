@@ -489,12 +489,6 @@ export const Projects = () => {
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
     },
-    postgres:{
-      icon:<SiPostgresql/>,
-      color:"text-white",
-      hoverColor:"hover:text-blue-600",
-      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_#013243)_drop-shadow(0_0_10px_#013243)_drop-shadow(0_0_15px_#013243)]",
-    }
   };
 
   const getSkillInfo = (skill) => {
