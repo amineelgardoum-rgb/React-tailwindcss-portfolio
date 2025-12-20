@@ -18,6 +18,7 @@ import {
   SiHuggingface,
   SiTailwindcss,
   SiNumpy,
+  SiPostgresql,
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -244,6 +245,21 @@ export const Projects = () => {
       image: "/images/chatbot_image.png",
       category: "AI",
     },
+    {
+      id:7,
+      title:"Stocks Data Pipeline",
+      description:"#",
+      skills:[
+        "Docker",
+        "Postgres",
+        "dbt",
+        "kafka",
+        "minio",
+        "airflow",
+        "fastapi",
+      ],
+      category:"Data Engineering"
+    }
   ];
 
   const skillInfo = {
@@ -391,6 +407,12 @@ export const Projects = () => {
       hoverColor: "hover:text-blue-500",
       hoverGlow: "hover:[filter:drop-shadow(0_0_5px_#013243)_drop-shadow(0_0_10px_#013243)_drop-shadow(0_0_15px_#013243)]",
     },
+    postgres:{
+      icon:<SiPostgresql/>,
+      color:"text-white",
+      hoverColor:"hover:text-blue-600",
+      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_#013243)_drop-shadow(0_0_10px_#013243)_drop-shadow(0_0_15px_#013243)]",
+    }
   };
 
   const getSkillInfo = (skill) => {
