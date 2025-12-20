@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin} from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { MdMail } from "react-icons/md";
 // import { XLogo } from "../XLogo";
@@ -8,29 +8,34 @@ export const Footer = () => {
       name: "GitHub",
       icon: <FaGithub />,
       link: "https://github.com/amineelgardoum-rgb",
-      hoverColor:"hover:text-white",
-      shadow:"hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_15px_white)_drop-shadow(0_0_25px_white)]"
+      hoverColor: "hover:text-white",
+      shadow:
+        "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_15px_white)_drop-shadow(0_0_25px_white)]",
     },
     {
       name: "LinkedIn",
       icon: <FaLinkedin />,
       link: "https://www.linkedin.com/in/amine-el-gardoum-491a82333",
-      hoverColor:"hover:text-blue-600",
-      shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_15px_blue)_drop-shadow(0_0_25px_blue)]"
+      hoverColor: "hover:text-blue-600",
+      shadow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_15px_blue)_drop-shadow(0_0_25px_blue)]",
     },
     {
       name: "X(Twitter)",
       icon: <BsTwitterX />,
       link: "https://x.com/AMINE44467019",
-      hoverColor:"hover:text-blue-600",
-      shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_15px_blue)_drop-shadow(0_0_25px_blue)]"
+      hoverColor: "hover:text-blue-600",
+      shadow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_15px_blue)_drop-shadow(0_0_25px_blue)]",
     },
-    { name: "Email", 
+    {
+      name: "Email",
       icon: <MdMail />,
       link: "mailto:amineotako64@gmail.com",
-      hoverColor:"hover:text-red-600",
-      shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_15px_red)_drop-shadow(0_0_25px_red)]"
-     },
+      hoverColor: "hover:text-red-600",
+      shadow:
+        "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_15px_red)_drop-shadow(0_0_25px_red)]",
+    },
   ];
 
   return (
@@ -48,7 +53,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Link to my ${social.name} profile`}
-                className={`text-green-400 text-3xl cursor-none
+                className={`text-green-400 text-6xl cursor-none
                           transition-all duration-500 ease-in-out
                           ${social.hoverColor}
                           hover:scale-110

@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { FaDocker, FaHtml5, FaCss3Alt, FaPython } from "react-icons/fa";
+import {
+  FaDocker,
+  FaHtml5,
+  FaCss3Alt,
+  FaPython,
+  FaAws,
+  FaCloud,
+  FaSnowflake,
+} from "react-icons/fa";
 import {
   SiFastapi,
   SiTensorflow,
@@ -18,13 +26,13 @@ import {
   SiHuggingface,
   SiTailwindcss,
   SiNumpy,
-  SiPostgresql,
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
 import { IoBarChart } from "react-icons/io5";
 import { TbChartLine } from "react-icons/tb";
-import {GiPanda} from "react-icons/gi"
+import { GiPanda } from "react-icons/gi";
+import { Kafdrop } from "../Kafdrop";
 
 const pythonIcon = <FaPython />;
 const kafkaIcon = <SiApachekafka />;
@@ -57,7 +65,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
           src={project.image}
           alt={project.title}
           className={`
-            absolute inset-0 h-full w-full object-fit rounded-xl 
+            absolute inset-0 h-full w-full object-center rounded-xl 
             transition-all duration-500 ease-in-out 
             md:group-hover:scale-110 md:group-hover:blur-sm
           `}
@@ -150,7 +158,10 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                 rel="noopener noreferrer"
                 className="inline-block group cursor-none font-semibold text-green-300 transition-all ease-in-out hover:scale-110 hover:text-green-500 hover:-translate-y-1  duration-500"
               >
-                View Project <span className="inline-block  transition-all duration-500 group-hover:translate-x-2">→</span>
+                View Project{" "}
+                <span className="inline-block  transition-all duration-500 group-hover:translate-x-2">
+                  →
+                </span>
               </a>
             </div>
           </div>
@@ -167,7 +178,15 @@ export const Projects = () => {
       title: "MRI Brain Tumor Detection.",
       description:
         "A deep learning model using TensorFlow to classify brain tumors from MRI scans. Served via a FastAPI backend with a simple HTML/CSS frontend for interaction.",
-      skills: ["TensorFlow", "FastAPI", "HTML5", "CSS3", "Kaggle", "Numpy","Python"],
+      skills: [
+        "TensorFlow",
+        "FastAPI",
+        "HTML5",
+        "CSS3",
+        "Kaggle",
+        "Numpy",
+        "Python",
+      ],
       link: "https://tumor-presentation.netlify.app/",
       image: "/images/mri_brain_detection.png",
       category: "AI",
@@ -175,26 +194,25 @@ export const Projects = () => {
     {
       id: 2,
       title: "Bitcoin Price Streaming.",
-      description:
-        "A real-time data pipeline that streams Bitcoin prices. Uses Kafka (with Redpanda) for messaging, FastAPI for the API, and Streamlit for live visualization.",
-      skills: [
-        "Docker",
-        "FastAPI",
-        "Redpanda",
-        "MongoDB",
-        "Streamlit",
-        "Python"
-      ],
-      link: "https://github.com/amineelgardoum-rgb/btc-real-time-streaming-pipeline",
+      description: "Coming Soon...",
+      skills: ["Docker", "FastAPI", "AWS_(S3_bucket)", "Airflow", "Python"],
+      link: "https://coming-soon-presenta.netlify.app/",
       image: "/images/btc-stream.png",
-      category: "Data Engineering",
+      category: "Coming Soon",
     },
     {
       id: 3,
       title: "Mental Health Prediction.",
       description:
         "A machine learning model predicting mental health conditions based on survey data. Built with Python, Pandas, and Scikit-learn, using Seaborn for visualizations.",
-      skills: ["Pandas","Python", "Scikit-learn", "Seaborn", "Kaggle", "matplotlib"],
+      skills: [
+        "Pandas",
+        "Python",
+        "Scikit-learn",
+        "Seaborn",
+        "Kaggle",
+        "matplotlib",
+      ],
       link: "https://mental-health-presentation.netlify.app/",
       image: "/images/depression.png",
       category: "AI",
@@ -204,7 +222,14 @@ export const Projects = () => {
       title: "In-Depth Sales Analysis.",
       description:
         "A comprehensive sales data analysis project performed in a Jupyter environment. Utilized Pandas for data manipulation and Matplotlib/Seaborn for insights.",
-      skills: ["Pandas", "Python","Matplotlib", "Seaborn", "Scikit-learn", "Jupyter"],
+      skills: [
+        "Pandas",
+        "Python",
+        "Matplotlib",
+        "Seaborn",
+        "Scikit-learn",
+        "Jupyter",
+      ],
       link: "https://in-depth-sales-presentation.netlify.app/",
       image: "/images/sales.png",
       category: "AI",
@@ -245,21 +270,6 @@ export const Projects = () => {
       image: "/images/chatbot_image.png",
       category: "AI",
     },
-    {
-      id:7,
-      title:"Stocks Data Pipeline",
-      description:"#",
-      skills:[
-        "Docker",
-        "Postgres",
-        "dbt",
-        "kafka",
-        "minio",
-        "airflow",
-        "fastapi",
-      ],
-      category:"Data Engineering"
-    }
   ];
 
   const skillInfo = {
@@ -267,145 +277,217 @@ export const Projects = () => {
       icon: <FaDocker />,
       color: "text-white",
       hoverColor: "hover:text-blue-500",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     fastapi: {
       icon: <SiFastapi />,
       color: "text-white",
       hoverColor: "hover:text-green-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
     },
     mongodb: {
       icon: <SiMongodb />,
       color: "text-white",
       hoverColor: "hover:text-green-500",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
     },
     kafka: {
       icon: kafkaIcon,
       color: "text-white",
       hoverColor: "hover:text-yellow-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
     },
     redpanda: {
       icon: <GiPanda />,
       color: "text-white",
       hoverColor: "hover:text-yellow-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
     },
     zookeeper: {
       icon: apacheIcon,
       color: "text-white",
       hoverColor: "hover:text-green-300",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
     },
     html5: {
       icon: <FaHtml5 />,
       color: "text-white",
       hoverColor: "hover:text-orange-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     },
     css3: {
       icon: <FaCss3Alt />,
       color: "text-white",
       hoverColor: "hover:text-blue-300",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     "chart.js": {
       icon: <SiChartdotjs />,
       color: "text-white",
       hoverColor: "hover:text-pink-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]",
     },
     streamlit: {
       icon: <SiStreamlit />,
       color: "text-white",
       hoverColor: "hover:text-red-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
     },
     python: {
       icon: pythonIcon,
       color: "text-white",
       hoverColor: "hover:text-yellow-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
     },
     tensorflow: {
       icon: <SiTensorflow />,
       color: "text-white",
       hoverColor: "hover:text-orange-700",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     },
     "scikit-learn": {
       icon: <SiScikitlearn />,
       color: "text-white",
       hoverColor: "hover:text-orange-500",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    },
+    postgres:{
+      icon:<SiPostgresql />,
+      color:"text-white",
+      hoverColor:"hover:text-blue-600",
+      hoverGlow:"[filter:drop-shadow(0_0_5px_oblue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
     },
     pandas: {
       icon: <SiPandas />,
       color: "text-white",
       hoverColor: "hover:text-blue-700",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     jupyter: {
       icon: <SiJupyter />,
       color: "text-white",
       hoverColor: "hover:text-orange-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     },
     kaggle: {
       icon: <SiKaggle />,
       color: "text-white",
       hoverColor: "hover:text-blue-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     seaborn: {
       icon: <IoBarChart />,
       color: "text-white",
       hoverColor: "hover:text-blue-700",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     matplotlib: {
       icon: <TbChartLine />,
       color: "text-white",
       hoverColor: "hover:text-blue-500",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     react: {
       icon: <SiReact />,
       color: "text-white",
       hoverColor: "hover:text-blue-500",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     langchain: {
       icon: <SiLangchain />,
       color: "text-white",
       hoverColor: "hover:text-gray-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
     },
     gemini: {
       icon: <SiGooglegemini />,
       color: "text-white",
       hoverColor: "hover:text-blue-400",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_#FF00FF)_drop-shadow(0_0_10px_#FF00FF)_drop-shadow(0_0_15px_#FF00FF)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_#FF00FF)_drop-shadow(0_0_10px_#FF00FF)_drop-shadow(0_0_15px_#FF00FF)]",
     },
     huggingface: {
       icon: <SiHuggingface />,
       color: "text-white",
       hoverColor: "hover:text-yellow-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_#FFA500)_drop-shadow(0_0_10px_#FFA500)_drop-shadow(0_0_15px_#FFA500)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_#FFA500)_drop-shadow(0_0_10px_#FFA500)_drop-shadow(0_0_15px_#FFA500)]",
     },
     tailwindcss: {
       icon: <SiTailwindcss />,
       color: "text-white",
       hoverColor: "hover:text-blue-600",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_#38B2AC)_drop-shadow(0_0_10px_#38B2AC)_drop-shadow(0_0_15px_#38B2AC)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_#38B2AC)_drop-shadow(0_0_10px_#38B2AC)_drop-shadow(0_0_15px_#38B2AC)]",
     },
     numpy: {
       icon: <SiNumpy />,
       color: "text-white",
       hoverColor: "hover:text-blue-500",
-      hoverGlow: "hover:[filter:drop-shadow(0_0_5px_#013243)_drop-shadow(0_0_10px_#013243)_drop-shadow(0_0_15px_#013243)]",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_#013243)_drop-shadow(0_0_10px_#013243)_drop-shadow(0_0_15px_#013243)]",
+    },
+    airflow: {
+      icon: <SiApacheairflow />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-600",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    },
+    "aws_(s3_bucket)": {
+      icon: <FaCloud />,
+      color: "text-white",
+      hoverColor: "hover:text-orange-300",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    },
+    snowflake: {
+      icon: <FaSnowflake />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-200",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
+    },
+    dbt: {
+      icon: <SiDbt />,
+      color: "text-white",
+      hoverColor: "hover:text-orange-600",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_20px_orange)]",
+    },
+    minio: {
+      icon: <SiMinio />,
+      color: "text-white",
+      hoverColor: "hover:text-pink-600",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]",
+    },
+    kafdrop: {
+      icon: <Kafdrop />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-600",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
     },
     postgres:{
       icon:<SiPostgresql/>,
@@ -431,7 +513,7 @@ export const Projects = () => {
   const dataEngProjects = projectsData.filter(
     (p) => p.category === "Data Engineering"
   );
-  // const webdev = projectsData.filter((p) => p.category === "Web development");
+  const comingSoon = projectsData.filter((p) => p.category === "Coming Soon");
 
   return (
     <>
@@ -475,6 +557,24 @@ export const Projects = () => {
             </RevealOnScroll>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {dataEngProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  getSkillInfo={getSkillInfo}
+                  skillInfo={skillInfo}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="mb-20">
+            <RevealOnScroll>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
+                Coming Soon (Btc-Streaming pipeline using airflow s3-bucket
+                storage)
+              </h3>
+            </RevealOnScroll>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {comingSoon.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}

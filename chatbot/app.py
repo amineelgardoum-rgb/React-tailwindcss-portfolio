@@ -10,11 +10,13 @@ from langchain.schema.output_parser import StrOutputParser
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import os
+from qdrant_client import QdrantClient
 api_key=os.environ.get('GOOGLE_API_KEY')
 app=FastAPI(title="RAG API")
+client = QdrantClient(url="http://qdrant:6333")
 origins=[
     "https://portfolio-s-amine.netlify.app/",
-    "http://localhost:5173/",
+    "http://localhost:5173",
     "http://localhost:3000",
 ]
 app.add_middleware(
@@ -95,6 +97,7 @@ async def message(query:str):
         return {"answer":str(answer)}
     except Exception as e:
         print("there is an error",e)
-    
-# if __name__=="__main__":
-#     uvicorn.run("app:app",host="0.0.0.0",port=8000,reload=True)
+   
+ 
+if __name__=="__main__":
+    uvicorn.run("app:app",host="0.0.0.0",port=8000,reload=True)

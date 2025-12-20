@@ -1,4 +1,5 @@
 import {
+  FaAws,
   FaDocker,
   FaJava,
   FaLinux,
@@ -35,19 +36,24 @@ import {
   SiShell,
   SiShelly,
   SiGnubash,
+  SiMinio,
+  SiPostgresql,
 } from "react-icons/si";
+import RAGStep from "../rag";
 import {
   TbSql,
   TbChartLine,
   TbBrandPowershell,
   TbCommand,
   TbCommandOff,
+  TbBrandNextjs,
 } from "react-icons/tb";
 import { VscSymbolNamespace } from "react-icons/vsc";
 import { IoBarChart } from "react-icons/io5";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
 import { GiPanda, GiTwinShell } from "react-icons/gi";
+// import { icons } from "lucide-react";
 
 const iconMap = {
   airflow: {
@@ -346,6 +352,33 @@ const iconMap = {
       "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
     url: "https://linuxcommand.org/lc3_lts0010.php",
   },
+  postgres:{
+    icon:<SiPostgresql />,
+    name:"postgres",
+    hoverColor:"hover:text-blue-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+
+  },
+  aws:{
+    icon:<FaAws />,
+    name:"aws",
+    hoverColor:"hover:text-orange-500",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    url:"https://aws.amazon.com/"
+  },
+  next:{
+    icon:<TbBrandNextjs />,
+    name:'next',
+    hoverColor:'hover:text-white',
+    shadow:'hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_20px_white)]',
+    url:'#'
+  },
+  minio:{
+    icon:<SiMinio />,
+    name:'minio',
+    hoverColor:'hover:text-pink-600',
+    shadow:"hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]"
+  }
 };
 
 const getIconInfo = (name) =>
@@ -368,7 +401,9 @@ export const About = () => {
     "Matplotlib",
     "Seaborn",
     "Numpy",
+    "Minio",
     "Redpanda",
+    "Postgres"
   ];
   const dataEngLanguages = [
     "Python",
@@ -381,14 +416,14 @@ export const About = () => {
     "Css",
   ];
   const dataOrchestrate = ["Docker", "Airflow", "Prefect"];
-  const frameworks = ["React", "FastAPI", "Tailwindcss"];
+  const frameworks = ["React", "FastAPI", "Tailwindcss","Next"];
   const aiTools = ["Langchain", "Scikit_Learn", "Tensorflow", "Pytorch"];
   const design = ["Canva"];
   const vsc = ["Github", "Git"];
   const hostingTools = ["Netlify", "Vercel"];
   const os = ["linux", "windows"];
   const scripting_tools = ["bash", "powershell"];
-
+  const cloud=["AWS"]
   const renderIcons = (items) =>
     items.map((name) => {
       const { icon, hoverColor, shadow, url } = getIconInfo(name);
@@ -518,6 +553,14 @@ export const About = () => {
                   </h3>
                   <div className="flex flex-wrap gap-4">
                     {renderIcons(scripting_tools)}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-green-300">
+                    Cloud Services
+                  </h3>
+                  <div className="flex flex-wrap gap-4">
+                    {renderIcons(cloud)}
                   </div>
                 </div>
               </div>
