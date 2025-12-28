@@ -26,6 +26,9 @@ import {
   SiHuggingface,
   SiTailwindcss,
   SiNumpy,
+  SiApacheairflow,  // NEW
+  SiDbt,             // NEW
+  SiMinio,           // NEW
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -33,7 +36,6 @@ import { IoBarChart } from "react-icons/io5";
 import { TbChartLine } from "react-icons/tb";
 import { GiPanda } from "react-icons/gi";
 import { Kafdrop } from "../Kafdrop";
-
 const pythonIcon = <FaPython />;
 const kafkaIcon = <SiApachekafka />;
 const apacheIcon = <SiApache />;
