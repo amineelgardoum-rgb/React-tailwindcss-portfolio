@@ -39,7 +39,6 @@ import {
   SiMinio,
   SiPostgresql,
 } from "react-icons/si";
-import RAGStep from "../rag";
 import {
   TbSql,
   TbChartLine,
