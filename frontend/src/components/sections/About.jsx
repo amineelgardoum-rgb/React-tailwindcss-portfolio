@@ -351,13 +351,6 @@ const iconMap = {
       "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
     url: "https://linuxcommand.org/lc3_lts0010.php",
   },
-  postgres:{
-    icon:<SiPostgresql />,
-    name:"postgres",
-    hoverColor:"hover:text-blue-600",
-    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
-
-  },
   aws:{
     icon:<FaAws />,
     name:"aws",
@@ -402,7 +395,6 @@ export const About = () => {
     "Numpy",
     "Minio",
     "Redpanda",
-    "Postgres"
   ];
   const dataEngLanguages = [
     "Python",

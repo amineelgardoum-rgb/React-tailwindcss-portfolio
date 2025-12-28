@@ -364,12 +364,6 @@ export const Projects = () => {
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     },
-    postgres:{
-      icon:<SiPostgresql />,
-      color:"text-white",
-      hoverColor:"hover:text-blue-600",
-      hoverGlow:"[filter:drop-shadow(0_0_5px_oblue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
-    },
     pandas: {
       icon: <SiPandas />,
       color: "text-white",
