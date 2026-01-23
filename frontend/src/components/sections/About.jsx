@@ -38,6 +38,8 @@ import {
   SiGnubash,
   SiMinio,
   SiPostgresql,
+  SiApachehadoop,
+  SiTrino
 } from "react-icons/si";
 import {
   TbSql,
@@ -71,6 +73,14 @@ const iconMap = {
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
     url: "https://kafka.apache.org/",
   },
+  postgres:{
+    icon:<SiPostgresql />,
+    name:"Postgres",
+    hoverColor:"hover:text-blue-600",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
+    url:"#"
+  },
   docker: {
     icon: <FaDocker />,
     name: "Docker",
@@ -78,6 +88,22 @@ const iconMap = {
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     url: "https://www.docker.com/",
+  },
+  trino:{
+    icon:<SiTrino/>,
+    name:"Trino",
+    hoverColor:"hover:text-pink-600",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]",
+    url:"#"
+  },
+  hadoop:{
+    icon:<SiApachehadoop />,
+    name:"Hadoop",
+    hoverColor:"hover:text-yellow-600",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]",
+    url:"#"
   },
   mongodb: {
     icon: <SiMongodb />,
@@ -395,6 +421,9 @@ export const About = () => {
     "Numpy",
     "Minio",
     "Redpanda",
+    "Hadoop",
+    "Postgres",
+    "Trino"
   ];
   const dataEngLanguages = [
     "Python",

@@ -29,6 +29,12 @@ import {
   SiApacheairflow,  // NEW
   SiDbt,             // NEW
   SiMinio,           // NEW
+  SiOllama,
+  SiApachehadoop,
+  SiTrino,
+  SiPostgresql,
+  SiGnubash,
+  SiMake
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -67,7 +73,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
           src={project.image}
           alt={project.title}
           className={`
-            absolute inset-0 h-full w-full object-center rounded-xl 
+            absolute inset-0 h-full w-full object-cover object-center rounded-xl 
             transition-all duration-500 ease-in-out 
             md:group-hover:scale-110 md:group-hover:blur-sm
           `}
@@ -272,6 +278,55 @@ export const Projects = () => {
       image: "/images/chatbot_image.png",
       category: "AI",
     },
+    {
+      id:7,
+      title:"GITA",
+      description:"Designed a RAG chatbot to answer question about any github repo.",
+      skills:[
+        "Langchain",
+        "FastAPI",
+        "Gemini",
+        "Ollama",
+        "Tensorflow",
+        "Docker",
+        "Makefile"
+      ],
+      link:"#",
+      image:"/images/gita.png",
+      category:"AI"
+    },
+    {
+      id:8,
+      title:"Procurement data pipeline",
+      description:"a simplified procurement pipeline big data project",
+      skills:[
+        "Hadoop",
+        "Docker",
+        "Trino",
+        "Postgres",
+        "Bash"
+      ],
+      link:"#",
+      image:"/images/big_data.png",
+      category:"Data Engineering"
+    },
+    {
+      id:9,
+      title:"Stocks data pipeline",
+      description:"Production Grade Stocks data pipeline",
+      skills:[
+        "dbt",
+        "Postgres",
+        "Minio",
+        "Kafka",
+        "Airflow",
+        "Docker",
+        "FastAPI"
+      ],
+      link:"#",
+      image:"/images/Stocks_pipeline.png",
+      category:"Data Engineering"
+    }
   ];
 
   const skillInfo = {
@@ -281,6 +336,19 @@ export const Projects = () => {
       hoverColor: "hover:text-blue-500",
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    },
+    makefile:{
+      icon:<SiMake />,
+      color:"text-white",
+      hoverColor:"hover:text-red-400",
+      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_20px_red)]"
+    },
+    bash:{
+      icon:<SiGnubash />,
+      color:"text-white",
+      hoverColor:"hover:text-orange-600",
+      hoverGlow:
+      "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_20px_orange)]"
     },
     fastapi: {
       icon: <SiFastapi />,
@@ -485,6 +553,34 @@ export const Projects = () => {
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
     },
+    ollama:{
+      icon:<SiOllama />,
+      color:"text-white",
+      hoverColor:"hover:text-blue-500",
+      hoverGlow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+    },
+    trino:{
+      icon:<SiTrino/>,
+      color:"text-white",
+      hoverColor:"hover:text-pink-600",
+      hoverGlow:
+      "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]"
+    },
+    hadoop:{
+      icon:<SiApachehadoop />,
+      color:"text-white",
+      hoverColor:"hover:text-yellow-400",
+      hoverGlow:
+      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]"
+    },
+    postgres:{
+      icon:<SiPostgresql />,
+      color:"text-white",
+      hoverColor:"hover:text-blue-600",
+      hoverGlow:
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+    }
   };
 
   const getSkillInfo = (skill) => {
