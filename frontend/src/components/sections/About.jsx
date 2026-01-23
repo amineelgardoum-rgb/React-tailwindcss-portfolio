@@ -39,7 +39,8 @@ import {
   SiMinio,
   SiPostgresql,
   SiApachehadoop,
-  SiTrino
+  SiTrino,
+  SiDbt
 } from "react-icons/si";
 import {
   TbSql,
@@ -313,6 +314,15 @@ const iconMap = {
       "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
     url: "https://vercel.com/",
   },
+  dbt:{
+    icon:<SiDbt />,
+    name:"dbt",
+    hoverColor: "hover:text-orange-600",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    url:"#"
+
+  },
   html: {
     icon: <SiHtml5 />,
     name: "html",
@@ -423,7 +433,8 @@ export const About = () => {
     "Redpanda",
     "Hadoop",
     "Postgres",
-    "Trino"
+    "Trino",
+    "dbt"
   ];
   const dataEngLanguages = [
     "Python",
