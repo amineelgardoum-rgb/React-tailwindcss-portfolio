@@ -73,7 +73,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
           src={project.image}
           alt={project.title}
           className={`
-            absolute inset-0 h-full w-full object-cover object-center rounded-xl 
+            absolute inset-0 h-full w-full object-cover rounded-xl 
             transition-all duration-500 ease-in-out 
             md:group-hover:scale-110 md:group-hover:blur-sm
           `}
@@ -326,6 +326,20 @@ export const Projects = () => {
       link:"#",
       image:"/images/Stocks_pipeline.png",
       category:"Data Engineering"
+    },
+    {
+      id:10,
+      title:"Heart disease classification end-to-end",
+      description:"A classification model to predict the heart disease",
+      skills:[
+        "Streamlit",
+        "Scikit-learn",
+        "Docker",
+        "Makefile"
+      ],
+      link:"#",
+      image:"/images/classification.png",
+      category:"AI"
     }
   ];
 
