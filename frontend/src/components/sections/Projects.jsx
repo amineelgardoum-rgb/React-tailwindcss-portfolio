@@ -149,7 +149,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                     className="group/tooltip relative"
                   >
                     <div
-                      className={` hidden md:block md:text-5xl md:cursor-none md:transition-all md:duration-300 md:ease-in display-none
+                      className={` hidden md:block md:text-3xl md:cursor-none md:transition-all md:duration-300 md:ease-in display-none
                                  ${displayColor} ${info.color} ${info.hoverColor} md:hover:-translate-y-2 ${info.hoverGlow}`}
                     >
                       {info.icon}
