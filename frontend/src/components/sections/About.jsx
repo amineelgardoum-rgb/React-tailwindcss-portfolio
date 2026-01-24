@@ -4,7 +4,6 @@ import {
   FaJava,
   FaLinux,
   FaPython,
-  FaUbuntu,
   FaWindows,
 } from "react-icons/fa";
 import {
@@ -33,14 +32,17 @@ import {
   SiVercel,
   SiTailwindcss,
   SiCss3,
-  SiShell,
-  SiShelly,
   SiGnubash,
   SiMinio,
   SiPostgresql,
   SiApachehadoop,
   SiTrino,
-  SiDbt
+  SiDbt,
+  SiApachehive,
+  SiApachecassandra,
+  SiSnowflake,
+  SiElasticsearch,
+  SiDbeaver
 } from "react-icons/si";
 import {
   TbSql,
@@ -55,6 +57,7 @@ import { IoBarChart } from "react-icons/io5";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
 import { GiPanda, GiTwinShell } from "react-icons/gi";
+import { Snowflake } from "lucide-react";
 // import { icons } from "lucide-react";
 
 const iconMap = {
@@ -274,6 +277,14 @@ const iconMap = {
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     url: "https://seaborn.pydata.org/",
   },
+  hive:{
+    icon:<SiApachehive />,
+    name:"Hive",
+    hoverColor:"hover:text-yellow-400",
+    shadow:
+     "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]",
+    url:"#"
+  },
   numpy: {
     icon: <SiNumpy />,
     name: "Numpy",
@@ -406,6 +417,30 @@ const iconMap = {
     name:'minio',
     hoverColor:'hover:text-pink-600',
     shadow:"hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]"
+  },
+  cassandra:{
+    icon:<SiApachecassandra />,
+    name:"cassandra",
+    hoverColor:"hover:text-blue-300",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+  },
+  snowflake:{
+    icon:<SiSnowflake />,
+    name:"snowflake",
+    hoverColor:"hover:text-blue-500",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+  },
+  elasticsearch:{
+    icon:<SiElasticsearch />,
+    name:"elasticsearch",
+    hoverColor:"hover:text-green-400",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_20px_green)]"
+  },
+  dbeaver:{
+    icon:<SiDbeaver />,
+    name:"dbeaver",
+    hoverColor:"hover:text-white",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_20px_white)]"
   }
 };
 
@@ -421,21 +456,28 @@ const getIconInfo = (name) =>
 export const About = () => {
   const dataEngTools = [
     "Kafka",
-    "MongoDB",
-    "MySQL",
-    "OracleDB",
     "Pandas",
-    "Streamlit",
     "Matplotlib",
     "Seaborn",
     "Numpy",
-    "Minio",
     "Redpanda",
-    "Hadoop",
-    "Postgres",
     "Trino",
-    "dbt"
+    "dbt",
+    "Hive",
+    "Docker"
   ];
+  const databases=[
+    "MongoDB",
+    "OracleDB",
+    "MySQL",
+    "Postgres",
+    "Minio",
+    "Hadoop",
+    "Cassandra",
+    "Snowflake",
+    "ElasticSearch",
+    "DBeaver"
+  ]
   const dataEngLanguages = [
     "Python",
     "SQL",
@@ -446,9 +488,9 @@ export const About = () => {
     "Html",
     "Css",
   ];
-  const dataOrchestrate = ["Docker", "Airflow", "Prefect"];
+  const dataOrchestrate = [ "Airflow"];
   const frameworks = ["React", "FastAPI", "Tailwindcss","Next"];
-  const aiTools = ["Langchain", "Scikit_Learn", "Tensorflow", "Pytorch"];
+  const aiTools = ["Langchain", "Scikit_Learn", "Tensorflow", "Pytorch","Streamlit"];
   const design = ["Canva"];
   const vsc = ["Github", "Git"];
   const hostingTools = ["Netlify", "Vercel"];
@@ -509,6 +551,15 @@ export const About = () => {
                   </h3>
                   <div className="flex flex-wrap gap-4">
                     {renderIcons(dataEngTools)}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-green-300">
+                    Databases
+                  </h3>
+                  <div className="flex flex-wrap gap-4">
+                    {renderIcons(databases)}
                   </div>
                 </div>
 
@@ -605,20 +656,27 @@ export const About = () => {
                 </h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-3">
                   <li>
-                    <strong>National School of Applied Sciences (ENSAH)</strong>
+                    <strong>Data/AI Engineering Student:(ENSAH)</strong>
                     <span className="block text-sm text-gray-400">
-                      2022 - Present
+                      2024 - Present
                     </span>
                   </li>
                   <li>
-                    <strong>Faculty of Sciences and Techniques (FST)</strong>
+                    <strong>integrated preparation classes:(ENSAH)</strong>
+                    <span className="block text-sm text-gray-400">
+                      2022 - 2024 
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Faculty of Sciences and Techniques:(FST)</strong>
                     <span className="block text-sm text-gray-400">
                       2021 - 2022
                     </span>
                   </li>
                   <li>
-                    <strong>Moroccan Baccalaureate, Physical Sciences</strong>
-                    <span className="block text-sm text-gray-400">2021</span>
+                    <strong>Aourir High School:(Moroccan Baccalaureate)</strong>
+                    <span className="block text-sm text-gray-400">
+                      2021</span>
                   </li>
                 </ul>
               </div>
@@ -626,13 +684,13 @@ export const About = () => {
             <RevealOnScroll>
               <div className="p-6 h-full rounded-xl shadow-[0px_2px_10px_green] hover:shadow-[0px_3px_40px_green]  border border-green-500 bg-black  hover:-translate-y-2 transition-all ease-in-out  duration-500">
                 <h3 className="text-xl font-bold mb-4 text-green-300">
-                  Work Experience
+                  Experience
                 </h3>
                 <div className="space-y-4 text-gray-300">
                   <div>
                     <h4 className="font-semibold">XAI Internship Program</h4>
                     <p className="text-sm text-gray-400">
-                      Project: Smart Recruitment Agent
+                      Project: A RAG System to help moroccan people in the government services interaction
                     </p>
                   </div>
                 </div>

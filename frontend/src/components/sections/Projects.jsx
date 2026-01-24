@@ -35,7 +35,10 @@ import {
   SiPostgresql,
   SiGnubash,
   SiMake,
-  SiApachehive
+  SiApachehive,
+  SiVite,
+  SiGithub,
+  SiGit
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -99,7 +102,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
               transition-all duration-300 ease-in
             `}
           >
-            <div className="mb-6 text-sm text-white  min-h-[4rem]">
+            <div className="mb-8 text-sm text-white  min-h-[4rem]">
               {isDescriptionExpanded ? (
                 <>
                   <p className="transition-all duration-300 ease-in-out opacity-100">
@@ -146,7 +149,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                     className="group/tooltip relative"
                   >
                     <div
-                      className={` hidden md:block md:text-3xl md:cursor-none md:transition-all md:duration-300 md:ease-in display-none
+                      className={` hidden md:block md:text-2xl md:cursor-none md:transition-all md:duration-300 md:ease-in display-none
                                  ${displayColor} ${info.color} ${info.hoverColor} md:hover:-translate-y-2 ${info.hoverGlow}`}
                     >
                       {info.icon}
@@ -282,7 +285,7 @@ export const Projects = () => {
     {
       id:7,
       title:"GITA",
-      description:"Designed a RAG chatbot to answer question about any github repo.",
+      description:"Designed a RAG chatbot to answer questions about any github repo.",
       skills:[
         "Langchain",
         "FastAPI",
@@ -290,9 +293,13 @@ export const Projects = () => {
         "Ollama",
         "Tensorflow",
         "Docker",
-        "Makefile"
+        "Makefile",
+        "React",
+        "vite",
+        "github",
+        "git"
       ],
-      link:"#",
+      link:"https://github-gita.netlify.app/",
       image:"/images/gita.png",
       category:"AI"
     },
@@ -346,32 +353,45 @@ export const Projects = () => {
   ];
 
   const skillInfo = {
+    github:{
+      icon:<SiGithub />,
+      color:"text-white",
+      hoverColor:"hover:text-white",
+      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]"
+    },
+    git:{
+      icon:<SiGit />,
+      color:"text-white",
+      hoverColor:"text-red-300",
+      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
+
+    },
     docker: {
       icon: <FaDocker />,
       color: "text-white",
       hoverColor: "hover:text-blue-500",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     hive:{
       icon:<SiApachehive />,
       color:"text-white",
       hoverColor:"hover:text-yellow-400",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]"
+        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]"
     },
     makefile:{
       icon:<SiMake />,
       color:"text-white",
       hoverColor:"hover:text-red-400",
-      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_20px_red)]"
+      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
     },
     bash:{
       icon:<SiGnubash />,
       color:"text-white",
       hoverColor:"hover:text-orange-600",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_20px_orange)]"
+      "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
     },
     fastapi: {
       icon: <SiFastapi />,
@@ -449,6 +469,13 @@ export const Projects = () => {
       hoverColor: "hover:text-orange-700",
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
+    },
+    vite:{
+      icon:<SiVite />,
+      color:"text-white",
+      hoverColor:"hover:text-violet-500",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]"
     },
     "scikit-learn": {
       icon: <SiScikitlearn />,
@@ -551,58 +578,58 @@ export const Projects = () => {
     snowflake: {
       icon: <FaSnowflake />,
       color: "text-white",
-      hoverColor: "hover:text-blue-200",
+      hoverColor: "hover:text-blue-150",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     dbt: {
       icon: <SiDbt />,
       color: "text-white",
       hoverColor: "hover:text-orange-600",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_20px_orange)]",
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     },
     minio: {
       icon: <SiMinio />,
       color: "text-white",
       hoverColor: "hover:text-pink-600",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]",
+        "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]",
     },
     kafdrop: {
       icon: <Kafdrop />,
       color: "text-white",
       hoverColor: "hover:text-blue-600",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
     ollama:{
       icon:<SiOllama />,
       color:"text-white",
       hoverColor:"hover:text-blue-500",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
     },
     trino:{
       icon:<SiTrino/>,
       color:"text-white",
       hoverColor:"hover:text-pink-600",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_20px_pink)]"
+      "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]"
     },
     hadoop:{
       icon:<SiApachehadoop />,
       color:"text-white",
       hoverColor:"hover:text-yellow-400",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]"
+      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]"
     },
     postgres:{
       icon:<SiPostgresql />,
       color:"text-white",
       hoverColor:"hover:text-blue-600",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
+      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
     }
   };
 
@@ -622,7 +649,6 @@ export const Projects = () => {
   const dataEngProjects = projectsData.filter(
     (p) => p.category === "Data Engineering"
   );
-  const comingSoon = projectsData.filter((p) => p.category === "Coming Soon");
 
   return (
     <>
@@ -666,24 +692,6 @@ export const Projects = () => {
             </RevealOnScroll>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {dataEngProjects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  getSkillInfo={getSkillInfo}
-                  skillInfo={skillInfo}
-                />
-              ))}
-            </div>
-          </div>
-          <div className="mb-20">
-            <RevealOnScroll>
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-green-300 bg-clip-text mb-8 text-center">
-                Coming Soon (Btc-Streaming pipeline using airflow s3-bucket
-                storage)
-              </h3>
-            </RevealOnScroll>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {comingSoon.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
