@@ -295,8 +295,6 @@ export const Projects = () => {
         "Docker",
         "React",
         "vite",
-        "github",
-        "git"
       ],
       link:"https://github-gita.netlify.app/",
       image:"/images/gita.png",
