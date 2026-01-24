@@ -293,7 +293,6 @@ export const Projects = () => {
         "Ollama",
         "Tensorflow",
         "Docker",
-        "Makefile",
         "React",
         "vite",
         "github",
