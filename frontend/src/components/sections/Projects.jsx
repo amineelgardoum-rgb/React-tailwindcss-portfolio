@@ -306,7 +306,7 @@ export const Projects = () => {
         "Postgres",
         "Bash"
       ],
-      link:"#",
+      link:"https://procurementproject.netlify.app/",
       image:"/images/big_data.png",
       category:"Data Engineering"
     },
