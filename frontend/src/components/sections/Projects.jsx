@@ -314,7 +314,7 @@ export const Projects = () => {
     },
     {
       id: 9,
-      title: "Stocks data pipeline",
+      title: "Stocks data pipeline.",
       description: "Production Grade Stocks data pipeline",
       skills: [
         "dbt",
@@ -325,7 +325,7 @@ export const Projects = () => {
         "Docker",
         "FastAPI",
       ],
-      link: "#",
+      link: "https://stocks-pipeline.netlify.app",
       image: "/images/Stocks_pipeline.png",
       category: "Data Engineering",
     },
