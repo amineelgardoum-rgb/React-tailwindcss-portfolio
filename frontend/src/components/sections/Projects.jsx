@@ -26,9 +26,9 @@ import {
   SiHuggingface,
   SiTailwindcss,
   SiNumpy,
-  SiApacheairflow,  // NEW
-  SiDbt,             // NEW
-  SiMinio,           // NEW
+  SiApacheairflow, // NEW
+  SiDbt, // NEW
+  SiMinio, // NEW
   SiOllama,
   SiApachehadoop,
   SiTrino,
@@ -38,7 +38,7 @@ import {
   SiApachehive,
   SiVite,
   SiGithub,
-  SiGit
+  SiGit,
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -55,7 +55,8 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const groupedIcons = new Map();
   project.skills.forEach((skill) => {
-    const { icon, color, hoverGlow, hoverColor } = getSkillInfo(skill);
+    const { icon, color, hoverGlow, hoverColor, hoverRotate } =
+      getSkillInfo(skill);
     const iconKey = icon.type.name;
     if (!groupedIcons.has(iconKey)) {
       groupedIcons.set(iconKey, {
@@ -63,6 +64,7 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
         color,
         hoverGlow,
         hoverColor,
+        hoverRotate,
         skills: [skill],
       });
     } else {
@@ -149,8 +151,8 @@ const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
                     className="group/tooltip relative"
                   >
                     <div
-                      className={` hidden md:block md:text-3xl md:cursor-none md:transition-all md:duration-300 md:ease-in display-none
-                                 ${displayColor} ${info.color} ${info.hoverColor} md:hover:-translate-y-2 ${info.hoverGlow}`}
+                      className={` hidden md:block md:text-3xl md:cursor-none transition-transform duration-300 ease-in-out hover:scale-110
+                                 ${displayColor} ${info.color} ${info.hoverColor}  md:hover:-translate-y-2 ${info.hoverGlow}`}
                     >
                       {info.icon}
                     </div>
@@ -283,10 +285,11 @@ export const Projects = () => {
       category: "AI",
     },
     {
-      id:7,
-      title:"GITA",
-      description:"Designed a RAG chatbot to answer questions about any github repo.",
-      skills:[
+      id: 7,
+      title: "GITA",
+      description:
+        "Designed a RAG chatbot to answer questions about any github repo.",
+      skills: [
         "Langchain",
         "FastAPI",
         "Gemini",
@@ -296,72 +299,61 @@ export const Projects = () => {
         "React",
         "vite",
       ],
-      link:"https://github-gita.netlify.app/",
-      image:"/images/gita.png",
-      category:"AI"
+      link: "https://github-gita.netlify.app/",
+      image: "/images/gita.png",
+      category: "AI",
     },
     {
-      id:8,
-      title:"Procurement data pipeline",
-      description:"a simplified procurement pipeline big data project",
-      skills:[
-        "Hadoop",
-        "Docker",
-        "Trino",
-        "Postgres",
-        "Bash",
-        "Hive"
-      ],
-      link:"https://procurementproject.netlify.app/",
-      image:"/images/big_data.png",
-      category:"Data Engineering"
+      id: 8,
+      title: "Procurement data pipeline",
+      description: "a simplified procurement pipeline big data project",
+      skills: ["Hadoop", "Docker", "Trino", "Postgres", "Bash", "Hive"],
+      link: "https://procurementproject.netlify.app/",
+      image: "/images/big_data.png",
+      category: "Data Engineering",
     },
     {
-      id:9,
-      title:"Stocks data pipeline",
-      description:"Production Grade Stocks data pipeline",
-      skills:[
+      id: 9,
+      title: "Stocks data pipeline",
+      description: "Production Grade Stocks data pipeline",
+      skills: [
         "dbt",
         "Postgres",
         "Minio",
         "Kafka",
         "Airflow",
         "Docker",
-        "FastAPI"
+        "FastAPI",
       ],
-      link:"#",
-      image:"/images/Stocks_pipeline.png",
-      category:"Data Engineering"
+      link: "#",
+      image: "/images/Stocks_pipeline.png",
+      category: "Data Engineering",
     },
     {
-      id:10,
-      title:"Heart disease classification end-to-end",
-      description:"A classification model to predict the heart disease",
-      skills:[
-        "Streamlit",
-        "Scikit-learn",
-        "Docker",
-        "Makefile"
-      ],
-      link:"#",
-      image:"/images/classification.png",
-      category:"AI"
-    }
+      id: 10,
+      title: "Heart disease classification end-to-end",
+      description: "A classification model to predict the heart disease",
+      skills: ["Streamlit", "Scikit-learn", "Docker", "Makefile"],
+      link: "#",
+      image: "/images/classification.png",
+      category: "AI",
+    },
   ];
 
   const skillInfo = {
-    github:{
-      icon:<SiGithub />,
-      color:"text-white",
-      hoverColor:"hover:text-white",
-      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]"
+    github: {
+      icon: <SiGithub />,
+      color: "text-white",
+      hoverColor: "hover:text-white",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
     },
-    git:{
-      icon:<SiGit />,
-      color:"text-white",
-      hoverColor:"text-red-300",
-      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
-
+    git: {
+      icon: <SiGit />,
+      color: "text-white",
+      hoverColor: "text-red-300",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
     },
     docker: {
       icon: <FaDocker />,
@@ -370,25 +362,26 @@ export const Projects = () => {
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
-    hive:{
-      icon:<SiApachehive />,
-      color:"text-white",
-      hoverColor:"hover:text-yellow-400",
+    hive: {
+      icon: <SiApachehive />,
+      color: "text-white",
+      hoverColor: "hover:text-yellow-400",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]"
+        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
     },
-    makefile:{
-      icon:<SiMake />,
-      color:"text-white",
-      hoverColor:"hover:text-red-400",
-      hoverGlow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
-    },
-    bash:{
-      icon:<SiGnubash />,
-      color:"text-white",
-      hoverColor:"hover:text-orange-600",
+    makefile: {
+      icon: <SiMake />,
+      color: "text-white",
+      hoverColor: "hover:text-red-400",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+        "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
+    },
+    bash: {
+      icon: <SiGnubash />,
+      color: "text-white",
+      hoverColor: "hover:text-orange-600",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     },
     fastapi: {
       icon: <SiFastapi />,
@@ -467,12 +460,12 @@ export const Projects = () => {
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     },
-    vite:{
-      icon:<SiVite />,
-      color:"text-white",
-      hoverColor:"hover:text-violet-500",
+    vite: {
+      icon: <SiVite />,
+      color: "text-white",
+      hoverColor: "hover:text-violet-500",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]"
+        "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]",
     },
     "scikit-learn": {
       icon: <SiScikitlearn />,
@@ -600,34 +593,34 @@ export const Projects = () => {
       hoverGlow:
         "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
-    ollama:{
-      icon:<SiOllama />,
-      color:"text-white",
-      hoverColor:"hover:text-blue-500",
+    ollama: {
+      icon: <SiOllama />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-500",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
     },
-    trino:{
-      icon:<SiTrino/>,
-      color:"text-white",
-      hoverColor:"hover:text-pink-600",
+    trino: {
+      icon: <SiTrino />,
+      color: "text-white",
+      hoverColor: "hover:text-pink-600",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]"
+        "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]",
     },
-    hadoop:{
-      icon:<SiApachehadoop />,
-      color:"text-white",
-      hoverColor:"hover:text-yellow-400",
+    hadoop: {
+      icon: <SiApachehadoop />,
+      color: "text-white",
+      hoverColor: "hover:text-yellow-400",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]"
+        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
     },
-    postgres:{
-      icon:<SiPostgresql />,
-      color:"text-white",
-      hoverColor:"hover:text-blue-600",
+    postgres: {
+      icon: <SiPostgresql />,
+      color: "text-white",
+      hoverColor: "hover:text-blue-600",
       hoverGlow:
-      "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
-    }
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+    },
   };
 
   const getSkillInfo = (skill) => {
@@ -644,7 +637,7 @@ export const Projects = () => {
 
   const aiProjects = projectsData.filter((p) => p.category === "AI");
   const dataEngProjects = projectsData.filter(
-    (p) => p.category === "Data Engineering"
+    (p) => p.category === "Data Engineering",
   );
 
   return (
