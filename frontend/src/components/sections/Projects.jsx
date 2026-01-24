@@ -286,7 +286,7 @@ export const Projects = () => {
     },
     {
       id: 7,
-      title: "GITA",
+      title: "GITA.",
       description:
         "Designed a RAG chatbot to answer questions about any github repo.",
       skills: [
@@ -305,7 +305,7 @@ export const Projects = () => {
     },
     {
       id: 8,
-      title: "Procurement data pipeline",
+      title: "Procurement data pipeline.",
       description: "a simplified procurement pipeline big data project",
       skills: ["Hadoop", "Docker", "Trino", "Postgres", "Bash", "Hive"],
       link: "https://procurementproject.netlify.app/",
@@ -331,7 +331,7 @@ export const Projects = () => {
     },
     {
       id: 10,
-      title: "Heart disease classification end-to-end",
+      title: "Heart disease classification end-to-end.",
       description: "A classification model to predict the heart disease",
       skills: ["Streamlit", "Scikit-learn", "Docker", "Makefile"],
       link: "#",
