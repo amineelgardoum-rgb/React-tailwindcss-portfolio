@@ -34,7 +34,8 @@ import {
   SiTrino,
   SiPostgresql,
   SiGnubash,
-  SiMake
+  SiMake,
+  SiApachehive
 } from "react-icons/si";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
@@ -304,7 +305,8 @@ export const Projects = () => {
         "Docker",
         "Trino",
         "Postgres",
-        "Bash"
+        "Bash",
+        "Hive"
       ],
       link:"https://procurementproject.netlify.app/",
       image:"/images/big_data.png",
@@ -349,7 +351,14 @@ export const Projects = () => {
       color: "text-white",
       hoverColor: "hover:text-blue-500",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]",
+    },
+    hive:{
+      icon:<SiApachehive />,
+      color:"text-white",
+      hoverColor:"hover:text-yellow-400",
+      hoverGlow:
+        "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]"
     },
     makefile:{
       icon:<SiMake />,
