@@ -596,9 +596,9 @@ export const Projects = () => {
     ollama: {
       icon: <SiOllama />,
       color: "text-white",
-      hoverColor: "hover:text-blue-500",
+      hoverColor: "hover:text-white",
       hoverGlow:
-        "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
+        "hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_15px_white)]",
     },
     trino: {
       icon: <SiTrino />,

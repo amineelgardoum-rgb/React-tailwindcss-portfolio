@@ -38,7 +38,7 @@ export const Home = () => {
             </p>
 
             {/* Call-to-Action Buttons - with corrected styling */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center  gap-4">
               <Link
                 to="/projects" // Use anchor link for single-page scrolling
                 className="w-full sm:w-auto border border-green-500/100 text-green-500 py-3 px-8 rounded-md font-semibold 
@@ -70,7 +70,7 @@ export const Home = () => {
               <a
                 href="/cv.pdf" // PDF in public/
                 download
-                className="w-full sm:w-auto border border-gray-600/100 text-gray-300 py-3 px-8 rounded-md font-semibold
+                className="w-full sm:w-auto border border-green-600/100 text-green-500 py-3 px-8 rounded-md font-semibold
                           transition-all duration-500 ease-in-out
                           hover:border-green-500
                           hover:text-black 
