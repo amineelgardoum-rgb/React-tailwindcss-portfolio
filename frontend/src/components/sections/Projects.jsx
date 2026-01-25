@@ -334,7 +334,7 @@ export const Projects = () => {
       title: "Heart disease classification end-to-end.",
       description: "A classification model to predict the heart disease",
       skills: ["Streamlit", "Scikit-learn", "Docker", "Makefile"],
-      link: "#",
+      link: "https://heartdiseaseclass.netlify.app/",
       image: "/images/classification.png",
       category: "AI",
     },
