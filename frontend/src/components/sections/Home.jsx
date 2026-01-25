@@ -68,7 +68,7 @@ export const Home = () => {
                 </span>
               </Link>
               <a
-                href="/cv.pdf" // PDF in public/
+                href="/amine_cv.pdf" // PDF in public/
                 download
                 className="w-full sm:w-auto border border-green-600/100 text-green-500 py-3 px-8 rounded-md font-semibold
                           transition-all duration-500 ease-in-out
