@@ -30,16 +30,22 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             </Link>
             <Link
               to="/projects"
-              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-500"
+              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-200"
             >
               Projects
             </Link>
             <Link
               to="/contact"
-              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-500"
+              className="text-gray-300 hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-200"
             >
               Contact
             </Link>
+            <a
+                href="/amine_cv.pdf"
+                download
+                className="text-gray-300 hover:bg-green-500 hover:text-black hover:scale-110 cursor-none transition-all border-1 p-3 border-green-500/50 hover:-translate-y-1 rounded ease-in-out  duration-200">
+                Resume
+              </a>
           </div>
         </div>
       </div>

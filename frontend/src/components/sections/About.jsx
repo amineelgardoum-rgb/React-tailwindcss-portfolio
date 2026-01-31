@@ -42,7 +42,7 @@ export const About = () => {
       <CustomCursor />
       <section
         id="about"
-        className="min-h-screen flex items-center justify-center py-20"
+        className="h-full w-full flex items-center justify-center py-20"
       >
         <div className="max-w-4xl mx-auto px-4">
           <RevealOnScroll>
@@ -54,11 +54,11 @@ export const About = () => {
           <RevealOnScroll>
             <div className="rounded-xl p-6 md:p-8 shadow-[0px_2px_12px_green] hover:shadow-[0px_0px_50px_green] bg-black transition-all ease-in-out duration-500 border border-green-500 hover:-translate-y-3">
               <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                As a second-year AI and Data Engineering student at ENSAH, my
-                passion is to bridge the gap between complex data and
-                intelligent action. My journey has evolved from writing
-                foundational code to architecting robust data pipelines and
-                integrate the data with ai. I am actively seeking opportunities
+                As a second-year <span className="text-green-500">AI and Data Engineering student</span> at ENSAH, my
+                passion is to bridge the gap between <span className="text-green-500">complex data</span> and
+                <span className="text-green-500"> intelligent action</span>. My journey has evolved from writing
+                foundational code to architecting <span className="text-green-500">robust data pipelines</span> and
+                integrate the <span className="text-green-500">data</span> with <span className="text-green-500">ai</span>. I am actively seeking opportunities
                 to apply my skills to solve real-world challenges.
               </p>
 

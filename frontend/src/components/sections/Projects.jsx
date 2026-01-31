@@ -4,6 +4,7 @@ import { projectsData } from "../../data/projectsData";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { CustomCursor } from "../CustomCursor";
 import { SiPython } from "react-icons/si";
+import { Background } from "../Background";
 const defaultIcon = <SiPython />;
 
 
@@ -30,6 +31,7 @@ export const Projects = () => {
   return (
     <>
       <CustomCursor />
+      <Background />
       <section
         id="projects"
         className="flex min-h-screen items-start justify-center py-28 bg-black text-green-300"

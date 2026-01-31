@@ -5,6 +5,7 @@ import MatrixBackground from './MatrixBackground';
 import { Navbar } from './Navbar';
 import { MobileMenu } from './MobileMenu';
 import { useIsTouchDevice } from './MobileTouch'; 
+import { Background } from './Background';
 
 
 export const Layout = () => {
@@ -12,14 +13,14 @@ export const Layout = () => {
   const isTouchDevice = useIsTouchDevice();
 
   return (
-    <>
+    <div className="relative min-h-screen">
       {!isTouchDevice && <CustomCursor />}
-      <MatrixBackground />
+      <Background />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <main>
+      <main className="relative z-10">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 };

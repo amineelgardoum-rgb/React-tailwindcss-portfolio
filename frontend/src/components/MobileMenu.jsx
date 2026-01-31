@@ -65,6 +65,19 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             >
               Contact
             </Link>
+            <a
+                href="/images/amine_cv.pdf"
+                download
+                onClick={()=>setMenuOpen(false)}
+                className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
+                ${
+                  menuOpen
+                  ?"opacity-100 translate-y-0"
+                  :"opacity-0 translate-y-5"
+                } `}
+              >
+                Resume
+              </a>
     </div>
   );
 };
