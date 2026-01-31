@@ -39,7 +39,7 @@ export const Home = () => {
                   {/* Main Title - Huge Bold Text */}
                   <h1 className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[8vw] xl:text-[7rem] 
                                 font-black leading-[0.9] tracking-tighter">
-                    <span className="inline-block text-white">DATA<span>.</span></span>
+                    <span className="inline-block text-white">DATA<span className=" inline-block animate-bounce  "> . </span> {" "}</span>
                     <span className="inline-block bg-gradient-to-r from-green-400 via-green-500 to-green-600 
                                    bg-clip-text text-transparent">
                       ENGINEER
@@ -51,7 +51,7 @@ export const Home = () => {
                 <div className="space-y-6 pt-4">
                   <div>
                     <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                      Amine ELGARDOUM
+                      Amine EL GARDOUM
                     </h3>
                     <p className="text-xl text-green-400 font-medium">
                       Data <span className="text-xl text-white">&</span> AI Engineer

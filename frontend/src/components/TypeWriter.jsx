@@ -1,7 +1,8 @@
 import Typewriter from "typewriter-effect";
 
-export const HeroText = ({strings}) => {
+export const HeroText = ({ strings, className }) => {
   return (
+    <div className={className}>
       <Typewriter
         options={{
           strings: strings,
@@ -11,6 +12,6 @@ export const HeroText = ({strings}) => {
           deleteSpeed: 100,
         }}
       />
-  )
-  
+    </div>
+  );
 };
