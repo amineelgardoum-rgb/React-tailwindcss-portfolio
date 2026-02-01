@@ -60,3 +60,25 @@ main
     opacity: 1;
     transform: translateY(0);
 }
+/* src/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add this at the bottom */
+/* @layer utilities {
+  .animate-bounce-color {
+    animation: bounce-color 3s ease-in-out infinite;
+  }
+  
+  @keyframes bounce-color {
+    0%, 100% {
+      transform: translateY(0);
+      color: #22c55e;
+    }
+    50% {
+      transform: translateY(-25%);
+      color: #86efac;
+    }
+  }
+} */ 
