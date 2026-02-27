@@ -5,6 +5,7 @@ import { SkillSection } from "../SkillSection";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { InfoSection } from "../InfoSection";
 import { aboutInfo } from "../../data/AboutInfo";
+import { FaPython } from "react-icons/fa";
 const getIconInfo = (name) =>
   icons[name.toLowerCase()] || {
     icon: <FaPython />,
