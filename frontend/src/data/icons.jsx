@@ -222,6 +222,13 @@ export const icons = {
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     url: "https://scikit-learn.org/",
   },
+  "Sql-server":{
+    icon:<SiMicrosoftsqlserver />,
+    name:"sql-server",
+    hoverColor:"hover:text-violet-600",
+    shadow:
+      "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_20px_violet)]"
+  },
   langchain: {
     icon: <SiLangchain />,
     name: "Langchain",

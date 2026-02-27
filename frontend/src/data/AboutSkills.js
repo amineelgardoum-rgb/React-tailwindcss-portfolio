@@ -22,6 +22,7 @@ export const aboutSkills = {
     "Snowflake",
     "ElasticSearch",
     "DBeaver",
+    "Sql-server"
   ],
   languages: [
     "Python",

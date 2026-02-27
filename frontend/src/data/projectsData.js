@@ -1,4 +1,4 @@
-import { skillInfo } from "./skillInfo";
+
 
 export const projectsData = [
     {
