@@ -39,6 +39,7 @@ import {
   SiGithub,
   SiGit,
   SiPython,
+  SiMicrosoftsqlserver
 } from "react-icons/si";
 import { IoBarChart } from "react-icons/io5";
 import { TbChartLine } from "react-icons/tb";
