@@ -1,3 +1,5 @@
+import { skillInfo } from "./skillInfo";
+
 export const projectsData = [
     {
       id: 1,
@@ -150,4 +152,13 @@ export const projectsData = [
       image: "/images/classification.png",
       category: "AI",
     },
+    {
+      id:11,
+      title:"Data Warehouse Architect for CRM & ERP Systems",
+      description:"SQL Data Warehouse integrating CRM & ERP data with ETL and star-schema design for analytics.",
+      skills:["Sql-server"],
+      link:"#",
+      image:"/images/archi.png",
+      category:"Data Engineering"
+    }
   ];
