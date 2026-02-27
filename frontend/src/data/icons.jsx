@@ -1,5 +1,6 @@
 import {
   FaAws,
+  FaDatabase,
   FaDocker,
   FaJava,
   FaLinux,
@@ -223,7 +224,7 @@ export const icons = {
     url: "https://scikit-learn.org/",
   },
   "Sql-server":{
-    icon:<SiMicrosoftsqlserver />,
+    icon:<FaDatabase />,
     name:"sql-server",
     hoverColor:"hover:text-violet-600",
     shadow:

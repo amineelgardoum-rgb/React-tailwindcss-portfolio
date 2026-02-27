@@ -6,6 +6,7 @@ import {
   FaPython,
   FaCloud,
   FaSnowflake,
+  FaDatabase,
 } from "react-icons/fa";
 import {
   SiFastapi,
@@ -39,8 +40,7 @@ import {
   SiGithub,
   SiGit,
   SiPython,
-  SiMicrosoftsqlserver
-} from "react-icons/si";
+  SiMicrosoftsqlserver} from "react-icons/si";
 import { IoBarChart } from "react-icons/io5";
 import { TbChartLine } from "react-icons/tb";
 import { GiPanda } from "react-icons/gi";
@@ -180,7 +180,7 @@ export const skillInfo = {
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   "Sql-server": {
-    icon: <SiMicrosoftsqlserver />,
+    icon: <FaDatabase />,
     name: "Sql-server",
     hoverColor: "hover:text-violet-600",
     shadow:
