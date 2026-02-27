@@ -180,7 +180,7 @@ export const skillInfo = {
   },
   "Sql-server": {
     icon: <SiMicrosoftsqlserver />,
-    name: "sql-server",
+    name: "Sql-server",
     hoverColor: "hover:text-violet-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_20px_violet)]",
