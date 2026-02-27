@@ -40,7 +40,7 @@ export const Home = () => {
             min-h-[calc(15vw*0.9)] sm:min-h-[calc(12vw*0.9)] md:min-h-[calc(10vw*0.9)] 
             lg:min-h-[calc(8vw*0.9)] xl:min-h-[calc(7rem*0.9)]"
                   >
-                    <span className="inline-block text-white">
+                    <span className="inline-block text-white ">
                       DATA
                       <span className="inline-block animate-bounce text-green-500/80">
                         {" "}
