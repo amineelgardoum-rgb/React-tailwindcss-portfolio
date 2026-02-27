@@ -10,10 +10,10 @@ This repository contains the complete source code for my personal portfolio webs
 
 The portfolio is architected with a decoupled frontend and backend, which is standard practice for modern, scalable web applications.
 
-| Frontend (React + Vite)                                                                                                                                                  | Backend (FastAPI)                                                                                                                            |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Frontend Screenshot](./frontend.png)                                                                                                                                     | ![Backend API Screenshot](./backend.png)                                                                                                       |
-| A clean, fully responsive user interface built with**React** and styled with **Tailwind CSS**.  | A robust and high-performance REST API built with **Python** and **FastAPI**. It serves project details, handles chatbot answers. |
+| Frontend (React + Vite)                                                                                    | Backend (FastAPI)                                                                                                                              |
+| :--------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Frontend Screenshot](./assets/frontend.png)                                                                | ![Backend API Screenshot](./assets/backend.png/)                                                                                                 |
+| A clean, fully responsive user interface built with**React** and styled with **Tailwind CSS**. | A robust and high-performance REST API built with **Python** and **FastAPI**. It serves project details, handles chatbot answers. |
 
 ---
 
@@ -24,7 +24,7 @@ The portfolio is architected with a decoupled frontend and backend, which is sta
 | ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)                       | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)               | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) |
 | ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)                          | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)            | ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)          |
 | ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) | ![Uvicorn](https://img.shields.io/badge/Uvicorn-27A499?style=for-the-badge&logo=uvicorn&logoColor=white)            | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) |
-| ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)              | ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white) |
+| ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)              | ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white) |                                                                                                     |
 
 ---
 
