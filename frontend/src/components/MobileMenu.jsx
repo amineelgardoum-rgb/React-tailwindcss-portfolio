@@ -66,7 +66,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
               Contact
             </Link>
             <a
-                href="/images/amine_cv.pdf"
+                href="/public/docs/amine_cv.pdf"
                 download
                 onClick={()=>setMenuOpen(false)}
                 className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300

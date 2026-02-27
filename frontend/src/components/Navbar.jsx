@@ -41,7 +41,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               Contact
             </Link>
             <a
-                href="/amine_cv.pdf"
+                href="/docs/amine_cv.pdf"
                 download
                 className="text-gray-300 hover:bg-green-500 hover:text-black hover:scale-110 cursor-none transition-all border-1 p-3 border-green-500/50 hover:-translate-y-1 rounded ease-in-out  duration-200">
                 Resume
