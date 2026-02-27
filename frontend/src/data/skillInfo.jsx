@@ -178,9 +178,10 @@ export const skillInfo = {
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
-  "Sql-server": {
+  "sql-server": {
     icon: <FaDatabase />,
-    name: "Sql-server",
+    color:"text-white",
+    name: "sql-server",
     hoverColor: "hover:text-violet-600",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_20px_violet)]",
