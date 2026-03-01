@@ -1,4 +1,4 @@
-import { RevealOnScroll } from "./RevealOnScroll";
+import { RevealOnScroll } from "../ui/RevealOnScroll";
 
 export const InfoSection = ({ title, items }) => {
   return (

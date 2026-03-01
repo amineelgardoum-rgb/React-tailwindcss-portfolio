@@ -13,11 +13,11 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import NotFound from "./components/NotFound";
-import { LoadingRedirect } from "./components/LoadingRedirect";
-import { Layout } from "./components/Layout";
+import NotFound from "./components/sections/NotFound";
+import { LoadingRedirect } from "./components/layout/LoadingRedirect";
+import { Layout } from "./components/layout/Layout";
 import { AnimatePresence } from "framer-motion";
-import { PageTransition } from "./components/Transition";
+import { PageTransition } from "./components/layout/Transition";
 // import Chatbot from "./components/sections/Chatbot";
 
 function AppRoutes() {

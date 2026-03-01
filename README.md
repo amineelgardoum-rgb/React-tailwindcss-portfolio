@@ -12,7 +12,7 @@ The portfolio is architected with a decoupled frontend and backend, which is sta
 
 | Frontend (React + Vite)                                                                                    | Backend (FastAPI)                                                                                                                              |
 | :--------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Frontend Screenshot](./assets/frontend.png)                                                                | ![Backend API Screenshot](./assets/backend.png/)                                                                                                 |
+| ![Frontend Screenshot](./docs/assets/frontend.png) | ![Backend API Screenshot](./docs/assets/backend.png/) |
 | A clean, fully responsive user interface built with**React** and styled with **Tailwind CSS**. | A robust and high-performance REST API built with **Python** and **FastAPI**. It serves project details, handles chatbot answers. |
 
 ---
@@ -64,7 +64,7 @@ python -m venv venv
 pip install -r requirements.txt
 
 # Run the FastAPI server
-uvicorn app.main:app --reload
+uvicorn app:app --reload
 ```
 
 The backend API will now be running at `http://127.0.0.1:8000`.

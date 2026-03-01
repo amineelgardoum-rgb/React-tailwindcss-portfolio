@@ -1,6 +1,6 @@
 // import { useState } from "react";
-import { RevealOnScroll } from "../RevealOnScroll";
-import { Footer } from "./Footer";
+import { RevealOnScroll } from "../ui/RevealOnScroll";
+import { Footer } from "../layout/Footer";
 
 export const Contact = () => {
   // const [formData, setFormData] = useState({ name: "", email: "", message: "" });

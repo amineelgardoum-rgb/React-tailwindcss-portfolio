@@ -1,10 +1,10 @@
-import { icons } from "../../data/icons";
-import { aboutSkills } from "../../data/AboutSkills";
-import { CustomCursor } from "../CustomCursor";
-import { SkillSection } from "../SkillSection";
-import { RevealOnScroll } from "../RevealOnScroll";
-import { InfoSection } from "../InfoSection";
-import { aboutInfo } from "../../data/AboutInfo";
+import { icons } from "../../data/skills/icons";
+import { aboutSkills } from "../../data/about/AboutSkills";
+import { CustomCursor } from "../ui/CustomCursor";
+import { SkillSection } from "./SkillSection";
+import { RevealOnScroll } from "../ui/RevealOnScroll";
+import { InfoSection } from "./InfoSection";
+import { aboutInfo } from "../../data/about/AboutInfo";
 import { FaPython } from "react-icons/fa";
 const getIconInfo = (name) =>
   icons[name.toLowerCase()] || {

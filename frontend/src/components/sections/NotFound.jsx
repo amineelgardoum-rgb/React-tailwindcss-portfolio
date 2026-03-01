@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { CustomCursor } from "./CustomCursor";
-import "./glow.css";
-import MatrixBackground from "./MatrixBackground";
+import { CustomCursor } from "../ui/CustomCursor";
+import "../ui/glow.css";
+import MatrixBackground from "../ui/MatrixBackground";
 
 const NotFound = () => {
   return (

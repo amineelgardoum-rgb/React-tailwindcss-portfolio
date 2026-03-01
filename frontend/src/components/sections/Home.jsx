@@ -1,6 +1,6 @@
-import { RevealOnScroll } from "../RevealOnScroll";
+import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Link } from "react-router-dom";
-import { HeroText } from "../TypeWriter";
+import { HeroText } from "../ui/TypeWriter";
 
 export const Home = () => {
   return (

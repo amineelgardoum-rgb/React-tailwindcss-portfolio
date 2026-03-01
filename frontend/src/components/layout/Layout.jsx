@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { CustomCursor } from './CustomCursor';
-import MatrixBackground from './MatrixBackground';
+import { CustomCursor } from '../ui/CustomCursor';
 import { Navbar } from './Navbar';
 import { MobileMenu } from './MobileMenu';
-import { useIsTouchDevice } from './MobileTouch'; 
-import { Background } from './Background';
+import { useIsTouchDevice } from '../ui/MobileTouch'; 
+import { Background } from '../ui/Background';
 
 
 export const Layout = () => {

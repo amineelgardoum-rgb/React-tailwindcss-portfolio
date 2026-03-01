@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { HeroText } from "../TypeWriter";
+import { HeroText } from "../ui/TypeWriter";
 import { Bot, X } from "lucide-react";
+import { askChatbot } from "../../services/api";
 const linkify = (text) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
   return text.split(urlRegex).map((part, i) =>
@@ -77,12 +78,6 @@ function Chatbot() {
     };
   }, [isChatOpen]);
 
-  // Detect if running in Docker or local dev
-  const isDocker = window.location.hostname !== "localhost";
-  const backendHost = isDocker
-    ? "http://chatbot-backend:8000"
-    : "http://localhost:8000";
-
   const handleSend = async (e) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
@@ -94,14 +89,8 @@ function Chatbot() {
     setIsLoading(true);
  
     try {
-      const encodedQuery = encodeURIComponent(currentInput);
-      const response = await fetch(`${backendHost}/ask?query=${encodedQuery}`);
-
-      if (!response.ok)
-        throw new Error(`Network error: ${response.statusText}`);
-
-      const data = await response.json();
-      const botMessage = { sender: "bot", text: data.answer };
+      const answer = await askChatbot(currentInput);
+      const botMessage = { sender: "bot", text: answer };
       setMessages((prev) => [...prev, botMessage]);
     } catch (err) {
       console.error("Failed to get response:", err);

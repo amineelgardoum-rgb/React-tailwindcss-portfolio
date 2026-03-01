@@ -1,10 +1,10 @@
-import {skillInfo} from "../../data/skillInfo"
-import { ProjectCard } from "../ProjectCard";
-import { projectsData } from "../../data/projectsData";
-import { RevealOnScroll } from "../RevealOnScroll";
-import { CustomCursor } from "../CustomCursor";
+import {skillInfo} from "../../data/skills/skillInfo"
+import { ProjectCard } from "../ui/ProjectCard";
+import { projectsData } from "../../data/projects/projectsData";
+import { RevealOnScroll } from "../ui/RevealOnScroll";
+import { CustomCursor } from "../ui/CustomCursor";
 import { SiPython } from "react-icons/si";
-import { Background } from "../Background";
+import { Background } from "../ui/Background";
 const defaultIcon = <SiPython />;
 
 

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Background } from "./Background";
+import { Background } from "../ui/Background";
 
 export const LoadingScreen = ({ onComplete }) => {
   const [text, setText] = useState("");
