@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CustomCursor } from "../ui/CustomCursor";
 import "../ui/glow.css";
-import MatrixBackground from "../ui/MatrixBackground";
+import  { Background } from "../ui/Background";
 
 const NotFound = () => {
   return (
@@ -9,7 +9,7 @@ const NotFound = () => {
       <CustomCursor />
       <div className="relative min-h-screen flex flex-col items-center justify-center bg-black text-green-400 font-mono overflow-hidden">
         {/* Matrix background */}
-        <MatrixBackground className="absolute inset-0 z-0" />
+        <Background className="absolute inset-0 z-0" />
 
         {/* 404 Title */}
         <div
