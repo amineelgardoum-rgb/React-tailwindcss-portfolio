@@ -1,6 +1,7 @@
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { Link } from "react-router-dom";
 import { HeroText } from "../ui/TypeWriter";
+import { RevealImage } from "../ui/RevealImage";
 
 export const Home = () => {
   return (
@@ -9,24 +10,15 @@ export const Home = () => {
         id="home"
         className="min-h-screen flex items-center justify-center relative z-10"
       >
-        <div className="w-full max-w-[1400px]  my-auto px-6 lg:px-12 py-10">
+        <div className="w-full max-w-full  my-auto px-6 lg:px-12 py-10">
           <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[500px_1fr] gap-8 lg:gap-16 items-start lg:items-center">
             <RevealOnScroll>
               <div className="order-2 lg:order-1 flex items-center justify-center min-h-full pt-10">
-                <div
-                  className="relative w-full h-full aspect-[4/3] rounded-2xl overflow-hidden 
-               border-4 border-green-500/40 shadow-2xl
-               shadow-green-500/20
-               transition-all duration-500 hover:border-green-500/60 
-                hover:shadow-green-500/40
-               hover:-translate-y-1"
-                >
-                  <img
-                    src="/images/amine.png"
-                    alt="Amine ELGARDOUM - Data Engineer"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
+                <RevealImage
+                  src="/images/amine.png"
+                  overlaySrc="/images/bot.png"
+                  className="w-full aspect-[4/3] rounded-2xl border-4 border-green-500/40 shadow-2xl shadow-green-500/20"
+                />
               </div>
             </RevealOnScroll>
 
@@ -40,7 +32,7 @@ export const Home = () => {
             min-h-[calc(15vw*0.9)] sm:min-h-[calc(12vw*0.9)] md:min-h-[calc(10vw*0.9)] 
             lg:min-h-[calc(8vw*0.9)] xl:min-h-[calc(7rem*0.9)]"
                   >
-                    <span className="inline-block text-white ">
+                    <span className="inline-block text-gray-900 dark:text-white ">
                       DATA
                       <span className="inline-block animate-bounce text-green-500/80">
                         {" "}
@@ -56,23 +48,23 @@ export const Home = () => {
 
                 <div className="space-y-5 pt-4">
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
                       Amine EL GARDOUM
                     </h3>
-                    <p className="text-xl text-green-400 font-medium">
-                      Data <span className="text-xl text-white">&</span> AI
+                    <p className="text-xl text-green-600 dark:text-green-400 font-medium">
+                      Data <span className="text-xl text-gray-900 dark:text-white">&</span> AI
                       Engineer{" "}
-                      <span className="text-xl text-white"> Student </span>
+                      <span className="text-xl text-gray-900 dark:text-white"> Student </span>
                     </p>
                   </div>
 
-                  <p className="text-gray-300 bg-black/50 backdrop-blur-sm p-6 border-green-500 border-2 rounded-lg text-lg md:text-xl leading-relaxed max-w-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]">
+                  <p className="text-gray-700 dark:text-gray-300 bg-white/50 dark:bg-black/50 backdrop-blur-sm p-6 border-green-500 border-2 rounded-lg text-lg md:text-xl leading-relaxed max-w-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(34,197,94,0.3)]">
                     Building robust{" "}
-                    <span className="text-green-400 font-semibold">
+                    <span className="text-green-600 dark:text-green-400 font-semibold">
                       data pipelines
                     </span>{" "}
                     and
-                    <span className="text-green-400 font-semibold">
+                    <span className="text-green-600 dark:text-green-400 font-semibold">
                       {" "}
                       intelligent systems
                     </span>{" "}
@@ -110,18 +102,6 @@ export const Home = () => {
                       />
                     </svg>
                   </Link>
-
-                  {/* Optional: Secondary CTA
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 px-8 py-4 
-                             bg-transparent text-green-400 font-bold text-lg
-                             rounded-lg border-2 border-green-500
-                             hover:bg-green-500/10 hover:scale-105 hover:-translate-y-1
-                             transition-all duration-300 ease-out"
-                  >
-                    Contact Me
-                  </Link> */}
                 </div>
               </div>
             </RevealOnScroll>

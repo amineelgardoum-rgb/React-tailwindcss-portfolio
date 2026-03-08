@@ -41,7 +41,7 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="relative bg-transparent z-15 py-12 mb-5 text-green-300"
+      className="relative bg-transparent z-15 py-12 mb-5 text-green-600 dark:text-green-300"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center">
@@ -53,7 +53,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Link to my ${social.name} profile`}
-                className={`text-green-400 text-6xl cursor-none
+                className={`text-green-600 dark:text-green-400 text-6xl cursor-none
                           transition-all duration-500 ease-in-out
                           ${social.hoverColor}
                           hover:scale-110

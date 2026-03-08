@@ -43,7 +43,7 @@ export const Background = () => {
       ></div>
 
       {/* Radial gradient overlay for vignette effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-white/40 dark:to-black/40"></div>
 
       {/* Subtle noise texture */}
       <div 
@@ -62,7 +62,7 @@ export const Background = () => {
         <div className="absolute bottom-1/4 left-1/2 w-1 h-1 bg-green-400 rounded-full animate-particle-5"></div>
       </div>
 
-      <style jsx>{`
+      <style jsx='true'>{`
         @keyframes grid-flow {
           0%, 100% {
             transform: translate(0, 0);

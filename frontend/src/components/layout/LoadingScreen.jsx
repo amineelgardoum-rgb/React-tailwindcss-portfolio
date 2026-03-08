@@ -26,16 +26,16 @@ export const LoadingScreen = ({ onComplete }) => {
       <Background />
 
       {/* Optional semi-transparent overlay for contrast */}
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-white/40 dark:bg-black/40 z-10"></div>
 
       {/* Loading content */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-gray-100">
+      <div className="relative z-20 flex flex-col items-center justify-center text-gray-900 dark:text-gray-100">
         <div className="mb-4 text-3xl  font-mono font-bold">
           {text}
           <span className="animate-blink ml-1">|</span>
         </div>
-        <div className="w-[200px] h-[2px] bg-white rounded relative overflow-hidden">
-          <div className="w-[40%] h-full bg-green-800 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+        <div className="w-[200px] h-[2px] bg-gray-200 dark:bg-white rounded relative overflow-hidden">
+          <div className="w-[40%] h-full bg-green-600 dark:bg-green-800 shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
         </div>
       </div>
     </div>

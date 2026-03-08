@@ -7,7 +7,7 @@ const NotFound = () => {
   return (
     <>
       <CustomCursor />
-      <div className="relative min-h-screen flex flex-col items-center justify-center bg-black text-green-400 font-mono overflow-hidden">
+      <div className="relative min-h-screen flex flex-col items-center justify-center bg-white dark:bg-black text-green-600 dark:text-green-400 font-mono overflow-hidden">
         {/* Matrix background */}
         <Background className="absolute inset-0 z-0" />
 
@@ -15,7 +15,7 @@ const NotFound = () => {
         <div
           className="
             relative mb-8 px-12 py-6 rounded-lg border-2 border-green-500 
-            bg-black/70 backdrop-blur-sm text-center z-20
+            bg-white/70 dark:bg-black/70 backdrop-blur-sm text-center z-20
             animate-pulse shadow-[0_0_20px_rgba(34,197,94,0.7)] hover:shadow-[0_0_30px_rgba(34,197,94,0.8)] duration-300 ease-in-out
           "
         >
@@ -23,7 +23,7 @@ const NotFound = () => {
             className="
             relative
               text-7xl md:text-9xl font-bold tracking-widest 
-              glitch  z-20 text-white hover:text-green-500 duration-300  ease-in-out transition-all
+              glitch  z-20 text-gray-900 dark:text-white hover:text-green-500 duration-300  ease-in-out transition-all
             "
             data-text="404"
           >
@@ -32,7 +32,7 @@ const NotFound = () => {
         </div>
 
         {/* Message */}
-        <p className="text-xl mb-6 text-white z-20 ">
+        <p className="text-xl mb-6 text-gray-800 dark:text-white z-20 ">
           Page Not Found
         </p>
 
@@ -41,6 +41,7 @@ const NotFound = () => {
           to="/"
           className="
             relative px-6 py-3 border-2 border-green-500 rounded-lg
+            text-green-600 dark:text-green-400
             hover:bg-green-500 hover:text-black
             transition-all duration-300 ease-in-out z-20
             cursor-none hover:scale-110 hover:-translate-y-2

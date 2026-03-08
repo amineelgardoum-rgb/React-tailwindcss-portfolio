@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div
-      className={`fixed top-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center 
+      className={`fixed top-0 w-full bg-white/90 dark:bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center 
             transition-all duration-300 ease-in-out 
             ${
               menuOpen
@@ -12,7 +12,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     >
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute cursor-none top-6 right-6 text-white text-3xl focus:outline-none "
+        className="absolute cursor-none top-6 right-6 text-gray-900 dark:text-white text-3xl focus:outline-none "
         aria-label="Close Menu"
       >
         &times;
@@ -20,7 +20,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       <Link
               to="/home"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl  hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
+              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-gray-900 dark:text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"
@@ -32,7 +32,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             <Link
               to="/about"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
+              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-gray-900 dark:text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"
@@ -44,7 +44,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             <Link
               to="/projects"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
+              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-gray-900 dark:text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"
@@ -56,7 +56,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             <Link
               to="/contact"
               onClick={()=>setMenuOpen(false)}
-              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
+              className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-gray-900 dark:text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"
@@ -69,7 +69,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
                 href="/public/docs/amine_cv.pdf"
                 download
                 onClick={()=>setMenuOpen(false)}
-                className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-white my-4 transform transition-all ease-in-out duration-300
+                className={`text-2xl hover:-translate-y-1 hover:text-green-600 cursor-none font-semibold text-gray-900 dark:text-white my-4 transform transition-all ease-in-out duration-300
                 ${
                   menuOpen
                   ?"opacity-100 translate-y-0"

@@ -27,11 +27,11 @@ export const About = () => {
           className="relative flex flex-col items-center group cursor-none"
         >
           <div
-            className={`text-3xl text-gray-300 transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-2 ${hoverColor} ${shadow}`}
+            className={`text-3xl text-gray-600 dark:text-gray-300 transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-2 ${hoverColor} ${shadow}`}
           >
             {icon}
           </div>
-          <span className="absolute -top-8 whitespace-nowrap rounded-md bg-black px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <span className="absolute -top-8 whitespace-nowrap rounded-md bg-gray-900 dark:bg-black px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 border border-green-500/50">
             {name}
           </span>
         </a>
@@ -47,19 +47,19 @@ export const About = () => {
       >
         <div className="max-w-4xl mx-auto px-4">
           <RevealOnScroll>
-            <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-500 to-green-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-600 to-green-400 dark:from-green-500 dark:to-green-400 bg-clip-text text-transparent">
               About Me
             </h2>
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <div className="rounded-xl p-6 md:p-8 shadow-[0px_2px_12px_green] hover:shadow-[0px_0px_50px_green] bg-black transition-all ease-in-out duration-500 border border-green-500 hover:-translate-y-3">
-              <p className="text-gray-300 mb-8 text-lg leading-relaxed">
-                As a second-year <span className="text-green-500">AI and Data Engineering student</span> at ENSAH, my
-                passion is to bridge the gap between <span className="text-green-500">complex data</span> and
-                <span className="text-green-500"> intelligent action</span>. My journey has evolved from writing
-                foundational code to architecting <span className="text-green-500">robust data pipelines</span> and
-                integrate the <span className="text-green-500">data</span> with <span className="text-green-500">ai</span>. I am actively seeking opportunities
+            <div className="rounded-xl p-6 md:p-8 shadow-[0px_2px_12px_green] hover:shadow-[0px_0px_50px_green] bg-white dark:bg-black transition-all ease-in-out duration-500 border border-green-500 hover:-translate-y-3">
+              <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg leading-relaxed">
+                As a second-year <span className="text-green-600 dark:text-green-500">AI and Data Engineering student</span> at ENSAH, my
+                passion is to bridge the gap between <span className="text-green-600 dark:text-green-500">complex data</span> and
+                <span className="text-green-600 dark:text-green-500"> intelligent action</span>. My journey has evolved from writing
+                foundational code to architecting <span className="text-green-600 dark:text-green-500">robust data pipelines</span> and
+                integrate the <span className="text-green-600 dark:text-green-500">data</span> with <span className="text-green-600 dark:text-green-500">ai</span>. I am actively seeking opportunities
                 to apply my skills to solve real-world challenges.
               </p>
 

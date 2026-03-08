@@ -18,7 +18,7 @@ import { LoadingRedirect } from "./components/layout/LoadingRedirect";
 import { Layout } from "./components/layout/Layout";
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/layout/Transition";
-// import Chatbot from "./components/sections/Chatbot";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function AppRoutes() {
   const location = useLocation();
@@ -82,9 +82,11 @@ function AppRoutes() {
 
 function App() {
   return (
-    <Router>
-      <AppRoutes />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </ThemeProvider>
   );
 }
 
