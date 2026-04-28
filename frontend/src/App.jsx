@@ -6,7 +6,7 @@ import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
-// import Chabot from "./components/sections/Chatbot";
+import Chatbot from "./components/sections/Chatbot";
 import {
   BrowserRouter as Router,
   Routes,
@@ -25,7 +25,7 @@ function AppRoutes() {
 
   return (
     <>
-      {/* <Chatbot /> */}
+      <Chatbot />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<LoadingRedirect redirectTo="/home" />} />
