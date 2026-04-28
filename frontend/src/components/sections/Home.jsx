@@ -7,13 +7,13 @@ export const Home = () => {
   return (
     <>
       <section
-        id="home"
-        className="min-h-screen flex items-center justify-center relative z-10"
-      >
-        <div className="w-full max-w-full  my-auto px-6 lg:px-12 py-10">
+  id="home"
+  className="min-h-screen flex items-center justify-center relative z-10 py-20 overflow-hidden"
+>
+        <div className="w-full max-w-full my-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[500px_1fr] gap-8 lg:gap-16 items-start lg:items-center">
             <RevealOnScroll>
-              <div className="order-2 lg:order-1 flex items-center justify-center min-h-full pt-10">
+              <div className="order-2 lg:order-1 flex items-center justify-center min-h-full">
                 <RevealImage
                   src="/images/amine.png"
                   overlaySrc="/images/bot.png"
@@ -27,11 +27,11 @@ export const Home = () => {
                 {/* Main Title - Huge Bold Text */}
                 <div className="space-y-3">
                   <h1
-                    className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[8vw] xl:text-[7rem] 
-            font-black leading-[0.9] tracking-tighter
-            min-h-[calc(15vw*0.9)] sm:min-h-[calc(12vw*0.9)] md:min-h-[calc(10vw*0.9)] 
-            lg:min-h-[calc(8vw*0.9)] xl:min-h-[calc(7rem*0.9)]"
-                  >
+  className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[8vw] xl:text-[7rem] 
+  font-black leading-[0.9] tracking-tighter overflow-hidden
+  min-h-[calc(15vw*0.9)] sm:min-h-[calc(12vw*0.9)] md:min-h-[calc(10vw*0.9)] 
+  lg:min-h-[calc(8vw*0.9)] xl:min-h-[calc(7rem*0.9)]"
+>
                     <span className="inline-block text-gray-900 dark:text-white ">
                       DATA
                       <span className="inline-block animate-bounce text-green-500/80">

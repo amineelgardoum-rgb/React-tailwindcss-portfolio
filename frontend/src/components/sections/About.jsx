@@ -43,7 +43,7 @@ export const About = () => {
       <CustomCursor />
       <section
         id="about"
-        className="h-full w-full flex items-center justify-center py-20"
+        className="min-h-screen w-full flex items-center justify-center py-20"
       >
         <div className="max-w-4xl mx-auto px-4">
           <RevealOnScroll>

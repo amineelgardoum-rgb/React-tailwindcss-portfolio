@@ -1,59 +1,68 @@
 import { useState, useEffect, useRef } from "react";
-import { HeroText } from "../ui/TypeWriter";
-import { Bot, X } from "lucide-react";
+import React from "react";
+import { Bot, X, Send, Terminal } from "lucide-react";
 import { askChatbot } from "../../services/api";
+
 const linkify = (text) => {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
-  return text.split(urlRegex).map((part, i) =>
-    urlRegex.test(part) ? (
-      <a
-        key={i}
-        href={part}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline text-cyan-400 hover:text-cyan-300"
-      >
-        {part}
-      </a>
-    ) : (
-      part
-    )
+  return text.split(urlRegex).map((part, i) => {
+    if (urlRegex.test(part)) {
+      return React.createElement(
+        "a",
+        {
+          key: i,
+          href: part,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          className: "underline text-green-400 hover:text-green-300 transition-colors",
+        },
+        part
+      );
+    }
+    return part;
+  });
+};
+
+const renderBotMessage = (text) => {
+  const items = text
+    .split("*")
+    .map((i) => i.trim())
+    .filter(Boolean);
+
+  if (items.length <= 1) return React.createElement("span", null, linkify(text));
+
+  const heading = items[0].includes(":") ? items[0].replace(":", "") : "";
+  const bullets = heading ? items.slice(1) : items;
+
+  return (
+    <div className="space-y-1">
+      {heading && (
+        <p className="font-semibold text-green-300 mb-2">{heading}</p>
+      )}
+      <ul className="space-y-1">
+        {bullets.map((b, i) => (
+          <li key={i} className="flex gap-2 items-start">
+            <span className="text-green-500 mt-1 flex-shrink-0">›</span>
+            <span>{linkify(b.replace(/\bBuilded\b/g, "Built"))}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
-   const renderBotMessage = (text) => {
-      // split by '*' for bullets
-      const items = text
-        .split("*")
-        .map((i) => i.trim())
-        .filter(Boolean);
 
-      if (items.length === 0) return text;
-
-      // first item as heading if contains colon
-      const heading = items[0].includes(":") ? items[0].replace(":", "") : "";
-      const bullets = heading ? items.slice(1) : items;
-
-      return (
-        <div>
-          {heading && <strong>{heading}:</strong>}
-          {bullets.length > 0 && (
-            <ul className="list-disc list-inside mt-1 space-y-1 text-green-400">
-              {bullets.map((b, i) => (
-                <li key={i}>{linkify(b.replace(/\bBuilded\b/g, "Built"))}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-      );
-    };
 function Chatbot() {
   const [messages, setMessages] = useState([
-    { sender: "bot", text: "Connection established. Awaiting your command..." },
+    {
+      sender: "bot",
+      text: "Hi! I'm Amine's assistant. Ask me anything about his skills, projects, or experience.",
+    },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef(null);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -62,17 +71,12 @@ function Chatbot() {
   useEffect(() => {
     if (isChatOpen) {
       scrollToBottom();
+      setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [messages, isChatOpen]);
 
-  // Effect to lock body scroll when chat is open on mobile
   useEffect(() => {
-    if (isChatOpen && window.innerWidth < 768) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    // Cleanup function to restore scroll
+    document.body.style.overflow = isChatOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -87,19 +91,15 @@ function Chatbot() {
     const currentInput = input;
     setInput("");
     setIsLoading(true);
- 
+
     try {
       const answer = await askChatbot(currentInput);
-      const botMessage = { sender: "bot", text: answer };
-      setMessages((prev) => [...prev, botMessage]);
+      setMessages((prev) => [...prev, { sender: "bot", text: answer }]);
     } catch (err) {
       console.error("Failed to get response:", err);
       setMessages((prev) => [
         ...prev,
-        {
-          sender: "bot",
-          text: "Error: Connection failed. Check backend and try again.",
-        },
+        { sender: "bot", text: "Connection error. Please try again." },
       ]);
     } finally {
       setIsLoading(false);
@@ -108,99 +108,106 @@ function Chatbot() {
 
   return (
     <>
-      {/* --- FINAL RESPONSIVE BUTTON --- */}
-      {/* This button is visible on all screens when the chat is closed. */}
-      {/* When the chat is open, it's hidden on small screens but visible on medium screens and up. */}
       <button
         onClick={() => setIsChatOpen(!isChatOpen)}
-        className={`fixed bottom-4 right-4 z-50 flex items-center justify-center
-                   bg-green-500 text-black rounded-full border border-black 
-                   p-3 md:py-3 md:px-5 md:rounded-md
-                   shadow-[0_0_20px_rgba(0,255,65,0.7)]
-                   ease-in-out
-                   hover:bg-black hover:text-green-500 hover:shadow-[0_0_20px_rgba(0,255,65,1)]
-                   transition-all duration-300 cursor-none transform hover:scale-105
-                   ${isChatOpen ? "hidden md:flex" : "flex"}`}
+        className={`fixed bottom-6 right-6 z-50 w-12 h-12 items-center justify-center rounded-full bg-green-500 text-black border border-green-400 hover:bg-green-400 transition-all duration-200 cursor-none ${
+          isChatOpen ? "hidden" : "flex"
+        }`}
       >
-        {isChatOpen ? <X className="w-6 h-6" /> : <Bot className="w-6 h-6" />}
+        <Bot className="w-5 h-5" />
       </button>
 
-      {/* CHAT WINDOW */}
+      {isChatOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/50 md:hidden"
+          onClick={() => setIsChatOpen(false)}
+        />
+      )}
+
       <div
-        className={`
-          fixed z-40
-          transition-all duration-500 ease-in-out
-          bottom-0 right-0 w-full h-full
-          md:bottom-20 md:right-5 md:w-[90%] md:max-w-lg md:h-[70vh] md:max-h-[700px] md:rounded-lg
-          ${
-            isChatOpen
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-full md:translate-y-10 pointer-events-none"
-          }`}
+        className={`fixed z-40 transition-all duration-300 ease-in-out bottom-6 left-2 right-2 w-auto h-[85vh] md:bottom-10 md:left-auto md:right-6 md:w-[300px] md:h-[480px] md:rounded-xl md:max-w-[calc(100vw-3rem)] ${
+          isChatOpen
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
       >
-        <div className="font-mono bg-black/95 text-green-400 flex flex-col w-full h-full max-h-full border border-green-500 shadow-[0_0_15px_rgba(0,255,65,0.4),0_0_5px_rgba(0,255,65,1)_inset] border-rounded md:rounded-lg">
-          <div className="bg-green-500 text-black border-rounded p-3 text-center uppercase tracking-widest border-b border-green-500/50 select-none flex-shrink-0">
-            <div className="flex justify-between items-center">
-              <h1 className="text-lg font-bold [text-shadow:0_0_3px_rgba(0,0,0,0.5)] mx-auto">
-                <HeroText strings={["Amine", "Chatbot"]} />
-              </h1>
-              {/* This close button is only visible on mobile screens */}
-              <button
-                onClick={() => setIsChatOpen(false)}
-                className="md:hidden hover:bg-black-600 hover:text-green text-black font-bold text-xl leading-none w-7 h-7 rounded-full transition-all-ease-in-out cursor-none"
-              >
-                &times;
-              </button>
+        <div className="flex flex-col w-full h-full bg-gray-950 text-gray-100 border border-gray-800 rounded-t-2xl md:rounded-xl overflow-hidden">
+          
+          <div className="flex items-center justify-between px-4 py-3 bg-gray-900 border-b border-gray-800 flex-shrink-0">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-500"></div>
+              <Terminal className="w-4 h-4 text-green-500" />
+              <span className="text-sm font-semibold text-white">
+                Amine's Assistant
+              </span>
             </div>
+            <button
+              onClick={() => setIsChatOpen(false)}
+              className="text-gray-400 hover:text-white transition-colors cursor-none"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
-          <div className="flex-1 p-4 overflow-y-auto flex flex-col gap-4 min-h-0">
+          <div className="flex-1 overflow-y-auto overflow-x-hidden px-4 py-4 space-y-4 min-h-0">
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`px-4 py-3 bg-green-900/30 max-w-[85%] leading-relaxed text-sm md:text-base rounded-md ${
-                  msg.sender === "user"
-                    ? "self-end border border-cyan-500/50 text-cyan-400 [text-shadow:0_0_5px_#00ffff]"
-                    : "self-start border border-green-500/50 [text-shadow:0_0_5px_#00ff41]"
+                className={`flex ${
+                  msg.sender === "user" ? "justify-end" : "justify-start"
                 }`}
               >
-                <span
-                  className={`font-bold ${
-                    msg.sender === "user" ? "text-cyan-400" : "text-green-400"
+                {msg.sender === "bot" && (
+                  <div className="w-6 h-6 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+                    <Bot className="w-3 h-3 text-green-400" />
+                  </div>
+                )}
+                <div
+                  className={`max-w-[78%] px-3 py-2 rounded-lg text-sm leading-relaxed ${
+                    msg.sender === "user"
+                      ? "bg-green-500 text-black font-medium rounded-br-none"
+                      : "bg-gray-800 text-gray-200 rounded-bl-none"
                   }`}
                 >
-                  {msg.sender === "bot" ? "[USER]> " : "[BOT_RESPONSE]> "}
-                </span>
-                {msg.sender === "bot" ? renderBotMessage(msg.text) : msg.text}
+                  {msg.sender === "bot" ? renderBotMessage(msg.text) : msg.text}
+                </div>
               </div>
             ))}
+
             {isLoading && (
-              <div className="self-start px-4 py-3 border border-green-500/50 [text-shadow:0_0_5px_#00ff41]">
-                <span className="font-bold">[BOT_RESPONSE] </span>
-                <span className="animate-pulse">Thinking...</span>
+              <div className="flex justify-start">
+                <div className="w-6 h-6 rounded-full bg-green-500/20 border border-green-500/40 flex items-center justify-center flex-shrink-0 mr-3 mt-1">
+                  <Bot className="w-3 h-3 text-green-400" />
+                </div>
+                <div className="bg-gray-800 px-4 py-3 rounded-lg rounded-bl-none flex gap-1 items-center">
+                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-bounce [animation-delay:0ms]"></span>
+                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-bounce [animation-delay:150ms]"></span>
+                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-bounce [animation-delay:300ms]"></span>
+                </div>
               </div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
           <form
-            className="flex items-center p-4 border-t border-green-500 bg-gray-900/50 gap-4 flex-shrink-0"
             onSubmit={handleSend}
+            className="flex items-center gap-2 px-4 py-3 bg-gray-900 border-t border-gray-800 flex-shrink-0"
           >
             <input
+              ref={inputRef}
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Enter command..."
+              placeholder="Ask me anything..."
               disabled={isLoading}
-              className="flex-grow bg-black text-green-400 p-3 text-base caret-green-400 border-b border-green-500 focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_10px_rgba(0,255,255,0.5)] transition-all duration-300 placeholder:text-green-500/60 cursor-none disabled:cursor-not-allowed"
+              className="flex-1 bg-gray-800 text-gray-100 text-sm px-3 py-2 rounded-lg border border-gray-700 focus:outline-none focus:border-green-500 placeholder:text-gray-500 disabled:opacity-50 transition-colors cursor-none"
             />
             <button
               type="submit"
-              disabled={isLoading}
-              className="bg-transparent text-green-400 border border-green-400 px-6 py-3 font-mono uppercase tracking-wider transition-all duration-300 hover:enabled:bg-green-400 hover:enabled:text-black  hover:enabled:shadow-[0_0_10px_#00ff41] disabled:border-red-500 disabled:text-red-500 cursor-none disabled:cursor-not-allowed"
+              disabled={isLoading || !input.trim()}
+              className="w-9 h-9 flex items-center justify-center flex-shrink-0 bg-green-500 text-black rounded-lg hover:bg-green-400 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-200 cursor-none"
             >
-              Send
+              <Send className="w-4 h-4" />
             </button>
           </form>
         </div>

@@ -34,7 +34,7 @@ export const Projects = () => {
       <Background />
       <section
         id="projects"
-        className="flex min-h-screen items-start justify-center py-28 bg-white dark:bg-black text-green-600 dark:text-green-300"
+        className="flex min-h-screen items-start justify-center py-20 bg-white dark:bg-black text-green-600 dark:text-green-300"
       >
         <div className="mx-auto w-full max-w-7xl px-4">
           <RevealOnScroll>
