@@ -128,25 +128,25 @@ function Chatbot() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsChatOpen(!isChatOpen)}
-        className={`fixed bottom-6 right-6 z-50 w-12 h-12 items-center justify-center rounded-full bg-green-500 text-black border border-green-400 hover:bg-green-400 transition-all duration-200 cursor-none ${
+        className={`fixed bottom-6 right-6 z-[60] w-12 h-12 items-center justify-center rounded-full bg-green-500 text-black border border-green-400 hover:bg-green-400 transition-all duration-200 cursor-none ${
           isChatOpen ? "hidden" : "flex"
         }`}
       >
         <Bot className="w-5 h-5" />
       </button>
 
-      {/* Backdrop on mobile */}
+      {/* Backdrop */}
       {isChatOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/50 md:hidden"
+          className="fixed inset-0 z-[55] bg-black/50 md:hidden"
           onClick={() => setIsChatOpen(false)}
         />
       )}
 
       {/* Chat Window */}
       <div
-        className={`fixed z-40 transition-all duration-300 ease-in-out
-          bottom-20 left-2 right-2 w-auto h-[78vh]
+        className={`fixed z-[60] transition-all duration-300 ease-in-out
+          bottom-4 left-2 right-2 w-auto h-[85vh]
           md:bottom-6 md:left-auto md:right-6 md:w-[420px] md:h-[580px] md:max-w-[calc(100vw-3rem)]
           rounded-2xl
           ${
@@ -223,7 +223,7 @@ function Chatbot() {
           {showScrollTop && (
             <button
               onClick={scrollToTop}
-              className="absolute bottom-20 right-4 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 border border-gray-600 text-green-400 hover:bg-gray-700 hover:border-green-500 transition-all duration-200 shadow-lg cursor-none"
+              className="absolute bottom-20 right-4 z-[70] w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 border border-gray-600 text-green-400 hover:bg-gray-700 hover:border-green-500 transition-all duration-200 shadow-lg cursor-none"
             >
               <ArrowUp className="w-4 h-4" />
             </button>
