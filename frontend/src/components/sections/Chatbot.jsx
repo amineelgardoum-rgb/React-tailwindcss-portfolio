@@ -222,7 +222,7 @@ function Chatbot() {
           {showScrollTop && (
             <button
               onClick={scrollToTop}
-              className="absolute bottom-16 right-8 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 border border-gray-600 text-green-400 hover:bg-gray-700 hover:border-green-500 transition-all duration-200 shadow-lg cursor-none"
+              className="absolute bottom-10 right-8 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 border border-gray-600 text-green-400 hover:bg-gray-700 hover:border-green-500 transition-all duration-200 shadow-lg cursor-none"
             >
               <ArrowUp className="w-4 h-4" />
             </button>
