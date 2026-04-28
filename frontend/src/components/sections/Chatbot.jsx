@@ -93,6 +93,7 @@ function Chatbot() {
       document.body.style.overflow = "auto";
     };
   }, [isChatOpen]);
+  
 
   const handleSend = async (e) => {
     e.preventDefault();
