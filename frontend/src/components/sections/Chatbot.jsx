@@ -146,8 +146,8 @@ function Chatbot() {
       {/* Chat Window */}
       <div
         className={`fixed z-40 transition-all duration-300 ease-in-out
-          bottom-0 left-0 right-0 w-full h-[90vh]
-          md:bottom-6 md:left-auto md:right-6 md:w-[420px] md:h-[580px] md:rounded-2xl md:max-w-[calc(100vw-3rem)]
+          bottom-16 left-2 right-0 w-full h-[80vh]
+          md:bottom-6 md:left-auto md:right-6 md:w-[420px] md:h-[580px] rounded-2xl md:max-w-[calc(100vw-3rem)]
           ${
             isChatOpen
               ? "opacity-100 translate-y-0"
