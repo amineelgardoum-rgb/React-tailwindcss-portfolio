@@ -25,9 +25,6 @@ html,body
 html {
     scrollbar-gutter: stable;
     overflow-y: hidden;
-    scrollbar-width: none;
-    scroll-behavior: none;
-
 }
 main
 {
