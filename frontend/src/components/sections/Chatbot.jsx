@@ -146,15 +146,16 @@ function Chatbot() {
       {/* Chat Window */}
       <div
         className={`fixed z-40 transition-all duration-300 ease-in-out
-          bottom-16 left-2 right-0 w-full h-[80vh]
-          md:bottom-6 md:left-auto md:right-6 md:w-[420px] md:h-[580px] rounded-2xl md:max-w-[calc(100vw-3rem)]
+          bottom-20 left-2 right-2 w-auto h-[78vh]
+          md:bottom-6 md:left-auto md:right-6 md:w-[420px] md:h-[580px] md:max-w-[calc(100vw-3rem)]
+          rounded-2xl
           ${
             isChatOpen
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4 pointer-events-none"
           }`}
       >
-        <div className="flex flex-col w-full h-full bg-gray-950 text-gray-100 border border-gray-800 rounded-t-2xl md:rounded-2xl overflow-hidden shadow-2xl shadow-green-900/20">
+        <div className="flex flex-col w-full h-full bg-gray-950 text-gray-100 border border-gray-800 rounded-2xl overflow-hidden shadow-2xl shadow-green-900/20">
 
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 bg-gray-900 border-b border-gray-800 flex-shrink-0">
@@ -222,7 +223,7 @@ function Chatbot() {
           {showScrollTop && (
             <button
               onClick={scrollToTop}
-              className="absolute bottom-10 right-8 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 border border-gray-600 text-green-400 hover:bg-gray-700 hover:border-green-500 transition-all duration-200 shadow-lg cursor-none"
+              className="absolute bottom-20 right-4 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-gray-800 border border-gray-600 text-green-400 hover:bg-gray-700 hover:border-green-500 transition-all duration-200 shadow-lg cursor-none"
             >
               <ArrowUp className="w-4 h-4" />
             </button>
