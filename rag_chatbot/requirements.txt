@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-huggingface
+langchain-google-genai
+langchain-text-splitters
+faiss-cpu
+python-dotenv
+google-generativeai
+torch==2.4.0
+transformers==4.40.0
+sentence-transformers==2.7.0
