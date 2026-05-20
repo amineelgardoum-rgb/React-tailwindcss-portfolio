@@ -39,11 +39,14 @@ import {
   SiVite,
   SiGithub,
   SiGit,
-  SiPython} from "react-icons/si";
+  SiPython,
+  SiGrafana,
+  SiRedis,
+SiPrometheus} from "react-icons/si";
 import { IoBarChart } from "react-icons/io5";
 import { TbChartLine } from "react-icons/tb";
 import { GiPanda } from "react-icons/gi";
-
+import {DiRedis} from "react-icons/di"
 export const skillInfo = {
   github: {
     icon: <SiGithub />,
@@ -326,4 +329,25 @@ export const skillInfo = {
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
+  grafana:{
+    icon:<SiGrafana />,
+    color:"text-white",
+    hoverColor:"hover:text-orange-600",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+  },
+  redis:{
+    icon:<DiRedis />,
+    color:"text-white",
+    hoverColor:"hover:text-red-600",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
+  },
+  prometheus:{
+    icon:<SiPrometheus />,
+    color:"text-white",
+    hoverColor:"hover:text-red-800",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+  }
 };

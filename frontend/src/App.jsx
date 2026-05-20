@@ -25,7 +25,7 @@ function AppRoutes() {
 
   return (
     <>
-      <Chatbot />
+      {/* <Chatbot /> */}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<LoadingRedirect redirectTo="/home" />} />
@@ -37,7 +37,6 @@ function AppRoutes() {
               element={
                 <PageTransition>
                   <Home />
-                  {/* <Chabot/> */}
                 </PageTransition>
               }
             />

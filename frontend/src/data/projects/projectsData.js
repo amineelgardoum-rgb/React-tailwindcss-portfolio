@@ -160,5 +160,14 @@ export const projectsData = [
       link:"#",
       image:"/images/archi.png",
       category:"Data Engineering"
+    },
+    {
+      id:12,
+      title:"Jobs Data Warehouse Project",
+      description:"SQL Data Warehouse Architecture to get the latest job offers.",
+      skills:["dbt","Sql-server","Docker","Airflow","Prometheus","Grafana","Redis","Postgres","React","FastAPI"],
+      link:"#",
+      image:"/images/jobs_datawarehouse.png",
+      category:"Data Engineering"
     }
   ];

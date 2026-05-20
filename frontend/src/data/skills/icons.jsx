@@ -43,7 +43,9 @@ import {
   SiApachecassandra,
   SiSnowflake,
   SiElasticsearch,
-  SiDbeaver
+  SiDbeaver,
+  SiGrafana,
+  SiPrometheus
 } from "react-icons/si";
 import {
   TbSql,
@@ -54,6 +56,7 @@ import {
 import { VscSymbolNamespace } from "react-icons/vsc";
 import { IoBarChart } from "react-icons/io5";
 import { GiPanda} from "react-icons/gi";
+import { DiRedis } from "react-icons/di";
 export const icons = {
   airflow: {
     icon: <SiApacheairflow />,
@@ -223,7 +226,7 @@ export const icons = {
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     url: "https://scikit-learn.org/",
   },
-  "Sql-server":{
+  "sql-server":{
     icon:<FaDatabase />,
     name:"sql-server",
     hoverColor:"hover:text-violet-600",
@@ -442,5 +445,23 @@ export const icons = {
     name:"dbeaver",
     hoverColor:"hover:text-white",
     shadow:"hover:[filter:drop-shadow(0_0_5px_white)_drop-shadow(0_0_10px_white)_drop-shadow(0_0_20px_white)]"
+  },
+  grafana:{
+    icon:<SiGrafana />,
+    name:"Grafana",
+    hoverColor:"hover:text-orange-400",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_20px_orange)]"
+  },
+  redis:{
+    icon:<DiRedis />,
+    name:"Redis",
+    hoverColor:"hover:text-red-400",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_20px_red)]"
+  },
+  prometheus:{
+    icon:<SiPrometheus />,
+    name:"Promethues",
+    hoverColor:"hover:text-red-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_20px_red)]"
   }
 };

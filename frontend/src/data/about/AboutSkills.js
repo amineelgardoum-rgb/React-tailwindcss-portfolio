@@ -22,7 +22,8 @@ export const aboutSkills = {
     "Snowflake",
     "ElasticSearch",
     "DBeaver",
-    "Sql-server"
+    "Sql-server",
+    "Redis"
   ],
   languages: [
     "Python",
@@ -43,4 +44,5 @@ export const aboutSkills = {
   os: ["linux", "windows"],
   scripting: ["bash", "powershell"],
   cloud: ["AWS"],
+  monitoring:["Prometheus","Grafana"]
 };

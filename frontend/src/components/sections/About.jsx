@@ -124,6 +124,11 @@ export const About = () => {
                   items={aboutSkills.cloud}
                   renderIcons={renderIcons}
                 />
+                <SkillSection
+                  title="Monitoring"
+                  items={aboutSkills.monitoring}
+                  renderIcons={renderIcons}
+                />
               </div>
             </div>
           </RevealOnScroll>
