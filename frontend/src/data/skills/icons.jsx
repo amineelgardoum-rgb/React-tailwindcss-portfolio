@@ -45,7 +45,8 @@ import {
   SiElasticsearch,
   SiDbeaver,
   SiGrafana,
-  SiPrometheus
+  SiPrometheus,
+  SiHuggingface
 } from "react-icons/si";
 import {
   TbSql,
@@ -463,5 +464,11 @@ export const icons = {
     name:"Promethues",
     hoverColor:"hover:text-red-600",
     shadow:"hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_20px_red)]"
+  },
+  huggingface:{
+    icon:<SiHuggingface />,
+    name:"huggingface",
+    hoverColor:"hover:text-yellow-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]"
   }
 };

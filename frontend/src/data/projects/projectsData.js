@@ -169,5 +169,14 @@ export const projectsData = [
       link:"#",
       image:"/images/jobs_datawarehouse.png",
       category:"Data Engineering"
+    },
+    {
+      id:13,
+      title:"Wav2Vec 2.0 fine-tuning on RADVESS dataset.",
+      description:"fine-tune Wav2Vec 2.0 on the RADVESS dataset. to get emotions from the speech.",
+      skills:['Huggingface','Scikit-learn','python','Tensorflow','streamlit'],
+      link:"#",
+      image:"/images/wav2vec.png",
+      category:"AI"
     }
   ];

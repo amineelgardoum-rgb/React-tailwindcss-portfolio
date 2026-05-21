@@ -37,7 +37,7 @@ export const aboutSkills = {
   ],
   orchestration: ["Airflow"],
   frameworks: ["React", "FastAPI", "Tailwindcss", "Next"],
-  aiTools: ["Langchain", "Scikit_Learn", "Tensorflow", "Pytorch", "Streamlit"],
+  aiTools: ["Langchain", "Scikit_Learn", "Tensorflow", "Pytorch", "Streamlit","Huggingface"],
   design: ["Canva"],
   versionControl: ["Github", "Git"],
   hosting: ["Netlify", "Vercel"],
