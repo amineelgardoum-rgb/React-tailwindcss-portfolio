@@ -6,11 +6,10 @@ import { RevealImage } from "../ui/RevealImage";
 export const Home = () => {
   return (
     <>
-      <section
+  <section
   id="home"
   className="h-[calc(100vh-64px)] w-full flex items-center justify-center relative z-10 overflow-x-hidden"
-  {/* 100vh minus navbar height (h-16 = 64px) */}
->
+  >
         <div className="w-full max-w-full my-auto px-6 lg:px-12 overflow-hidden">
           <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[500px_1fr] gap-8 lg:gap-16 items-start lg:items-center">
             <RevealOnScroll>
