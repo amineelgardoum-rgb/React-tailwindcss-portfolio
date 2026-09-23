@@ -6,19 +6,28 @@ import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { InfoSection } from "./InfoSection";
 import { aboutInfo } from "../../data/about/AboutInfo";
 import { FaPython } from "react-icons/fa";
-const getIconInfo = (name) =>
-  icons[name.toLowerCase()] || {
-    icon: <FaPython />,
-    name,
-    hoverColor: "hover:text-gray-400",
-    shadow: "hover:drop-shadow-[0_0_10px_gray]",
-    url: "#",
+const getIconInfo = (name) => {
+  const info = icons[name.toLowerCase()];
+  if (!info) {
+    return {
+      icon: <FaPython />,
+      name,
+      color: "text-gray-400",
+      hoverColor: "hover:text-gray-400",
+      shadow: "hover:drop-shadow-[0_0_10px_gray]",
+      url: "#",
+    };
+  }
+  return {
+    ...info,
+    color: (info.hoverColor || "").replace(/^hover:/, "") || "text-gray-400",
   };
+};
 
 export const About = () => {
   const renderIcons = (items) =>
     items.map((name) => {
-      const { icon, hoverColor, shadow, url } = getIconInfo(name);
+      const { icon, color, hoverColor, shadow, url } = getIconInfo(name);
       return (
         <a
           key={name}
@@ -27,7 +36,7 @@ export const About = () => {
           className="relative flex flex-col items-center group cursor-none"
         >
           <div
-            className={`text-3xl text-gray-600 dark:text-gray-300 transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-2 ${hoverColor} ${shadow}`}
+            className={`text-3xl transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-2 ${color} ${hoverColor} ${shadow}`}
           >
             {icon}
           </div>

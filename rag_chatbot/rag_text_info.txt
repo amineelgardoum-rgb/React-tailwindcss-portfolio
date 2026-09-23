@@ -60,6 +60,6 @@ ProjectExperience: Builded a prediction ML model for Sales (Cars Sales).
 ShortTermGoal: Contribute to open-source data-related projects.
 CareerAspiration: Help companies build intelligent, data-driven products,build scalable data_pipelines
 
-ContactInfo:github:https://github.com/amineel-crypto
+ContactInfo:github:https://github.com/amineelgardoum-rgb
 ContactInfo:linkedin:https://www.linkedin.com/in/amine-el-gardoum-491a82333
 ContactInfo:X:https://x.com/AMINE44467019

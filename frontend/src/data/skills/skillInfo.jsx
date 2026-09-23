@@ -7,6 +7,7 @@ import {
   FaCloud,
   FaSnowflake,
   FaDatabase,
+  FaMicrosoft,
 } from "react-icons/fa";
 import {
   SiFastapi,
@@ -42,11 +43,19 @@ import {
   SiPython,
   SiGrafana,
   SiRedis,
-SiPrometheus} from "react-icons/si";
+SiPrometheus,
+SiApachespark,
+  SiN8N,
+  SiDuckdb,
+  SiObsidian,
+  SiMarkdown} from "react-icons/si";
 import { IoBarChart } from "react-icons/io5";
 import { TbChartLine } from "react-icons/tb";
 import { GiPanda } from "react-icons/gi";
 import {DiRedis} from "react-icons/di"
+import { SiMetabase } from "react-icons/si";
+import { DataFactories } from "@threeveloper/azure-react-icons/dist/components/analytics/10126-icon-service-Data-Factories";
+import { AzureSynapseAnalytics } from "@threeveloper/azure-react-icons/dist/components/analytics/00606-icon-service-Azure-Synapse-Analytics";
 export const skillInfo = {
   github: {
     icon: <SiGithub />,
@@ -283,7 +292,7 @@ export const skillInfo = {
   snowflake: {
     icon: <FaSnowflake />,
     color: "text-white",
-    hoverColor: "hover:text-blue-150",
+    hoverColor: "hover:text-blue-400",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
@@ -349,5 +358,68 @@ export const skillInfo = {
     hoverColor:"hover:text-red-800",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+  },
+  adf:{
+    icon:<DataFactories />,
+    color:"text-white",
+    hoverColor:"hover:text-blue-600",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
+  },
+  asa:{
+    icon:<AzureSynapseAnalytics />,
+    color:"text-white",
+    hoverColor:"hover:text-blue-600",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
+  },
+  metabase:{
+    icon:<SiMetabase />,
+    color:"text-white",
+    hoverColor:"hover:text-blue-400",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
+  },
+  spark:{
+    icon:<SiApachespark />,
+    color:"text-white",
+    hoverColor:"hover:text-orange-500",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
+  },
+  n8n:{
+    icon:<SiN8N />,
+    color:"text-white",
+    hoverColor:"hover:text-red-500",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
+  },
+  duckdb:{
+    icon:<SiDuckdb />,
+    color:"text-white",
+    hoverColor:"hover:text-green-600",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]"
+  },
+  obsidian:{
+    icon:<SiObsidian />,
+    color:"text-white",
+    hoverColor:"hover:text-violet-400",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]"
+  },
+  markdown:{
+    icon:<SiMarkdown />,
+    color:"text-white",
+    hoverColor:"hover:text-gray-300",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]"
+  },
+  azure:{
+    icon:<FaMicrosoft />,
+    color:"text-white",
+    hoverColor:"hover:text-blue-500",
+    hoverGlow:
+    "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
   }
 };

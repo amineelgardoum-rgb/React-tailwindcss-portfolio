@@ -58,6 +58,7 @@ import { VscSymbolNamespace } from "react-icons/vsc";
 import { IoBarChart } from "react-icons/io5";
 import { GiPanda} from "react-icons/gi";
 import { DiRedis } from "react-icons/di";
+import { DataFactories } from "@threeveloper/azure-react-icons/dist/components/analytics/10126-icon-service-Data-Factories";
 export const icons = {
   airflow: {
     icon: <SiApacheairflow />,
@@ -374,7 +375,7 @@ export const icons = {
   linux: {
     icon: <FaLinux />,
     name: "linux(Ubuntu)",
-    hoverColor: "hover:text-white-600",
+    hoverColor: "hover:text-orange-500",
     shadow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
     url: "https://www.linux.org/",
@@ -470,5 +471,11 @@ export const icons = {
     name:"huggingface",
     hoverColor:"hover:text-yellow-600",
     shadow:"hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_20px_yellow)]"
+  },
+  adf:{
+    icon:<DataFactories />,
+    name:"adf",
+    hoverColor:"hover:text-blue-600",
+    shadow:"hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_20px_blue)]"
   }
 };

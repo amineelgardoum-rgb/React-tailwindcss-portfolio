@@ -12,6 +12,16 @@ export const InfoSection = ({ title, items }) => {
             {item.details && (
               <span className="block text-sm text-gray-500 dark:text-gray-400">{item.details}</span>
             )}
+            {item.link && (
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-1 text-sm text-green-600 dark:text-green-400 hover:underline"
+              >
+                View certificate →
+              </a>
+            )}
           </li>
         ))}
       </ul>

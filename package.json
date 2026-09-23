@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@threeveloper/azure-react-icons": "^1.1.1",
+    "azure-react-icons": "^0.10.1"
+  }
+}

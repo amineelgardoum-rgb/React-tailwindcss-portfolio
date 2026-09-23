@@ -12,21 +12,24 @@ const defaultIcon = <SiPython />;
 export const Projects = () => {
 
   const getSkillInfo = (skill) => {
-    return (
-      skillInfo[skill.toLowerCase()] || {
+    const info = skillInfo[skill.toLowerCase()];
+    if (!info) {
+      return {
         icon: defaultIcon,
         color: "text-gray-400",
         hoverGlow:
           "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
         hoverColor: "text-gray-600",
-      }
-    );
+      };
+    }
+    return info;
   };
 
   const aiProjects = projectsData.filter((p) => p.category === "AI");
   const dataEngProjects = projectsData.filter(
     (p) => p.category === "Data Engineering",
   );
+  const notesProjects = projectsData.filter((p) => p.category === "Notes");
 
   return (
     <>
@@ -71,6 +74,25 @@ export const Projects = () => {
             </RevealOnScroll>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {dataEngProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  getSkillInfo={getSkillInfo}
+                  skillInfo={skillInfo}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Notes & Knowledge Base Section */}
+          <div className="mb-20">
+            <RevealOnScroll>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-green-400 dark:from-green-500 dark:to-green-300 bg-clip-text mb-8 text-center">
+                Notes & Knowledge Base
+              </h3>
+            </RevealOnScroll>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {notesProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}

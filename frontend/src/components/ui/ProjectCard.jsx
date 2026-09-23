@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 import { RevealOnScroll } from "./RevealOnScroll";
-export const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
+
+export const ProjectCard = ({ project, getSkillInfo }) => {
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+
   const groupedIcons = new Map();
   project.skills.forEach((skill) => {
-    const { icon, color, hoverGlow, hoverColor, hoverRotate } =
-      getSkillInfo(skill);
+    const { icon, color, hoverGlow, hoverColor } = getSkillInfo(skill);
     const iconKey = icon.type.name;
     if (!groupedIcons.has(iconKey)) {
       groupedIcons.set(iconKey, {
@@ -13,7 +15,6 @@ export const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
         color,
         hoverGlow,
         hoverColor,
-        hoverRotate,
         skills: [skill],
       });
     } else {
@@ -23,111 +24,77 @@ export const ProjectCard = ({ project, getSkillInfo, skillInfo }) => {
 
   return (
     <RevealOnScroll>
-      <div className="group relative w-full max-w-sm overflow-hidden  mx-auto aspect-[4/3] rounded-xl shadow-lg hover:drop-shadow-[0px_0px_30px_rgba(0,255,0,0.3)] hover:-translate-y-2 transition-all ease-in-out duration-300">
-        <img
-          src={project.image}
-          alt={project.title}
-          className={`
-            absolute inset-0 h-full w-full object-cover rounded-xl 
-            transition-all duration-500 ease-in-out 
-            md:group-hover:scale-110 md:group-hover:blur-sm
-          `}
-        />
-        <div
-          className={`
-            absolute inset-0 bg-black/40 rounded-xl
-            transition-all duration-500 ease-in-out 
-            md:group-hover:bg-black/70
-          `}
-        ></div>
-        <div className="relative z-10 flex h-full flex-col justify-end p-6">
-          <h3 className="text-xl font-bold text-white bg-[rgba(0,0,0,0.4)] rounded mb-auto text-center p-3">
-            {project.title}
-          </h3>
+      <div className="group relative flex flex-col w-full max-w-sm mx-auto bg-gray-900 dark:bg-gray-950 rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-[0px_0px_35px_rgba(0,255,0,0.35)] border border-gray-800 hover:border-green-500/60 transition-all ease-in-out duration-300 h-full">
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-full w-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 group-hover:brightness-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
+        </div>
 
-          <div
-            className={`
-              opacity-100 translate-y-0 group-hover:opacity-100
-              md:opacity-0 md:group-hover:opacity-100 
-              md:translate-y-4 md:group-hover:translate-y-0
-              transition-all duration-300 ease-in
-            `}
-          >
-            <div className="mb-8 text-sm text-white  min-h-[4rem]">
-              {isDescriptionExpanded ? (
-                <>
-                  <p className="transition-all duration-300 ease-in-out opacity-100">
-                    {project.description}
-                  </p>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation(); // Prevents card click when hiding text
-                      setIsDescriptionExpanded(false);
-                    }}
-                    className="font-semibold text-green-300 transition-all ease-in-out duration-300 hover:text-green-200 mt-2 cursor-none"
-                  >
-                    Show Less
-                  </button>
-                </>
-              ) : (
-                <div className="flex items-start">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsDescriptionExpanded(true);
-                    }}
-                    className="cursor-none font-bold text-2xl leading-none text-gray-300 hover:text-green-500 duration-500 transition-all ease-in-out"
-                  >
-                    ...
-                  </button>
-                </div>
-              )}
-            </div>
+        <div className="flex flex-col flex-1 p-5">
+          <h3 className="text-lg font-bold text-white mb-2">{project.title}</h3>
 
-            <div className="mb-4 flex flex-wrap items-center gap-3">
-              {Array.from(groupedIcons.values()).map((info) => {
-                const isPythonIcon = info.icon.type.name === "FaPython";
-                const displayColor = isPythonIcon
-                  ? skillInfo["python"].color
-                  : info.color;
-                const tooltipText = isPythonIcon
-                  ? "Python"
-                  : info.skills.join(" / ");
-
-                return (
-                  <div
-                    key={info.skills.join("-")}
-                    className="group/tooltip relative"
-                  >
-                    <div
-                      className={` hidden md:block md:text-2xl md:cursor-none transition-transform duration-300 ease-in-out hover:scale-110
-                                 ${displayColor} ${info.color} ${info.hoverColor}  md:hover:-translate-y-2 ${info.hoverGlow}`}
-                    >
-                      {info.icon}
-                    </div>
-
-                    <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-in-out group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 group-hover/tooltip:-translate-y-2 group-hover/tooltip:pointer-events-auto">
-                      {tooltipText}
-                      <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-black/80"></div>
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-            <div>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block group cursor-none font-semibold text-green-300 transition-all ease-in-out hover:scale-110 hover:text-green-500 hover:-translate-y-1  duration-500"
-              >
-                View Project{" "}
-                <span className="inline-block  transition-all duration-500 group-hover:translate-x-2">
-                  →
-                </span>
-              </a>
-            </div>
+          <div className="text-sm text-gray-300 mb-4 flex-1">
+            {isDescriptionExpanded ? (
+              <>
+                <p>{project.description}</p>
+                <button
+                  onClick={() => setIsDescriptionExpanded(false)}
+                  className="mt-1 font-semibold text-green-400 hover:text-green-300 transition-colors duration-300 cursor-none"
+                >
+                  Show Less
+                </button>
+              </>
+            ) : (
+              <div className="flex items-start justify-between gap-2">
+                <p className="line-clamp-2">{project.description}</p>
+                <button
+                  onClick={() => setIsDescriptionExpanded(true)}
+                  className="shrink-0 font-bold text-lg leading-none text-green-400 hover:text-green-300 transition-colors duration-300 cursor-none"
+                >
+                  ...
+                </button>
+              </div>
+            )}
           </div>
+
+          <div className="mb-4 flex flex-wrap items-center gap-3">
+            {Array.from(groupedIcons.values()).map((info) => (
+              <div
+                key={info.skills.join("-")}
+                className="group/tooltip relative"
+              >
+                <div
+                  className={`text-2xl text-white transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1 ${info.color} ${info.hoverColor} ${info.hoverGlow}`}
+                >
+                  {info.icon}
+                </div>
+
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-black/80 px-2 py-1 text-xs text-white shadow-lg opacity-0 scale-95 pointer-events-none transition-all duration-500 ease-in-out group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 group-hover/tooltip:-translate-y-2 group-hover/tooltip:pointer-events-auto">
+                  {info.skills.join(" / ")}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-black/80"></div>
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {project.link && project.link !== "#" && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/btn inline-flex items-center gap-2 font-semibold text-green-400 hover:text-green-300 transition-all ease-in-out hover:gap-3 duration-300 cursor-none"
+            >
+              <FaGithub className="text-lg" />
+              View Project
+              <span className="transition-transform duration-300 group-hover/btn:translate-x-1">
+                →
+              </span>
+            </a>
+          )}
         </div>
       </div>
     </RevealOnScroll>
