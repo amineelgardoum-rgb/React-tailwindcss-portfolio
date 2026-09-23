@@ -6,4 +6,4 @@ __pycache__
 .netlify
 .dockerignore
 .chatbot
-node_modulesnode_modules/
+node_modules/
