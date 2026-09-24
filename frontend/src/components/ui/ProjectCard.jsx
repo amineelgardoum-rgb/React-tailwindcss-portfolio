@@ -1,4 +1,5 @@
 import { FaGithub } from "react-icons/fa";
+import { BiBookOpen } from "react-icons/bi";
 import { RevealOnScroll } from "./RevealOnScroll";
 
 const taglines = {
@@ -26,6 +27,7 @@ export const ProjectCard = ({ project, getSkillInfo }) => {
   });
 
   const tagline = taglines[project.category] || "The Project";
+  const isNotes = project.category === "Notes";
 
   return (
     <RevealOnScroll>
@@ -82,8 +84,12 @@ export const ProjectCard = ({ project, getSkillInfo }) => {
               rel="noopener noreferrer"
               className="group/link mt-5 inline-flex items-center gap-2 font-bold text-green-600 transition-all duration-300 hover:gap-3 cursor-none dark:text-green-400"
             >
-              <FaGithub className="text-lg" />
-              View project
+              {isNotes ? (
+                <BiBookOpen className="text-xl" />
+              ) : (
+                <FaGithub className="text-lg" />
+              )}
+              {isNotes ? "Open the notes" : "View project"}
               <span className="transition-transform duration-300 group-hover/link:translate-x-1">
                 →
               </span>

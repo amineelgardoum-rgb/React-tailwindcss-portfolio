@@ -202,7 +202,7 @@ export const projectsData = [
       title:"Microsoft Azure — Obsidian Learning Vault",
       description:`A beginner-friendly Obsidian vault that mirrors the AZ-900 syllabus with interlinked notes, ~60 hands-on screenshots and step-by-step portal tutorials — covering compute, storage, security, economics and migration.`,
       skills:["Obsidian","Markdown","Azure"],
-      link:"https://github.com/amineelgardoum-rgb/Azure",
+      link:"https://amineelgardoum-rgb.github.io/amine-notes/azure/",
       image:"/images/obsidian_vault.png",
       category:"Notes"
     },
@@ -211,7 +211,7 @@ export const projectsData = [
       title:"SQL to NoSQL — MongoDB Vault",
       description:"Structured notes from MongoDB University on data modeling, schema design and best practices — from relational SQL to the flexible document model. Open as an Obsidian vault.",
       skills:["MongoDB","Obsidian","Markdown"],
-      link:"https://github.com/amineelgardoum-rgb/SQL-to-NoSQL-MongoDB-badge-",
+      link:"https://amineelgardoum-rgb.github.io/amine-notes/mongodb/",
       image:"/images/mongodb_vault.png",
       category:"Notes"
     }
