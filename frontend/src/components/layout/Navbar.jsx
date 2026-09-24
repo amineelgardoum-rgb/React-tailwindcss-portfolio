@@ -1,7 +1,12 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom"; 
+import { Link, NavLink } from "react-router-dom"; 
 import { useTheme } from "../../context/ThemeContext";
 import { Sun, Moon } from "lucide-react";
+
+const navLinkClass = ({ isActive }) =>
+  `text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-200 ${
+    isActive ? "text-green-600 dark:text-green-400 font-extrabold" : ""
+  }`;
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   const { theme, toggleTheme } = useTheme();
@@ -20,24 +25,15 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           
           <div className="flex items-center space-x-6">
             <div className="hidden md:flex items-center space-x-6">
-              <Link
-                to="/about"
-                className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 duration-500 ease-in-out"
-              >
+              <NavLink to="/about" className={navLinkClass}>
                 About
-              </Link>
-              <Link
-                to="/projects"
-                className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-200"
-              >
+              </NavLink>
+              <NavLink to="/projects" className={navLinkClass}>
                 Projects
-              </Link>
-              <Link
-                to="/contact"
-                className="text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-300 hover:scale-110 cursor-none transition-all hover:-translate-y-1 ease-in-out duration-200"
-              >
+              </NavLink>
+              <NavLink to="/contact" className={navLinkClass}>
                 Contact
-              </Link>
+              </NavLink>
               <a
                   href="/docs/amine_cv.pdf"
                   download

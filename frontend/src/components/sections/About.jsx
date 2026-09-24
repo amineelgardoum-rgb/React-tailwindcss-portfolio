@@ -1,6 +1,5 @@
 import { icons } from "../../data/skills/icons";
 import { aboutSkills } from "../../data/about/AboutSkills";
-import { CustomCursor } from "../ui/CustomCursor";
 import { SkillSection } from "./SkillSection";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { InfoSection } from "./InfoSection";
@@ -49,7 +48,6 @@ export const About = () => {
 
   return (
     <>
-      <CustomCursor />
       <section
         id="about"
         className="min-h-screen w-full flex items-center justify-center py-20"

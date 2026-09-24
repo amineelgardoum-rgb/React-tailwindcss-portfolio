@@ -19,6 +19,17 @@ import { Layout } from "./components/layout/Layout";
 import { AnimatePresence } from "framer-motion";
 import { PageTransition } from "./components/layout/Transition";
 import { ThemeProvider } from "./context/ThemeContext";
+import { useEffect } from "react";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function AppRoutes() {
   const location = useLocation();
@@ -83,6 +94,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <AppRoutes />
       </Router>
     </ThemeProvider>

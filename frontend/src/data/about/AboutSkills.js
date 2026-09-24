@@ -43,6 +43,6 @@ export const aboutSkills = {
   hosting: ["Netlify", "Vercel"],
   os: ["linux", "windows"],
   scripting: ["bash", "powershell"],
-  cloud: ["AWS"],
+  cloud: ["Azure"],
   monitoring:["Prometheus","Grafana"]
 };
