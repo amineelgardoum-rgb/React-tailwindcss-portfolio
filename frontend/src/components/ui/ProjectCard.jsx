@@ -12,13 +12,14 @@ const taglines = {
 export const ProjectCard = ({ project, getSkillInfo }) => {
   const groupedIcons = new Map();
   project.skills.forEach((skill) => {
-    const { icon, hoverGlow, hoverColor } = getSkillInfo(skill);
+    const { icon, hoverGlow, hoverColor, color } = getSkillInfo(skill);
     const iconKey = icon.type.name;
     if (!groupedIcons.has(iconKey)) {
       groupedIcons.set(iconKey, {
         icon,
         hoverGlow,
         hoverColor,
+        color,
         skills: [skill],
       });
     } else {
@@ -66,7 +67,7 @@ export const ProjectCard = ({ project, getSkillInfo }) => {
                 className="group/tooltip relative"
               >
                 <div
-                  className={`text-2xl text-gray-700 dark:text-gray-300 transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1 ${info.hoverColor} ${info.hoverGlow}`}
+                  className={`text-2xl transition-all duration-300 ease-in-out hover:scale-110 hover:-translate-y-1 ${info.color} ${info.hoverColor} ${info.hoverGlow}`}
                 >
                   {info.icon}
                 </div>

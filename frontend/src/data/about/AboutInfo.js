@@ -15,16 +15,22 @@ export const aboutInfo = {
     {
       role: "Understanding Cloud Computing",
       details: "DataCamp",
+      issuer: "DataCamp",
+      image: "/images/cert_cloud_computing.png",
       link: "https://www.datacamp.com/statement-of-accomplishment/course/c927f97a30cf8db8295621a0d9729c401527aac3",
     },
     {
       role: "Understanding Microsoft Azure",
       details: "DataCamp",
+      issuer: "DataCamp",
+      image: "/images/cert_azure.png",
       link: "https://www.datacamp.com/statement-of-accomplishment/course/fbc9565a37923f9ca2b865593103e12a754a9b78",
     },
     {
       role: "From Relational Model (SQL) to MongoDB's Document Model",
       details: "MongoDB",
+      issuer: "MongoDB",
+      image: "/images/cert_mongodb.png",
       link: "https://www.credly.com/badges/7583399e-22cc-4886-8e03-5b41d4fa05ee",
     },
   ],

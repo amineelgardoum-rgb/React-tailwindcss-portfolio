@@ -66,126 +66,126 @@ export const skillInfo = {
   },
   git: {
     icon: <SiGit />,
-    color: "text-white",
+    color: "text-red-300",
     hoverColor: "text-red-300",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
   },
   docker: {
     icon: <FaDocker />,
-    color: "text-white",
+    color: "text-blue-500",
     hoverColor: "hover:text-blue-500",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   hive: {
     icon: <SiApachehive />,
-    color: "text-white",
+    color: "text-yellow-400",
     hoverColor: "hover:text-yellow-400",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   makefile: {
     icon: <SiMake />,
-    color: "text-white",
+    color: "text-red-400",
     hoverColor: "hover:text-red-400",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
   },
   bash: {
     icon: <SiGnubash />,
-    color: "text-white",
+    color: "text-orange-600",
     hoverColor: "hover:text-orange-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   fastapi: {
     icon: <SiFastapi />,
-    color: "text-white",
+    color: "text-green-600",
     hoverColor: "hover:text-green-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
   },
   mongodb: {
     icon: <SiMongodb />,
-    color: "text-white",
+    color: "text-green-500",
     hoverColor: "hover:text-green-500",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
   },
   kafka: {
     icon: <SiApachekafka />,
-    color: "text-white",
+    color: "text-yellow-600",
     hoverColor: "hover:text-yellow-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   redpanda: {
     icon: <GiPanda />,
-    color: "text-white",
+    color: "text-yellow-600",
     hoverColor: "hover:text-yellow-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   zookeeper: {
     icon: <SiApache />,
-    color: "text-white",
+    color: "text-green-300",
     hoverColor: "hover:text-green-300",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]",
   },
   html5: {
     icon: <FaHtml5 />,
-    color: "text-white",
+    color: "text-orange-600",
     hoverColor: "hover:text-orange-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   css3: {
     icon: <FaCss3Alt />,
-    color: "text-white",
+    color: "text-blue-300",
     hoverColor: "hover:text-blue-300",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   "chart.js": {
     icon: <SiChartdotjs />,
-    color: "text-white",
+    color: "text-pink-600",
     hoverColor: "hover:text-pink-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]",
   },
   streamlit: {
     icon: <SiStreamlit />,
-    color: "text-white",
+    color: "text-red-600",
     hoverColor: "hover:text-red-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]",
   },
   python: {
     icon: <SiPython />,
-    color: "text-white",
+    color: "text-yellow-600",
     hoverColor: "hover:text-yellow-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   tensorflow: {
     icon: <SiTensorflow />,
-    color: "text-white",
+    color: "text-orange-700",
     hoverColor: "hover:text-orange-700",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   vite: {
     icon: <SiVite />,
-    color: "text-white",
+    color: "text-violet-500",
     hoverColor: "hover:text-violet-500",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]",
   },
   "scikit-learn": {
     icon: <SiScikitlearn />,
-    color: "text-white",
+    color: "text-orange-500",
     hoverColor: "hover:text-orange-500",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
@@ -200,112 +200,112 @@ export const skillInfo = {
   },
   pandas: {
     icon: <SiPandas />,
-    color: "text-white",
+    color: "text-blue-700",
     hoverColor: "hover:text-blue-700",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   jupyter: {
     icon: <SiJupyter />,
-    color: "text-white",
+    color: "text-orange-600",
     hoverColor: "hover:text-orange-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   kaggle: {
     icon: <SiKaggle />,
-    color: "text-white",
+    color: "text-blue-600",
     hoverColor: "hover:text-blue-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   seaborn: {
     icon: <IoBarChart />,
-    color: "text-white",
+    color: "text-blue-700",
     hoverColor: "hover:text-blue-700",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   matplotlib: {
     icon: <TbChartLine />,
-    color: "text-white",
+    color: "text-blue-500",
     hoverColor: "hover:text-blue-500",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   react: {
     icon: <SiReact />,
-    color: "text-white",
+    color: "text-blue-500",
     hoverColor: "hover:text-blue-500",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   langchain: {
     icon: <SiLangchain />,
-    color: "text-white",
+    color: "text-gray-600",
     hoverColor: "hover:text-gray-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]",
   },
   gemini: {
     icon: <SiGooglegemini />,
-    color: "text-white",
+    color: "text-blue-400",
     hoverColor: "hover:text-blue-400",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_#FF00FF)_drop-shadow(0_0_10px_#FF00FF)_drop-shadow(0_0_15px_#FF00FF)]",
   },
   huggingface: {
     icon: <SiHuggingface />,
-    color: "text-white",
+    color: "text-yellow-600",
     hoverColor: "hover:text-yellow-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_#FFA500)_drop-shadow(0_0_10px_#FFA500)_drop-shadow(0_0_15px_#FFA500)]",
   },
   tailwindcss: {
     icon: <SiTailwindcss />,
-    color: "text-white",
+    color: "text-blue-600",
     hoverColor: "hover:text-blue-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_#38B2AC)_drop-shadow(0_0_10px_#38B2AC)_drop-shadow(0_0_15px_#38B2AC)]",
   },
   numpy: {
     icon: <SiNumpy />,
-    color: "text-white",
+    color: "text-blue-500",
     hoverColor: "hover:text-blue-500",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_#013243)_drop-shadow(0_0_10px_#013243)_drop-shadow(0_0_15px_#013243)]",
   },
   airflow: {
     icon: <SiApacheairflow />,
-    color: "text-white",
+    color: "text-blue-600",
     hoverColor: "hover:text-blue-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   "aws_(s3_bucket)": {
     icon: <FaCloud />,
-    color: "text-white",
+    color: "text-orange-300",
     hoverColor: "hover:text-orange-300",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   snowflake: {
     icon: <FaSnowflake />,
-    color: "text-white",
+    color: "text-blue-400",
     hoverColor: "hover:text-blue-400",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   dbt: {
     icon: <SiDbt />,
-    color: "text-white",
+    color: "text-orange-600",
     hoverColor: "hover:text-orange-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]",
   },
   minio: {
     icon: <SiMinio />,
-    color: "text-white",
+    color: "text-pink-600",
     hoverColor: "hover:text-pink-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]",
@@ -319,106 +319,106 @@ export const skillInfo = {
   },
   trino: {
     icon: <SiTrino />,
-    color: "text-white",
+    color: "text-pink-600",
     hoverColor: "hover:text-pink-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_pink)_drop-shadow(0_0_10px_pink)_drop-shadow(0_0_15px_pink)]",
   },
   hadoop: {
     icon: <SiApachehadoop />,
-    color: "text-white",
+    color: "text-yellow-400",
     hoverColor: "hover:text-yellow-400",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_yellow)_drop-shadow(0_0_10px_yellow)_drop-shadow(0_0_15px_yellow)]",
   },
   postgres: {
     icon: <SiPostgresql />,
-    color: "text-white",
+    color: "text-blue-600",
     hoverColor: "hover:text-blue-600",
     hoverGlow:
       "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]",
   },
   grafana:{
     icon:<SiGrafana />,
-    color:"text-white",
-    hoverColor:"hover:text-orange-600",
+    color: "text-orange-600",
+    hoverColor: "hover:text-orange-600",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
   },
   redis:{
     icon:<DiRedis />,
-    color:"text-white",
-    hoverColor:"hover:text-red-600",
+    color: "text-red-600",
+    hoverColor: "hover:text-red-600",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
   },
   prometheus:{
     icon:<SiPrometheus />,
-    color:"text-white",
-    hoverColor:"hover:text-red-800",
+    color: "text-red-800",
+    hoverColor: "hover:text-red-800",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
   },
   adf:{
     icon:<DataFactories />,
-    color:"text-white",
-    hoverColor:"hover:text-blue-600",
+    color: "text-blue-600",
+    hoverColor: "hover:text-blue-600",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
   },
   asa:{
     icon:<AzureSynapseAnalytics />,
-    color:"text-white",
-    hoverColor:"hover:text-blue-600",
+    color: "text-blue-600",
+    hoverColor: "hover:text-blue-600",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
   },
   metabase:{
     icon:<SiMetabase />,
-    color:"text-white",
-    hoverColor:"hover:text-blue-400",
+    color: "text-blue-400",
+    hoverColor: "hover:text-blue-400",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
   },
   spark:{
     icon:<SiApachespark />,
-    color:"text-white",
-    hoverColor:"hover:text-orange-500",
+    color: "text-orange-500",
+    hoverColor: "hover:text-orange-500",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_orange)_drop-shadow(0_0_10px_orange)_drop-shadow(0_0_15px_orange)]"
   },
   n8n:{
     icon:<SiN8N />,
-    color:"text-white",
-    hoverColor:"hover:text-red-500",
+    color: "text-red-500",
+    hoverColor: "hover:text-red-500",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_red)_drop-shadow(0_0_10px_red)_drop-shadow(0_0_15px_red)]"
   },
   duckdb:{
     icon:<SiDuckdb />,
-    color:"text-white",
-    hoverColor:"hover:text-green-600",
+    color: "text-green-600",
+    hoverColor: "hover:text-green-600",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_green)_drop-shadow(0_0_10px_green)_drop-shadow(0_0_15px_green)]"
   },
   obsidian:{
     icon:<SiObsidian />,
-    color:"text-white",
-    hoverColor:"hover:text-violet-400",
+    color: "text-violet-400",
+    hoverColor: "hover:text-violet-400",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_violet)_drop-shadow(0_0_10px_violet)_drop-shadow(0_0_15px_violet)]"
   },
   markdown:{
     icon:<SiMarkdown />,
-    color:"text-white",
-    hoverColor:"hover:text-gray-300",
+    color: "text-gray-300",
+    hoverColor: "hover:text-gray-300",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_gray)_drop-shadow(0_0_10px_gray)_drop-shadow(0_0_15px_gray)]"
   },
   azure:{
     icon:<FaMicrosoft />,
-    color:"text-white",
-    hoverColor:"hover:text-blue-500",
+    color: "text-blue-500",
+    hoverColor: "hover:text-blue-500",
     hoverGlow:
     "hover:[filter:drop-shadow(0_0_5px_blue)_drop-shadow(0_0_10px_blue)_drop-shadow(0_0_15px_blue)]"
   }

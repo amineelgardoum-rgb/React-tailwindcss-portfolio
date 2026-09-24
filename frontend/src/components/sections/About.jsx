@@ -3,6 +3,7 @@ import { aboutSkills } from "../../data/about/AboutSkills";
 import { SkillSection } from "./SkillSection";
 import { RevealOnScroll } from "../ui/RevealOnScroll";
 import { InfoSection } from "./InfoSection";
+import { CertificationCard } from "../ui/CertificationCard";
 import { aboutInfo } from "../../data/about/AboutInfo";
 import { FaPython } from "react-icons/fa";
 const getIconInfo = (name) => {
@@ -52,7 +53,7 @@ export const About = () => {
         id="about"
         className="min-h-screen w-full flex items-center justify-center py-20"
       >
-        <div className="max-w-4xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <RevealOnScroll>
             <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-green-600 to-green-400 dark:from-green-500 dark:to-green-400 bg-clip-text text-transparent">
               About Me
@@ -70,7 +71,7 @@ export const About = () => {
                 to apply my skills to solve real-world challenges.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 <SkillSection
                   title="Data Engineering Tools"
                   items={aboutSkills.dataEngTools}
@@ -139,13 +140,24 @@ export const About = () => {
               </div>
             </div>
           </RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <InfoSection title="Education" items={aboutInfo.education} />
             <InfoSection title="Experience" items={aboutInfo.experience} />
-            <InfoSection
-              title="Certification"
-              items={aboutInfo.certification}
-            />
+          </div>
+
+          <div className="mt-14">
+            <RevealOnScroll>
+              <div className="rounded-xl p-6 md:p-8 shadow-[0px_2px_12px_green] hover:shadow-[0px_0px_50px_green] bg-white dark:bg-black transition-all ease-in-out duration-500 border border-green-500 hover:-translate-y-3">
+                <h2 className="mb-8 text-3xl font-bold text-center bg-gradient-to-r from-green-600 to-green-400 dark:from-green-500 dark:to-green-400 bg-clip-text text-transparent">
+                  Certification
+                </h2>
+                <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
+                  {aboutInfo.certification.map((cert, index) => (
+                    <CertificationCard key={index} cert={cert} />
+                  ))}
+                </div>
+              </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
